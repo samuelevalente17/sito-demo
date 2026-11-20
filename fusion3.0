@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fusion 3.0 — Pizzeria Contemporanea | Lanciano</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#0B0B0D',
+              card: '#141418',
+              border: '#24242B',
+              amber: '#F59E0B',
+              ember: '#EA580C',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #0B0B0D;
+      color: #F4F4F5;
+    }
+    .glass-nav {
+      background: rgba(11, 11, 13, 0.85);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-black pb-24 md:pb-0">
+
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-40 glass-nav border-b border-brand-border">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center text-black font-bold text-lg shadow-lg shadow-amber-500/20">
+          F
+        </div>
+        <div>
+          <span class="font-serif font-bold text-xl tracking-tight text-white">FUSION <span class="text-amber-500">3.0</span></span>
+          <span class="block text-[10px] uppercase tracking-[0.2em] text-zinc-400 -mt-1">Lanciano</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-300">
+        <a href="#filosofia" class="hover:text-amber-400 transition">L'Impasto</a>
+        <a href="#menu" class="hover:text-amber-400 transition">Menu Digitale</a>
+        <a href="#prenota" class="hover:text-amber-400 transition">Prenota Tavolo</a>
+        <a href="#dove-siamo" class="hover:text-amber-400 transition">Dove Siamo</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <button onclick="toggleCart()" class="relative inline-flex items-center gap-2 bg-brand-card hover:bg-zinc-800 border border-brand-border px-3.5 py-2 rounded-full text-sm font-medium transition">
+          <svg class="w-4 h-4 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+          </svg>
+          <span class="hidden sm:inline">Asporto</span>
+          <span id="nav-cart-count" class="bg-amber-500 text-black text-xs font-bold px-1.5 py-0.5 rounded-full">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON FOTO AD ALTA RISOLUZIONE -->
+  <section class="relative pt-24 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1800&q=80"
+        alt="Pizza contemporanea Fusion 3.0 con cornicione alveolato"
+        class="w-full h-full object-cover opacity-35"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0D] via-[#0B0B0D]/80 to-[#0B0B0D]/60"></div>
+    </div>
+
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+      <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-zinc-900/90 border border-amber-500/30 text-xs font-medium text-amber-400 mb-6">
+          <span>★ 4.7 su Google</span>
+          <span class="text-zinc-600">•</span>
+          <span>Oltre 270 recensioni verificate</span>
+        </div>
+
+        <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-[1.1] mb-5">
+          L'evoluzione della pizza a <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">Lanciano</span>.
+        </h1>
+
+        <p class="text-zinc-300 text-base sm:text-lg leading-relaxed mb-8">
+          Impasti ad alta idratazione maturati 72 ore, cornicione soffice e croccantezza calibrata, abbinati alle eccellenze d'Abruzzo. Scegli dal menu e ordina o prenota in 10 secondi, senza intermediari.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-3.5">
+          <a href="#menu" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-black font-bold px-6 py-3.5 rounded-xl shadow-lg shadow-amber-500/20 transition">
+            <span>Sfoglia il Menu & Ordina</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+          </a>
+          <a href="#prenota" class="inline-flex items-center justify-center gap-2 bg-zinc-900/90 hover:bg-zinc-800 text-white border border-zinc-700 font-semibold px-6 py-3.5 rounded-xl transition">
+            <span>Prenota un Tavolo</span>
+          </a>
+        </div>
+
+        <div class="mt-10 pt-6 border-t border-zinc-800/80 grid grid-cols-3 gap-4 text-xs sm:text-sm">
+          <div>
+            <span class="block text-zinc-400">Dove siamo</span>
+            <span class="font-semibold text-white">Via del Mare, 49</span>
+          </div>
+          <div>
+            <span class="block text-zinc-400">Orari</span>
+            <span class="font-semibold text-white">Mer–Lun 19:00–00:00</span>
+          </div>
+          <div>
+            <span class="block text-zinc-400">Servizio</span>
+            <span class="font-semibold text-emerald-400">Sala & Asporto Diretto</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERIA VISIVA: L'ARTE DELL'IMPASTO -->
+  <section id="filosofia" class="py-12 border-y border-brand-border bg-brand-card/40">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-500">Metodo Fusion 3.0</span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mt-1">Alveolatura, tecnica e territorio</h2>
+        </div>
+        <p class="text-sm text-zinc-400 max-w-md">
+          Ogni panetto segue una maturazione lenta a temperatura controllata per garantire massima digeribilità e fragranza ad ogni morso.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-card h-64">
+          <img
+            src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=80"
+            alt="Lievitazione 72 ore"
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">01. Leggerezza</span>
+            <h3 class="text-white font-bold text-lg">72 Ore di Maturazione</h3>
+            <p class="text-zinc-300 text-xs mt-1">Alta idratazione e blend di farine selezionate per un impasto soffice e leggero.</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-card h-64">
+          <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80"
+            alt="Ingredienti abruzzesi selezionati"
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">02. Territorio</span>
+            <h3 class="text-white font-bold text-lg">Eccellenze d'Abruzzo</h3>
+            <p class="text-zinc-300 text-xs mt-1">Ventricina frentana, fiordilatte locale, olio EVO delle colline teatine e verdure di stagione.</p>
+          </div>
+        </div>
+
+        <div class="group relative rounded-2xl overflow-hidden border border-brand-border bg-brand-card h-64">
+          <img
+            src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?auto=format&fit=crop&w=900&q=80"
+            alt="Cottura ad alta temperatura"
+            class="w-full h-full object-cover group-hover:scale-105 transition duration-500 opacity-85"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent p-5 flex flex-col justify-end">
+            <span class="text-amber-400 text-xs font-bold uppercase tracking-wider">03. Cottura</span>
+            <h3 class="text-white font-bold text-lg">Cornicione Dorato</h3>
+            <p class="text-zinc-300 text-xs mt-1">Sfornata al momento con guarnizioni aggiunte in uscita per preservare profumi e freschezza.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU DIGITALE INTERATTIVO CON FOTO -->
+  <section id="menu" class="py-16">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-widest text-amber-500">Asporto Zero Commissioni</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-white mt-1">Menu Digitale</h2>
+        </div>
+
+        <!-- Filtri Categoria -->
+        <div class="flex gap-2 overflow-x-auto no-scrollbar pb-1" id="category-filters">
+          <button data-cat="all" class="cat-btn active px-4 py-2 rounded-full text-xs font-bold bg-amber-500 text-black transition whitespace-nowrap">Tutte</button>
+          <button data-cat="gourmet" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-brand-card text-zinc-300 border border-brand-border hover:border-zinc-600 transition whitespace-nowrap">Le Fusion Gourmet</button>
+          <button data-cat="classiche" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-brand-card text-zinc-300 border border-brand-border hover:border-zinc-600 transition whitespace-nowrap">Le Classiche</button>
+          <button data-cat="sfizi" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-brand-card text-zinc-300 border border-brand-border hover:border-zinc-600 transition whitespace-nowrap">Fritti & Sfizi</button>
+          <button data-cat="dolci" class="cat-btn px-4 py-2 rounded-full text-xs font-semibold bg-brand-card text-zinc-300 border border-brand-border hover:border-zinc-600 transition whitespace-nowrap">Dolci</button>
+        </div>
+      </div>
+
+      <!-- Griglia Prodotti -->
+      <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Popolato via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- PRENOTAZIONE TAVOLO DIRETTA SU WHATSAPP -->
+  <section id="prenota" class="py-16 border-t border-brand-border bg-gradient-to-b from-brand-card/50 to-brand-dark">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="bg-brand-card border border-brand-border rounded-3xl p-6 sm:p-10 shadow-2xl">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-semibold border border-emerald-500/20 mb-3">
+            Conferma immediata su WhatsApp
+          </span>
+          <h2 class="font-serif text-3xl font-bold text-white">Prenota il tuo tavolo</h2>
+          <p class="text-zinc-400 text-sm mt-2">
+            Compila i campi qui sotto: si aprirà WhatsApp con il messaggio già pronto per lo staff di Fusion 3.0.
+          </p>
+        </div>
+
+        <form id="booking-form" onsubmit="sendBookingWhatsApp(event)" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-medium text-zinc-400 mb-1.5">Nome e Cognome *</label>
+            <input type="text" id="book-name" required placeholder="Es. Marco Rossi"
+              class="w-full bg-brand-dark border border-brand-border focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-zinc-400 mb-1.5">Numero Persone *</label>
+            <select id="book-guests" class="w-full bg-brand-dark border border-brand-border focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition">
+              <option value="2 persone">2 persone</option>
+              <option value="3 persone">3 persone</option>
+              <option value="4 persone" selected>4 persone</option>
+              <option value="5 persone">5 persone</option>
+              <option value="6 persone">6 persone</option>
+              <option value="Tavolata (7+ persone)">Tavolata (7+ persone)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-zinc-400 mb-1.5">Data *</label>
+            <input type="date" id="book-date" required
+              class="w-full bg-brand-dark border border-brand-border focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition" />
+          </div>
+
+          <div>
+            <label class="block text-xs font-medium text-zinc-400 mb-1.5">Orario preferito *</label>
+            <select id="book-time" class="w-full bg-brand-dark border border-brand-border focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition">
+              <option value="19:30">19:30</option>
+              <option value="20:00">20:00</option>
+              <option value="20:30" selected>20:30</option>
+              <option value="21:00">21:00</option>
+              <option value="21:30">21:30</option>
+              <option value="22:00">22:00</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-2">
+            <label class="block text-xs font-medium text-zinc-400 mb-1.5">Note (es. seggiolone, intolleranze, tavolo interno/esterno)</label>
+            <input type="text" id="book-notes" placeholder="Facoltativo"
+              class="w-full bg-brand-dark border border-brand-border focus:border-amber-500 rounded-xl px-4 py-3 text-sm text-white outline-none transition" />
+          </div>
+
+          <div class="sm:col-span-2 mt-2">
+            <button type="submit" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-3.5 px-6 rounded-xl flex items-center justify-center gap-2.5 transition shadow-lg shadow-emerald-500/20">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              <span>Invia Prenotazione su WhatsApp</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / DOVE SIAMO -->
+  <footer id="dove-siamo" class="py-12 border-t border-brand-border bg-brand-dark text-sm text-zinc-400">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <span class="font-serif font-bold text-xl text-white">FUSION <span class="text-amber-500">3.0</span></span>
+        <p class="mt-2 text-zinc-400 leading-relaxed">
+          Pizzeria contemporanea a Lanciano. Impasti ad alta digeribilità, materie prime selezionate e servizio d'asporto diretto.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Indirizzo & Contatti</h4>
+        <p>Via del Mare, 49 — 66034 Lanciano (CH)</p>
+        <p class="mt-1">WhatsApp Diretto: <a href="https://wa.me/393913137097" target="_blank" class="text-amber-400 hover:underline">+39 391 313 7097</a></p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Orari di Apertura</h4>
+        <p>Mercoledì – Lunedì: <span class="text-white">19:00 – 00:00</span></p>
+        <p class="text-rose-400 mt-1">Martedì: Chiuso</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BARRA FISSA MOBILE PER CARRELLO -->
+  <div id="mobile-cart-bar" class="fixed bottom-4 inset-x-4 z-40 md:hidden hidden">
+    <button onclick="toggleCart()" class="w-full bg-amber-500 text-black font-bold py-3.5 px-5 rounded-2xl shadow-2xl flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <span id="mobile-bar-count" class="bg-black text-amber-400 text-xs font-extrabold px-2.5 py-1 rounded-lg">0</span>
+        <span>Vedi Ordine d'Asporto</span>
+      </div>
+      <span id="mobile-bar-total" class="font-extrabold">€ 0,00</span>
+    </button>
+  </div>
+
+  <!-- DRAWER CARRELLO ASPORTO WHATSAPP -->
+  <div id="cart-drawer" class="fixed inset-0 z-50 hidden">
+    <div onclick="toggleCart()" class="absolute inset-0 bg-black/75 backdrop-blur-sm"></div>
+    <div class="absolute right-0 top-0 bottom-0 w-full max-w-md bg-brand-card border-l border-brand-border flex flex-col shadow-2xl">
+      <div class="p-5 border-b border-brand-border flex items-center justify-between">
+        <div>
+          <h3 class="font-serif font-bold text-xl text-white">Il tuo Ordine d'Asporto</h3>
+          <p class="text-xs text-zinc-400">Invio diretto su WhatsApp • Zero commissioni</p>
+        </div>
+        <button onclick="toggleCart()" class="p-2 text-zinc-400 hover:text-white rounded-lg bg-zinc-900">
+          ✕
+        </button>
+      </div>
+
+      <div id="cart-items" class="flex-1 overflow-y-auto p-5 space-y-3">
+        <!-- Elementi carrello -->
+      </div>
+
+      <div class="p-5 border-t border-brand-border bg-brand-dark space-y-3">
+        <div class="grid grid-cols-2 gap-2.5">
+          <input type="text" id="order-name" placeholder="Il tuo nome *" class="bg-brand-card border border-brand-border rounded-xl px-3 py-2.5 text-xs text-white outline-none focus:border-amber-500" />
+          <select id="order-time" class="bg-brand-card border border-brand-border rounded-xl px-3 py-2.5 text-xs text-white outline-none focus:border-amber-500">
+            <option value="Prima possibile">Ritiro: Prima possibile</option>
+            <option value="19:30">Ritiro ore 19:30</option>
+            <option value="20:00">Ritiro ore 20:00</option>
+            <option value="20:30">Ritiro ore 20:30</option>
+            <option value="21:00">Ritiro ore 21:00</option>
+            <option value="21:30">Ritiro ore 21:30</option>
+          </select>
+        </div>
+
+        <div class="flex items-center justify-between text-base font-bold text-white pt-1">
+          <span>Totale stimato</span>
+          <span id="cart-total" class="text-amber-400 text-xl">€ 0,00</span>
+        </div>
+
+        <button onclick="sendOrderWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-bold py-3.5 rounded-xl flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+          <span>Invia Ordine su WhatsApp</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // NUMERO WHATSAPP IMPOSTATO PER LA DIMOSTRAZIONE IN DIRETTA
+    const WHATSAPP_NUMBER = "393913137097";
+
+    const menuItems = [
+      {
+        id: 1,
+        name: "La Lancianese 3.0",
+        category: "gourmet",
+        price: 11.50,
+        badge: "Più ordinata",
+        desc: "Vellutata di datterino giallo, fiordilatte d'Abruzzo, ventricina frentana croccante, stracciatella e basilico fresco.",
+        img: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 2,
+        name: "Mortadella, Pistacchio & Burrata",
+        category: "gourmet",
+        price: 12.00,
+        badge: "Gourmet",
+        desc: "Base bianca con fiordilatte, mortadella Bologna IGP tagliata sottile in uscita, burrata pugliese e granella di pistacchio.",
+        img: "https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 3,
+        name: "Tartufo & Funghi Cardoncelli",
+        category: "gourmet",
+        price: 12.50,
+        badge: "Stagionale",
+        desc: "Crema di tartufo nero d'Abruzzo, funghi cardoncelli arrosto, fior di latte, scaglie di pecorino e olio EVO.",
+        img: "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 4,
+        name: "Margherita Contemporanea",
+        category: "classiche",
+        price: 7.50,
+        badge: "Classica",
+        desc: "Pomodoro San Marzano DOP schiacciato a mano, fiordilatte fresco, parmigiano 24 mesi, basilico e olio EVO.",
+        img: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 5,
+        name: "Diavola Frentana",
+        category: "classiche",
+        price: 9.00,
+        badge: "Piccante",
+        desc: "San Marzano DOP, fiordilatte, spianata calabra piccante, olive nere denocciolate e filo d'olio al peperoncino.",
+        img: "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 6,
+        name: "4 Formaggi & Miele di Sulla",
+        category: "classiche",
+        price: 9.50,
+        badge: "",
+        desc: "Fiordilatte, gorgonzola dolce DOP, scamorza affumicata, parmigiano e gocce di miele abruzzese.",
+        img: "https://images.unsplash.com/photo-1548369937-47519962c11a?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 7,
+        name: "Tris di Supplì Artigianali",
+        category: "sfizi",
+        price: 6.50,
+        badge: "Fatti in casa",
+        desc: "Classico al ragù abruzzese, cacio e pepe, e 'nduja con cuore filante di mozzarella.",
+        img: "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 8,
+        name: "Patatine Dippers & Fonduta",
+        category: "sfizi",
+        price: 5.50,
+        badge: "",
+        desc: "Patate con buccia croccanti servite con fonduta calda di parmigiano e pepe nero.",
+        img: "https://images.unsplash.com/photo-1576107232684-1279f390859f?auto=format&fit=crop&w=700&q=80"
+      },
+      {
+        id: 9,
+        name: "Tiramisù della Casa",
+        category: "dolci",
+        price: 5.00,
+        badge: "Dolce",
+        desc: "Crema al mascarpone fresco, savoiardi inzuppati al caffè espresso e cacao amaro.",
+        img: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=700&q=80"
+      }
+    ];
+
+    let cart = [];
+
+    function renderMenu(filter = 'all') {
+      const grid = document.getElementById('menu-grid');
+      const filtered = filter === 'all' ? menuItems : menuItems.filter(i => i.category === filter);
+
+      grid.innerHTML = filtered.map(item => `
+        <div class="bg-brand-card border border-brand-border hover:border-amber-500/40 rounded-2xl overflow-hidden flex flex-col justify-between transition group">
+          <div>
+            <div class="relative h-48 overflow-hidden bg-zinc-900">
+              <img
+                src="${item.img}"
+                alt="${item.name}"
+                onerror="this.src='https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80'"
+                class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+              />
+              ${item.badge ? `<span class="absolute top-3 left-3 bg-black/80 backdrop-blur-md text-amber-400 border border-amber-500/30 text-[11px] font-bold px-2.5 py-1 rounded-full">${item.badge}</span>` : ''}
+            </div>
+            <div class="p-5">
+              <div class="flex items-start justify-between gap-2">
+                <h3 class="font-bold text-lg text-white leading-snug">${item.name}</h3>
+                <span class="font-bold text-amber-400 whitespace-nowrap">€ ${item.price.toFixed(2).replace('.', ',')}</span>
+              </div>
+              <p class="text-zinc-400 text-xs leading-relaxed mt-2">${item.desc}</p>
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-2">
+            <button onclick="addToCart(${item.id})" class="w-full bg-zinc-900 hover:bg-amber-500 text-zinc-200 hover:text-black border border-zinc-700 hover:border-amber-500 font-semibold text-xs py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition">
+              <span>+ Aggiungi all'asporto</span>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Gestione Filtri
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.cat-btn').forEach(b => {
+          b.classList.remove('bg-amber-500', 'text-black', 'font-bold');
+          b.classList.add('bg-brand-card', 'text-zinc-300', 'border', 'border-brand-border');
+        });
+        btn.classList.remove('bg-brand-card', 'text-zinc-300', 'border', 'border-brand-border');
+        btn.classList.add('bg-amber-500', 'text-black', 'font-bold');
+        renderMenu(btn.dataset.cat);
+      });
+    });
+
+    function addToCart(id) {
+      const product = menuItems.find(p => p.id === id);
+      const existing = cart.find(c => c.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ ...product, qty: 1 });
+      }
+      updateCartUI();
+    }
+
+    function changeQty(id, delta) {
+      const idx = cart.findIndex(c => c.id === id);
+      if (idx === -1) return;
+      cart[idx].qty += delta;
+      if (cart[idx].qty <= 0) {
+        cart.splice(idx, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+      const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      document.getElementById('nav-cart-count').textContent = totalQty;
+      document.getElementById('mobile-bar-count').textContent = totalQty;
+      document.getElementById('mobile-bar-total').textContent = `€ ${totalPrice.toFixed(2).replace('.', ',')}`;
+      document.getElementById('cart-total').textContent = `€ ${totalPrice.toFixed(2).replace('.', ',')}`;
+
+      const mobileBar = document.getElementById('mobile-cart-bar');
+      if (totalQty > 0) {
+        mobileBar.classList.remove('hidden');
+      } else {
+        mobileBar.classList.add('hidden');
+      }
+
+      const container = document.getElementById('cart-items');
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="text-center py-12 text-zinc-500 text-sm">
+            Il tuo ordine è vuoto.<br>Aggiungi una pizza dal menu per provare l'invio WhatsApp.
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = cart.map(item => `
+        <div class="flex items-center justify-between bg-brand-dark border border-brand-border p-3.5 rounded-xl">
+          <div>
+            <h4 class="text-sm font-semibold text-white">${item.name}</h4>
+            <span class="text-xs text-amber-400 font-medium">€ ${(item.price * item.qty).toFixed(2).replace('.', ',')}</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-white font-bold">-</button>
+            <span class="text-sm font-bold w-4 text-center">${item.qty}</span>
+            <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 rounded-lg bg-amber-500 text-black font-bold">+</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cart-drawer');
+      drawer.classList.toggle('hidden');
+    }
+
+    // INVIO ORDINE D'ASPORTO REALE SU WHATSAPP
+    function sendOrderWhatsApp() {
+      if (cart.length === 0) {
+        alert("Aggiungi almeno un prodotto al carrello per provare l'ordine!");
+        return;
+      }
+      const name = document.getElementById('order-name').value.trim() || "Cliente Demo";
+      const time = document.getElementById('order-time').value;
+      const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+      let lines = [
+        `🍕 *NUOVO ORDINE D'ASPORTO — FUSION 3.0*`,
+        `👤 *Cliente:* ${name}`,
+        `⏰ *Orario:* ${time}`,
+        ``,
+        `*Riepilogo ordine:*`
+      ];
+
+      cart.forEach(item => {
+        lines.push(`• ${item.qty}x ${item.name} (€ ${(item.price * item.qty).toFixed(2).replace('.', ',')})`);
+      });
+
+      lines.push(``);
+      lines.push(`💰 *Totale stimato:* € ${total.toFixed(2).replace('.', ',')}`);
+      lines.push(`_(Ordine inviato dal sito web)_`);
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(url, '_blank');
+    }
+
+    // INVIO PRENOTAZIONE TAVOLO REALE SU WHATSAPP
+    function sendBookingWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('book-name').value.trim();
+      const guests = document.getElementById('book-guests').value;
+      const dateRaw = document.getElementById('book-date').value;
+      const time = document.getElementById('book-time').value;
+      const notes = document.getElementById('book-notes').value.trim();
+
+      let dateFormatted = dateRaw;
+      if (dateRaw && dateRaw.includes('-')) {
+        const [y, m, d] = dateRaw.split('-');
+        dateFormatted = `${d}/${m}/${y}`;
+      }
+
+      let lines = [
+        `📅 *PRENOTAZIONE TAVOLO — FUSION 3.0*`,
+        `👤 *Nome:* ${name}`,
+        `👥 *Ospiti:* ${guests}`,
+        `📆 *Data:* ${dateFormatted}`,
+        `⏰ *Orario:* ${time}`
+      ];
+
+      if (notes) {
+        lines.push(`📝 *Note:* ${notes}`);
+      }
+      lines.push(``);
+      lines.push(`In attesa di vostra conferma, grazie!`);
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(url, '_blank');
+    }
+
+    // Imposta data odierna di default nel form prenotazione
+    document.addEventListener('DOMContentLoaded', () => {
+      const today = new Date().toISOString().split('T')[0];
+      document.getElementById('book-date').value = today;
+      renderMenu();
+      updateCartUI();
+    });
+  </script>
+</body>
+</html>
