@@ -7,31 +7,30 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Bebas Neue / Oswald + Montserrat per replicare fedelmente il font condensato del logo originale FUSION 3.0 -->
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Font condensati e geometrici coerenti con il brand manual ufficiale -->
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
             petrolio: {
-              DEFAULT: '#124E5B',
-              light: '#1C6878',
-              dark: '#0B353E',
-              soft: '#EAF3F5'
+              DEFAULT: '#0E4A56',
+              light: '#176271',
+              dark: '#08323B',
+              soft: '#EBF3F5'
             },
             senape: {
-              DEFAULT: '#C5A037',
-              light: '#DEC05F',
-              dark: '#9F7E22'
+              DEFAULT: '#B79438',
+              light: '#D2B154',
+              dark: '#8F7122'
             },
             legno: '#8C6239',
             marmo: '#F7F6F2'
           },
           fontFamily: {
             sans: ['Montserrat', 'sans-serif'],
-            logo: ['Bebas Neue', 'Oswald', 'sans-serif'],
-            display: ['Oswald', 'sans-serif']
+            logo: ['Barlow Condensed', 'sans-serif']
           }
         }
       }
@@ -40,47 +39,51 @@
   <style>
     .marble-bg {
       background-color: #F7F6F2;
-      background-image: radial-gradient(circle at 20% 20%, rgba(18, 78, 91, 0.04) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 80%, rgba(197, 160, 55, 0.06) 0%, transparent 50%);
+      background-image: radial-gradient(circle at 18% 18%, rgba(14, 74, 86, 0.04) 0%, transparent 50%),
+                        radial-gradient(circle at 82% 82%, rgba(183, 148, 56, 0.06) 0%, transparent 50%);
     }
     .photo-placeholder {
       background-image: repeating-linear-gradient(
         -45deg,
-        rgba(18, 78, 91, 0.04),
-        rgba(18, 78, 91, 0.04) 12px,
-        rgba(197, 160, 55, 0.07) 12px,
-        rgba(197, 160, 55, 0.07) 24px
+        rgba(14, 74, 86, 0.035),
+        rgba(14, 74, 86, 0.035) 12px,
+        rgba(183, 148, 56, 0.065) 12px,
+        rgba(183, 148, 56, 0.065) 24px
       );
+    }
+    /* Linea calligrafica fedele al submark "f" del brand manual */
+    .submark-stroke {
+      stroke: #B79438;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
     }
   </style>
 </head>
 <body class="marble-bg text-slate-800 font-sans antialiased">
 
-  <!-- Barra Avviso Superiore -->
-  <div class="bg-senape text-petrolio-dark text-xs sm:text-sm font-semibold py-2 px-4 text-center tracking-wide">
-    <span id="banner-testo">Via del Mare 49, Lanciano — Aperti dalle 19:00 | Prenota l'asporto o riserva il tuo tavolo</span>
+  <!-- SOVRAIMPRESSIONE SUPERIORE (Ripristinata come concordato) -->
+  <div class="sticky top-0 z-50 bg-senape text-petrolio-dark text-xs sm:text-sm font-bold py-2 px-4 text-center tracking-wide shadow-sm">
+    <span id="banner-testo">A Dicembre siamo SEMPRE APERTI — Anche il martedì! | Via del Mare 49, Lanciano</span>
   </div>
 
-  <!-- Navbar Fissa con Solo Submark (F calligrafica del brand manual) -->
-  <header class="sticky top-0 z-40 bg-petrolio/95 backdrop-blur-md border-b border-senape/30 shadow-md">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-3 group" aria-label="Torna all'inizio">
-        <div class="w-10 h-10 rounded-full bg-petrolio-dark border border-senape/70 flex items-center justify-center shadow-inner group-hover:border-senape transition">
-          <!-- Submark calligrafico "f" fedele al PDF del brand manual -->
-          <svg viewBox="0 0 100 120" class="w-6 h-7 overflow-visible" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58 8 C46 28, 42 66, 37 112" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round"/>
-            <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <span class="hidden sm:inline-block text-[11px] uppercase tracking-[0.26em] text-senape-light font-semibold">Pinsa &amp; Beverage</span>
+  <!-- NAVBAR FISSA CON SOLO SUBMARK "f" -->
+  <header class="sticky top-8 sm:top-9 z-40 bg-petrolio/95 backdrop-blur-md border-b border-senape/30 shadow-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
+      <a href="#top" class="flex items-center gap-2.5 group" aria-label="Torna all'inizio">
+        <!-- Submark "f" fedele al PDF ufficiale (occhiello superiore stretto, tratto obliquo, occhiello inferiore piccolo, coda orizzontale) -->
+        <svg viewBox="0 0 180 120" class="w-12 h-8 overflow-visible" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
+        </svg>
+        <span class="hidden sm:inline-block text-[10px] uppercase tracking-[0.28em] text-senape-light font-medium">Pinsa &amp; Beverage</span>
       </a>
 
       <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-white/90">
-        <a href="#menu" class="hover:text-senape transition">Menù</a>
-        <a href="#locale" class="hover:text-senape transition">Locale</a>
-        <a href="#prenota" class="hover:text-senape transition">Prenota</a>
-        <a href="#chi-siamo" class="hover:text-senape transition">Chi Siamo</a>
-        <a href="#dove-siamo" class="hover:text-senape transition">Dove Siamo</a>
+        <a href="#menu" class="hover:text-senape-light transition">Menù</a>
+        <a href="#locale" class="hover:text-senape-light transition">Locale</a>
+        <a href="#prenota" class="hover:text-senape-light transition">Prenota</a>
+        <a href="#chi-siamo" class="hover:text-senape-light transition">Chi Siamo</a>
+        <a href="#dove-siamo" class="hover:text-senape-light transition">Dove Siamo</a>
       </nav>
 
       <div class="flex items-center gap-2">
@@ -91,59 +94,61 @@
     </div>
   </header>
 
-  <!-- HERO SECTION: Logo Principale Ufficiale + CTA Prenota Asporto + Calendario Aperture -->
+  <!-- HERO SECTION: Logo Principale Integrato Naturalmente + CTA Prenota Asporto + Calendario Compatto -->
   <section id="top" class="relative bg-gradient-to-br from-petrolio-dark via-petrolio to-petrolio-light text-white overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 lg:py-16 grid lg:grid-cols-12 gap-10 items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 lg:py-14 grid lg:grid-cols-12 gap-8 items-center">
       
-      <!-- Colonna Sinistra: Logo Principale Completo (come nel PDF ufficiale) e Pulsanti -->
+      <!-- Colonna Sinistra: Logo Principale Ufficiale (senza riquadro bianco posticcio) -->
       <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
         
         <!-- LOGO PRINCIPALE UFFICIALE (Submark dorato sopra + FUSION 3.0 condensato + PINSA & BEVERAGE) -->
-        <div class="bg-white rounded-2xl px-9 py-6 shadow-xl border border-senape/50 mb-7 inline-flex flex-col items-center">
-          <svg viewBox="0 0 100 120" class="w-16 h-20 mb-1" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M58 8 C46 28, 42 66, 37 112" stroke="#B59232" stroke-width="3.2" stroke-linecap="round"/>
-            <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#B59232" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <div class="mb-6 inline-flex flex-col items-center">
+          <svg viewBox="0 0 180 120" class="w-28 h-20 -mb-2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="3.6"/>
           </svg>
-          <div class="font-logo text-5xl sm:text-6xl tracking-[0.07em] text-petrolio leading-none">
+          <div class="font-logo font-bold text-5xl sm:text-6xl tracking-[0.06em] text-white leading-none">
             FUSION 3.0
           </div>
-          <div class="font-sans font-semibold text-[11px] sm:text-xs tracking-[0.34em] text-petrolio-light mt-1.5 uppercase">
+          <div class="font-sans font-medium text-[11px] sm:text-xs tracking-[0.36em] text-senape-light mt-1.5 uppercase">
             PINSA &amp; BEVERAGE
           </div>
         </div>
 
-        <h1 class="text-2xl sm:text-4xl font-bold leading-tight mb-4">
+        <p class="text-xs uppercase tracking-[0.25em] text-senape-light font-semibold mb-2">
+          ...Tre generazioni, un'unica passione
+        </p>
+        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4">
           Alta idratazione, croccantezza unica e abbinamenti ricercati a Lanciano.
         </h1>
-        <p class="text-white/85 text-sm sm:text-base max-w-xl mb-8 leading-relaxed">
-          Impasto leggero a lunga maturazione, materie prime selezionate e una carta beverage pensata per esaltare ogni pinsa. Ordina comodamente da casa o riserva il tuo tavolo.
+        <p class="text-white/85 text-sm sm:text-base max-w-xl mb-7 leading-relaxed">
+          Impasto leggero a lunga maturazione (disponibile anche senza glutine), materie prime selezionate e una carta beverage pensata per esaltare ogni pinsa.
         </p>
 
-        <div class="flex flex-wrap justify-center lg:justify-start gap-4 w-full sm:w-auto">
-          <a href="#asporto-box" class="w-full sm:w-auto text-center bg-senape hover:bg-senape-light text-petrolio-dark font-extrabold px-7 py-3.5 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+        <div class="flex flex-wrap justify-center lg:justify-start gap-3.5 w-full sm:w-auto">
+          <a href="#asporto-box" class="w-full sm:w-auto text-center bg-senape hover:bg-senape-light text-petrolio-dark font-extrabold px-7 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
             Prenota Asporto
           </a>
-          <a href="#tavolo-box" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-3.5 rounded-xl transition">
+          <a href="#tavolo-box" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-3 rounded-xl transition">
             Prenota un Tavolo
           </a>
         </div>
       </div>
 
-      <!-- Colonna Destra: Calendario Aperture e Chiusure del Mese -->
-      <div class="lg:col-span-5">
-        <div class="bg-white text-slate-800 rounded-2xl shadow-2xl border border-senape/40 p-5 sm:p-6">
-          <div class="flex items-center justify-between border-b border-slate-200 pb-3 mb-4">
+      <!-- Colonna Destra: Calendario Aperture/Chiusure Compatto -->
+      <div class="lg:col-span-5 flex justify-center lg:justify-end">
+        <div class="w-full max-w-sm bg-white/95 text-slate-800 rounded-2xl shadow-xl border border-senape/40 p-4">
+          <div class="flex items-center justify-between border-b border-slate-200 pb-2.5 mb-3">
             <div>
-              <span class="text-[11px] uppercase tracking-widest text-legno font-bold">Calendario Locale</span>
-              <h2 id="cal-month-title" class="text-lg sm:text-xl font-bold text-petrolio capitalize">Novembre 2026</h2>
+              <span class="text-[10px] uppercase tracking-widest text-legno font-bold block">Aperture del Mese</span>
+              <h2 id="cal-month-title" class="text-base font-bold text-petrolio capitalize">Novembre 2026</h2>
             </div>
             <div class="flex items-center gap-1">
-              <button type="button" id="cal-prev" class="p-1.5 rounded-lg border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese precedente">&larr;</button>
-              <button type="button" id="cal-next" class="p-1.5 rounded-lg border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese successivo">&rarr;</button>
+              <button type="button" id="cal-prev" class="px-2 py-1 rounded border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese precedente">&larr;</button>
+              <button type="button" id="cal-next" class="px-2 py-1 rounded border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese successivo">&rarr;</button>
             </div>
           </div>
 
-          <div class="grid grid-cols-7 text-center text-[11px] font-bold text-slate-400 uppercase mb-2">
+          <div class="grid grid-cols-7 text-center text-[10px] font-bold text-slate-400 uppercase mb-1.5">
             <div>Lun</div>
             <div>Mar</div>
             <div>Mer</div>
@@ -153,16 +158,16 @@
             <div>Dom</div>
           </div>
 
-          <div id="cal-grid" class="grid grid-cols-7 gap-1.5 text-center text-xs sm:text-sm font-semibold"></div>
+          <div id="cal-grid" class="grid grid-cols-7 gap-1 text-center text-[11px] font-semibold"></div>
 
-          <div class="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2 text-xs text-slate-600">
+          <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600">
             <div class="flex items-center gap-1.5">
-              <span class="w-3 h-3 rounded-full bg-petrolio-soft border border-petrolio inline-block"></span>
-              <span>Aperto (19:00 – 23:30)</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-petrolio-soft border border-petrolio inline-block"></span>
+              <span>Aperto (dalle 19:00)</span>
             </div>
             <div class="flex items-center gap-1.5">
-              <span class="w-3 h-3 rounded-full bg-red-100 border border-red-400 inline-block"></span>
-              <span>Giorno di chiusura</span>
+              <span class="w-2.5 h-2.5 rounded-full bg-red-100 border border-red-400 inline-block"></span>
+              <span>Chiuso</span>
             </div>
           </div>
         </div>
@@ -171,192 +176,199 @@
     </div>
   </section>
 
-  <!-- SEZIONE MENÙ CON SEGAPOSTO FOTO PER CATEGORIA -->
-  <section id="menu" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-10">
-      <div class="inline-flex items-center justify-center mb-2">
-        <svg viewBox="0 0 100 120" class="w-7 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M58 8 C46 28, 42 66, 37 112" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round"/>
-          <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- SEZIONE MENÙ COMPLETO CON SEGAPOSTO FOTO PER CATEGORIA -->
+  <section id="menu" class="py-14 px-4 sm:px-6 max-w-6xl mx-auto">
+    <div class="text-center max-w-2xl mx-auto mb-8">
+      <div class="inline-flex items-center justify-center mb-1">
+        <svg viewBox="0 0 180 120" class="w-12 h-8" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
         </svg>
       </div>
       <h2 class="text-3xl sm:text-4xl font-bold text-petrolio">Il Nostro Menù</h2>
-      <p class="text-slate-600 text-sm sm:text-base mt-2">
-        Seleziona una categoria oppure aggiungi direttamente le tue pinse all'ordine d'asporto.
+      <p class="text-slate-600 text-sm sm:text-base mt-1.5">
+        Pinsa disponibile anche <strong>senza glutine su richiesta (+ € 3,50)</strong>. Clicca su <em>+ Asporto</em> per comporre il tuo ordine.
       </p>
     </div>
 
     <!-- Filtri Categoria -->
     <div class="flex flex-wrap justify-center gap-2 mb-10" id="category-tabs">
-      <button type="button" data-cat="tutte" class="cat-btn active bg-petrolio text-white px-4 py-2 rounded-full text-xs sm:text-sm font-semibold shadow-sm transition">Tutte le Categorie</button>
-      <button type="button" data-cat="rosse" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Rosse</button>
-      <button type="button" data-cat="bianche" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Bianche</button>
-      <button type="button" data-cat="fusion" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">Specialità 3.0</button>
-      <button type="button" data-cat="fritti" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">Sfizi &amp; Fritti</button>
+      <button type="button" data-cat="tutte" class="cat-btn bg-petrolio text-white px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-sm transition">Tutto il Menù</button>
+      <button type="button" data-cat="fuori-menu" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Fuori Menù</button>
+      <button type="button" data-cat="cominciare" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">...Per Cominciare</button>
+      <button type="button" data-cat="rosse" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Rosse</button>
+      <button type="button" data-cat="bianche" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Bianche</button>
+      <button type="button" data-cat="focacce" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Focacce e Ripiene</button>
+      <button type="button" data-cat="pinse-30" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse 3.0</button>
+      <button type="button" data-cat="hamburger" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Hamburger</button>
+      <button type="button" data-cat="birre" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Birre Artigianali</button>
+      <button type="button" data-cat="cocktail" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Drink &amp; Analcolici</button>
+      <button type="button" data-cat="vini" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Vini</button>
     </div>
 
-    <!-- Contenitore Categorie con Riquadri Segnaposto per Foto Reali -->
+    <!-- Contenitore Categorie Completo -->
     <div id="menu-container" class="space-y-12">
 
-      <!-- CATEGORIA: PINSE ROSSE -->
+      <!-- 1. FUORI MENÙ -->
+      <div class="menu-category" data-category="fuori-menu">
+        <div class="rounded-2xl border-2 border-dashed border-senape/60 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Proposte Stagionali</span>
+            <h3 class="text-2xl font-bold text-petrolio">Fuori Menù</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-senape/40 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Fuori Menù ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="grid-fuori-menu"></div>
+      </div>
+
+      <!-- 2. ...PER COMINCIARE -->
+      <div class="menu-category" data-category="cominciare">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Sfizi &amp; Fritti</span>
+            <h3 class="text-2xl font-bold text-petrolio">...Per Cominciare</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: ...Per Cominciare ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-cominciare"></div>
+      </div>
+
+      <!-- 3. PINSE CLASSICHE / ROSSE -->
       <div class="menu-category" data-category="rosse">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-legno">Categoria 01</span>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Pinse Classiche</span>
             <h3 class="text-2xl font-bold text-petrolio">Pinse Rosse</h3>
-            <p class="text-xs text-slate-500 mt-1">Spazio predisposto per inserire 1 o 2 foto reali delle Pinse Rosse.</p>
           </div>
-          <div class="px-4 py-2 rounded-xl bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio text-center">
-            [ Qui andranno le foto reali: Pinse Rosse ]
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Margherita 3.0</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Pomodoro San Marzano DOP, fior di latte d'Agerola, basilico fresco, olio EVO.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 7,50</span>
-              <button type="button" onclick="aggiungiAlCarrello('Margherita 3.0', 7.50)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Diavola Abruzzese</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Pomodoro San Marzano, fior di latte, ventricina piccante, fili di peperoncino.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 9,50</span>
-              <button type="button" onclick="aggiungiAlCarrello('Diavola Abruzzese', 9.50)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Pinse Rosse ]
           </div>
         </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-rosse"></div>
       </div>
 
-      <!-- CATEGORIA: PINSE BIANCHE -->
+      <!-- 4. PINSE CLASSICHE / BIANCHE -->
       <div class="menu-category" data-category="bianche">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-legno">Categoria 02</span>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Pinse Classiche</span>
             <h3 class="text-2xl font-bold text-petrolio">Pinse Bianche</h3>
-            <p class="text-xs text-slate-500 mt-1">Spazio predisposto per inserire 1 o 2 foto reali delle Pinse Bianche.</p>
           </div>
-          <div class="px-4 py-2 rounded-xl bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio text-center">
-            [ Qui andranno le foto reali: Pinse Bianche ]
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Mortadella &amp; Pistacchio</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Fior di latte, mortadella Bologna IGP, stracciatella pugliese, granella di pistacchio.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 11,00</span>
-              <button type="button" onclick="aggiungiAlCarrello('Mortadella & Pistacchio', 11.00)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Quattro Formaggi &amp; Noci</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Fior di latte, gorgonzola dolce, scamorza affumicata, parmigiano 24 mesi, gherigli di noce.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 10,00</span>
-              <button type="button" onclick="aggiungiAlCarrello('Quattro Formaggi & Noci', 10.00)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Pinse Bianche ]
           </div>
         </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-bianche"></div>
       </div>
 
-      <!-- CATEGORIA: SPECIALITÀ 3.0 -->
-      <div class="menu-category" data-category="fusion">
-        <div class="rounded-2xl border-2 border-dashed border-senape/60 photo-placeholder p-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <!-- 5. FOCACCE E RIPIENE -->
+      <div class="menu-category" data-category="focacce">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-legno">Categoria 03</span>
-            <h3 class="text-2xl font-bold text-petrolio">Specialità 3.0</h3>
-            <p class="text-xs text-slate-500 mt-1">Spazio predisposto per inserire 1 o 2 foto reali delle Specialità della casa.</p>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Basi Speciali</span>
+            <h3 class="text-2xl font-bold text-petrolio">Focacce e Ripiene</h3>
           </div>
-          <div class="px-4 py-2 rounded-xl bg-white/90 border border-senape text-xs font-semibold text-petrolio text-center">
-            [ Qui andranno le foto reali: Specialità 3.0 ]
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Fusion 3.0</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Crema di datterino giallo, burrata affumicata, prosciutto crudo di Parma 24 mesi, rucola.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 12,50</span>
-              <button type="button" onclick="aggiungiAlCarrello('Fusion 3.0', 12.50)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Tartufo &amp; Porcini</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Fior di latte, funghi porcini saltati, salsa al tartufo nero pregiato, scaglie di grana.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 12,00</span>
-              <button type="button" onclick="aggiungiAlCarrello('Tartufo & Porcini', 12.00)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Focacce e Ripiene ]
           </div>
         </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-focacce"></div>
       </div>
 
-      <!-- CATEGORIA: SFIZI & FRITTI -->
-      <div class="menu-category" data-category="fritti">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-6 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <!-- 6. PINSE 3.0 -->
+      <div class="menu-category" data-category="pinse-30">
+        <div class="rounded-2xl border-2 border-dashed border-senape/60 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div>
-            <span class="text-xs font-bold uppercase tracking-widest text-legno">Categoria 04</span>
-            <h3 class="text-2xl font-bold text-petrolio">Sfizi &amp; Fritti</h3>
-            <p class="text-xs text-slate-500 mt-1">Spazio predisposto per inserire 1 o 2 foto reali degli antipasti e fritti artigianali.</p>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Le Signature della Casa</span>
+            <h3 class="text-2xl font-bold text-petrolio">Pinse 3.0</h3>
           </div>
-          <div class="px-4 py-2 rounded-xl bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio text-center">
-            [ Qui andranno le foto reali: Sfizi &amp; Fritti ]
-          </div>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-4">
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Supplì Classico al Telefono</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Riso Carnaroli al ragù tradizionale con cuore filante di fior di latte.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 3,00</span>
-              <button type="button" onclick="aggiungiAlCarrello('Supplì Classico', 3.00)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-xl p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-4">
-            <div>
-              <h4 class="font-bold text-petrolio text-base">Tris di Bruschette 3.0</h4>
-              <p class="text-xs sm:text-sm text-slate-600 mt-1">Pane di pinsa tostato con pomodorini confit, stracciatella e crema di olive.</p>
-            </div>
-            <div class="text-right shrink-0">
-              <span class="block font-bold text-petrolio text-base">€ 6,50</span>
-              <button type="button" onclick="aggiungiAlCarrello('Tris di Bruschette 3.0', 6.50)" class="mt-2 text-xs font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-3 py-1.5 rounded-lg transition">+ Asporto</button>
-            </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-senape/40 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Pinse 3.0 ]
           </div>
         </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-pinse-30"></div>
+      </div>
+
+      <!-- 7. HAMBURGER (PANINO ARTIGIANALE) -->
+      <div class="menu-category" data-category="hamburger">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Panino Artigianale — Scottona 200 gr</span>
+            <h3 class="text-2xl font-bold text-petrolio">Hamburger</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Hamburger ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4" id="grid-hamburger"></div>
+      </div>
+
+      <!-- 8. BIRRE ARTIGIANALI -->
+      <div class="menu-category" data-category="birre">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Beverage Selection</span>
+            <h3 class="text-2xl font-bold text-petrolio">Birre Artigianali</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Birre Artigianali ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-birre"></div>
+      </div>
+
+      <!-- 9. ANALCOLICI & COCKTAIL / OUR GIN SELECTION -->
+      <div class="menu-category" data-category="cocktail">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Mixology &amp; Soft Drinks</span>
+            <h3 class="text-2xl font-bold text-petrolio">Analcolici, Cocktail &amp; Gin Selection</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Cocktail &amp; Gin ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4" id="grid-cocktail"></div>
+      </div>
+
+      <!-- 10. CARTA DEI VINI -->
+      <div class="menu-category" data-category="vini">
+        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Calici, Bianchi, Rosati, Bollicine &amp; Rossi</span>
+            <h3 class="text-2xl font-bold text-petrolio">Carta dei Vini</h3>
+          </div>
+          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
+            [ Segnaposto Foto Reali: Cantina Vini ]
+          </div>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="grid-vini"></div>
       </div>
 
     </div>
-    <p class="text-center text-xs text-slate-500 mt-8">
-      * Il listino completo con tutte le pinse, i cocktail, le birre artigianali e i vini sarà inserito nella versione definitiva.
-    </p>
+
+    <!-- Note di servizio e Legenda Allergeni (dal listino ufficiale) -->
+    <div class="mt-12 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 text-xs text-slate-600 space-y-3">
+      <div class="flex flex-wrap gap-4 font-bold text-petrolio border-b border-slate-100 pb-3">
+        <span>Coperto: € 2,50</span>
+        <span>&bull;</span>
+        <span>Base senza glutine: + € 3,50</span>
+        <span>&bull;</span>
+        <span>Servizio torta p.p.: € 0,50</span>
+      </div>
+      <p class="leading-relaxed">
+        <strong>Allergeni:</strong> 1_cereali contenenti glutine e prodotti derivati; 2_crostacei e prodotti a base di crostacei; 3_pesce e prodotti a base di pesce; 4_arachidi e prodotti a base di arachidi; 5_soia e prodotti a base di soia; 6_uova e prodotti a base di uova; 7_latte e prodotti a base di latte; 8_frutta a guscio e loro prodotti; 9_sedano e prodotti a base di sedano; 10_senape e prodotti a base di senape; 11_sesamo e prodotti a base di sesamo; 12_solfiti in concentrazione superiore a 10 mg/kg; 13_lupini e prodotti a base di lupini; 14_molluschi e prodotti a base di molluschi.
+      </p>
+      <p class="text-[11px] text-slate-500">
+        * Prodotto surgelato in mancanza del fresco. Prodotto sottoposto a trattamento di bonifica preventiva in conformità alle prescrizioni del Reg. CE 853/2004.
+      </p>
+    </div>
   </section>
 
-  <!-- NUOVA SEZIONE DEDICATA: IL LOCALE (Con segnaposti chiari per le foto definitive) -->
+  <!-- SEZIONE DEDICATA: IL LOCALE -->
   <section id="locale" class="py-16 bg-petrolio-soft/70 border-y border-petrolio/10 px-4 sm:px-6">
     <div class="max-w-6xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-10">
@@ -369,32 +381,32 @@
 
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70">
-          <span class="w-10 h-10 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-3">1</span>
-          <p class="font-bold text-petrolio text-sm">[ Qui andrà la foto definitiva 1 ]</p>
-          <p class="text-xs text-slate-500 mt-1">Sala interna e tavoli del locale</p>
+          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">1</span>
+          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Sala Interna ]</p>
+          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
         </div>
 
         <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70">
-          <span class="w-10 h-10 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-3">2</span>
-          <p class="font-bold text-petrolio text-sm">[ Qui andrà la foto definitiva 2 ]</p>
-          <p class="text-xs text-slate-500 mt-1">Bancone bar e area beverage</p>
+          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">2</span>
+          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Bancone &amp; Beverage ]</p>
+          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
         </div>
 
         <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70 sm:col-span-2 lg:col-span-1">
-          <span class="w-10 h-10 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-3">3</span>
-          <p class="font-bold text-petrolio text-sm">[ Qui andrà la foto definitiva 3 ]</p>
-          <p class="text-xs text-slate-500 mt-1">Dettagli arredo e zona forno</p>
+          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">3</span>
+          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Dettagli &amp; Forno ]</p>
+          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SEZIONE PRENOTAZIONI: TAVOLO (Turni Weekend + 30 min feriali) & ASPORTO (10 min + Note + Disclaimer) -->
+  <!-- SEZIONE PRENOTAZIONI: TAVOLO & ASPORTO -->
   <section id="prenota" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
     <div class="text-center max-w-2xl mx-auto mb-12">
       <h2 class="text-3xl sm:text-4xl font-bold text-petrolio">Prenota Tavolo o Asporto</h2>
       <p class="text-slate-600 text-sm sm:text-base mt-2">
-        Scegli se accomodarti da noi oppure ritirare le tue pinse calde all'orario che preferisci.
+        Scegli se accomodarti in sala oppure ritirare le tue pinse calde all'orario che preferisci.
       </p>
     </div>
 
@@ -407,9 +419,8 @@
             <span class="text-xs font-bold uppercase tracking-wider text-legno">Sala &amp; Dehor</span>
             <h3 class="text-2xl font-bold text-petrolio">Prenota un Tavolo</h3>
           </div>
-          <svg viewBox="0 0 100 120" class="w-7 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58 8 C46 28, 42 66, 37 112" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round"/>
-            <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 180 120" class="w-11 h-7" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
           </svg>
         </div>
 
@@ -443,7 +454,7 @@
             </div>
           </div>
 
-          <p id="tavolo-info-turni" class="text-xs text-petrolio bg-petrolio-soft px-3.5 py-2 rounded-lg font-medium">
+          <p class="text-xs text-petrolio bg-petrolio-soft px-3.5 py-2 rounded-lg font-medium">
             Dal lunedì al giovedì: fasce ogni 30 minuti dalle 19:00. Venerdì, sabato e domenica: 1° Turno (19:30–21:30) o 2° Turno (21:30–in poi).
           </p>
 
@@ -475,7 +486,7 @@
             <button type="button" onclick="svuotaCarrello()" class="text-xs text-red-600 hover:underline font-medium">Svuota</button>
           </div>
           <div id="carrello-lista" class="text-sm text-slate-600 space-y-1.5">
-            <p class="text-xs italic text-slate-400">Nessuna pinsa selezionata. Aggiungile dal menù qui sopra oppure scrivile nelle note.</p>
+            <p class="text-xs italic text-slate-400">Nessun prodotto selezionato. Aggiungili dal menù qui sopra oppure scrivili nelle note.</p>
           </div>
           <div class="border-t border-slate-200 mt-3 pt-2 flex justify-between items-center font-bold text-petrolio text-sm">
             <span>Totale stimato:</span>
@@ -496,8 +507,8 @@
           </div>
 
           <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Note ordine / Allergie</label>
-            <textarea id="asporto-note" rows="2" placeholder="Es. Ben cotta, senza cipolla, oppure scrivi qui altre pinse..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:outline-none focus:border-petrolio"></textarea>
+            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Note ordine / Allergie / Senza Glutine</label>
+            <textarea id="asporto-note" rows="2" placeholder="Es. Base senza glutine, ben cotta, senza cipolla..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:outline-none focus:border-petrolio"></textarea>
           </div>
 
           <!-- DISCLAIMER MODIFICHE AL CIBO -->
@@ -520,22 +531,21 @@
     <div class="max-w-5xl mx-auto grid md:grid-cols-12 gap-8 items-center">
       <div class="md:col-span-5">
         <div class="aspect-square rounded-2xl border-2 border-dashed border-senape/60 bg-petrolio-dark/60 flex flex-col items-center justify-center p-6 text-center">
-          <svg viewBox="0 0 100 120" class="w-10 h-12 mb-3" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58 8 C46 28, 42 66, 37 112" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round"/>
-            <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <svg viewBox="0 0 180 120" class="w-16 h-11 mb-3" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
           </svg>
-          <p class="font-bold text-senape-light text-sm">[ Qui andrà la foto definitiva del Team / Impasto ]</p>
+          <p class="font-bold text-senape-light text-sm">[ Foto Definitiva Team / Impasto ]</p>
           <p class="text-xs text-white/70 mt-1">Scatto reale da inserire prima della pubblicazione</p>
         </div>
       </div>
       <div class="md:col-span-7">
-        <span class="text-xs font-bold uppercase tracking-widest text-senape">La Nostra Filosofia</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-senape-light">...Tre generazioni, un'unica passione</span>
         <h2 class="text-3xl sm:text-4xl font-bold mt-1 mb-4">Tradizione e ricerca in ogni impasto.</h2>
         <p class="text-white/85 text-sm sm:text-base leading-relaxed mb-4">
           Fusion 3.0 nasce a Lanciano con un'idea precisa: portare in tavola una pinsa altamente digeribile, fragrante fuori e soffice dentro, capace di valorizzare tanto i prodotti del territorio abruzzese quanto abbinamenti contemporanei.
         </p>
         <p class="text-white/85 text-sm sm:text-base leading-relaxed">
-          Ogni sera accompagniamo le nostre proposte con una selezione curata di birre, vini e drink studiati per completare l'esperienza.
+          Ogni sera accompagniamo le nostre proposte con una selezione curata di birre artigianali, vini abruzzesi e nazionali, gin botanical e cocktail pensati per completare l'esperienza.
         </p>
       </div>
     </div>
@@ -587,23 +597,144 @@
   <!-- FOOTER CON SOLO SUBMARK -->
   <footer class="bg-petrolio-dark text-white/80 py-10 px-4 text-center border-t border-senape/30">
     <div class="max-w-4xl mx-auto flex flex-col items-center">
-      <div class="w-12 h-12 rounded-full bg-petrolio border border-senape/50 flex items-center justify-center mb-3">
-        <svg viewBox="0 0 100 120" class="w-7 h-8" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M58 8 C46 28, 42 66, 37 112" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round"/>
-          <path d="M22 58 C38 48, 68 45, 71 54 C74 63, 38 66, 25 58 C17 53, 28 42, 48 40" stroke="#C5A037" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </div>
-      <p class="text-xs uppercase tracking-[0.26em] text-senape-light font-semibold">Pinsa &amp; Beverage — Lanciano</p>
+      <svg viewBox="0 0 180 120" class="w-16 h-11 mb-2" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
+      </svg>
+      <p class="text-[11px] uppercase tracking-[0.3em] text-senape-light font-medium">Pinsa &amp; Beverage — Lanciano</p>
       <p class="text-xs text-white/50 mt-2">Via del Mare 49, Lanciano (CH) &bull; Tel. 0872 703567</p>
     </div>
   </footer>
 
   <script>
     // ==========================================
-    // 1. CALENDARIO APERTURE / CHIUSURE DEL MESE
+    // 1. DATI COMPLETI DEL MENÙ (DAL PDF UFFICIALE)
     // ==========================================
-    const GIORNO_CHIUSURA_SETTIMANALE = 2; // 2 = Martedì (metti null se sempre aperto)
-    const DATE_CHIUSE_EXTRA = []; // Es. ['2026-12-25']
+    const MENU_DATA = {
+      'fuori-menu': [
+        { nome: 'Tonno e Cipolla', prezzo: 13.00, desc: "Fiordilatte, filetti di tonno sott'olio, cipolla caramellata, salsa verde. [1-3-5-7-10]" },
+        { nome: 'Zucca', prezzo: 12.00, desc: "Fiordilatte, gorgonzola, pancetta, chips di zucca. [1-5-7-10]" },
+        { nome: 'Porcini', prezzo: 15.00, desc: "Fiordilatte, funghi porcini*, salsiccia, ricotta aromatizzata al timo, nocciole tostate. [1-5-7-8-10]" }
+      ],
+      'cominciare': [
+        { nome: 'Patatine Fritte con la Buccia*', prezzo: 4.00, desc: "Patate rustiche croccanti servite calde." },
+        { nome: 'Olive di Ascoli DOP (6 pz)*', prezzo: 4.00, desc: "Olive ascolane ripiene tradizionali. [1-6-7]" },
+        { nome: 'Parmigiana Fritta (1 pz - 60 gr) — Home Made', prezzo: 2.00, desc: "Melanzana alla parmigiana cotta al forno con panatura croccante dal cuore morbido. [1-7-5-10]" },
+        { nome: 'Crocchètta di Patate (1 pz - 50 gr) — Home Made', prezzo: 1.50, desc: "Patate, fiordilatte e provola in doppia panatura extra croccante. [1-7-5-10]" }
+      ],
+      'rosse': [
+        { nome: 'Margherita', prezzo: 6.50, desc: "Pomodoro, fiordilatte, basilico. [1-5-7-10]" },
+        { nome: 'Marinara', prezzo: 6.50, desc: "Pomodoro, pomodorino giallo semi dry, origano del Monte Saro, pesto d'aglio. [1-5-10]" },
+        { nome: 'Napoletana', prezzo: 8.00, desc: "Pomodoro, fiordilatte, alici. [1-3-5-7-10]" },
+        { nome: 'Bufalina', prezzo: 8.50, desc: "Pomodoro, pachini, bufala in cottura, basilico. [1-5-7-10]" },
+        { nome: 'Siciliana', prezzo: 15.00, desc: "Pomodoro, pachini confit, stracciatella, acciughe del Cantabrico, olive taggiasche, prezzemolo. [1-3-5-7-10]" }
+      ],
+      'bianche': [
+        { nome: 'Vegetariana', prezzo: 9.00, desc: "Fiordilatte, verdure del giorno. [1-5-7-10]" },
+        { nome: '4 Formaggi', prezzo: 8.00, desc: "Fiordilatte, provola, gorgonzola, grana padano. [1-5-7-10]" },
+        { nome: 'Capricciosa', prezzo: 10.00, desc: "Fiordilatte, prosciutto cotto, carciofi, champignon, olive taggiasche. [1-5-7-10]" },
+        { nome: 'Guanciale', prezzo: 10.00, desc: "Fiordilatte, zucchine, guanciale croccante, stracciatella. [1-5-7-10]" },
+        { nome: 'Nduja', prezzo: 10.00, desc: "Nduja di Spilinga DOP, fiordilatte, melanzane, pachini, olive taggiasche, stracciatella. [1-5-7-10]" },
+        { nome: 'La Rossa', prezzo: 10.00, desc: "Fiordilatte, patate al forno, salsiccia, stracciatella, peperone rosso dolce di Altino. [1-5-7-10]" },
+        { nome: 'Sempre Verde', prezzo: 10.00, desc: "Fiordilatte, cicoria saltata*, stracciatella, pancetta, crema di patate. [1-5-7-10]" },
+        { nome: 'Crudo di Parma', prezzo: 14.00, desc: "Fiordilatte, datterini, crudo di Parma DOC 24 mesi, stracciatella, pesto di basilico. [1-5-7-8-10]" },
+        { nome: 'Carpaccio di Bresaola', prezzo: 14.00, desc: "Fiordilatte, carpaccio di bresaola, rucola, pachini, scaglie di grana, glassa di balsamico, olio EVO al limone. [1-5-7-10-12]" }
+      ],
+      'focacce': [
+        { nome: 'Pistacchio (Base Focaccia)', prezzo: 10.00, desc: "Base focaccia, mortadella Riserva Oro, stracciatella, pistacchi. [1-5-7-8-10]" },
+        { nome: 'Salmone (Base Focaccia)', prezzo: 15.00, desc: "Base focaccia, valeriana, salmone affumicato, bufala, limone, pachini secchi. [1-3-5-7-10]" },
+        { nome: 'Ariccia (Ripiena)', prezzo: 13.00, desc: "Ripiena con Porchetta di Ariccia IGP, finocchi, stracciatella. [1-5-7-10]" },
+        { nome: 'Leggera (Ripiena)', prezzo: 12.00, desc: "Ripiena con fiordilatte, cime di rapa saltate, ventricina. [1-5-7-10]" },
+        { nome: 'Croccante (Ripiena)', prezzo: 14.00, desc: "Ripiena con stracchino alle olive, crudo di Parma DOC 24 mesi, spinaci. [1-5-7-10]" }
+      ],
+      'pinse-30': [
+        { nome: 'Bufala 3.0', prezzo: 10.00, desc: "Pomodoro, bufala in cottura, ricotta salata, polvere di olive. [1-5-7-10]" },
+        { nome: 'Come Una Volta', prezzo: 15.00, desc: "Peperoni arrosto, stracciatella, acciughe del Cantabrico, olive taggiasche, capperi, prezzemolo. [1-3-5-7-10]" },
+        { nome: 'Baccalà 3.0', prezzo: 15.00, desc: "Fiordilatte, crema di patate, baccalà CBT, peperoni, polvere di olive, peperone di Altino, prezzemolo. [1-3-5-7-10]" },
+        { nome: 'Tartare di Manzo', prezzo: 15.00, desc: "Misticanza condita con olio e limone, tartare di manzo, stracciatella, mango. [1-5-7-10]" },
+        { nome: 'Lardo', prezzo: 13.00, desc: "Fiordilatte, Lardo di Patanegra, pera caramellata, pecorino. [1-5-7-10]" },
+        { nome: 'Mortadella a Modo Mio', prezzo: 14.00, desc: "Passata di pomodorino giallo, fiordilatte, mortadella Riserva Oro, pesto pistacchio e basilico, crema di stracciatella, zest al limone. [1-5-7-8-10]" },
+        { nome: 'Carbonara', prezzo: 12.00, desc: "Fiordilatte, guanciale, pecorino, tuorlo d'uovo. [1-5-6-7-10]" },
+        { nome: 'Patata Viola', prezzo: 14.00, desc: "Fiordilatte, caciocavallo, salsiccia, crema di peperoni gialli e rossi, chips di patata viola, basilico. [1-5-7-10]" }
+      ],
+      'hamburger': [
+        { nome: 'Bun N. 1', prezzo: 13.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, insalata, pomodoro, pancetta, sottiletta, salse. [1-5-7-10]" },
+        { nome: 'Bun N. 2', prezzo: 14.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, cicoria saltata*, stracciatella, pachini confit, ventricina. [1-5-7-10]" },
+        { nome: 'Bun N. 3', prezzo: 14.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, maionese alla soya, misticanza, bufala, cipolla caramellata, pancetta sgrassatella. [1-5-6-7-10]" }
+      ],
+      'birre': [
+        { nome: 'Spina: Doge "Pils" (0.2 / 0.4 / 0.5)', prezzo: 5.50, desc: "Lager | Giallo fieno | 5% Vol | Veneto. Mediamente corposa con note di malto, miele d'acacia e luppolo erbaceo. (0.2 €3 / 0.4 €5,5 / 0.5 €6,5)" },
+        { nome: 'Spina: Doge "IPA" (0.4)', prezzo: 6.50, desc: "IPA | Giallo oro | 6% Vol | Veneto. Gusto erbaceo e rinfrescante con note di fiori e frutti tropicali." },
+        { nome: 'Spina: Doge "Weizen" (0.3 / 0.5)', prezzo: 4.50, desc: "Weizen | Giallo oro | 6% Vol | Veneto. Note di banana, frutta a pasta bianca, vaniglia e nocciola. (0.3 €4,5 / 0.5 €7,5)" },
+        { nome: 'Spina: Doge "Vienna Lager" (0.4)', prezzo: 6.50, desc: "Lager | Rosso ramato | 5,4% Vol | Veneto. Note di caramello, malto tostato, frutta secca e miele di castagno." },
+        { nome: 'Gluten Free 33cl: Doge "APA"', prezzo: 6.00, desc: "APA | Oro chiaro | 4,8% Vol | Veneto. Gusto agrumato, bevuta dissetante." },
+        { nome: 'Gluten Free 33cl: Rebel\'s "Secret View"', prezzo: 6.50, desc: "Pale Ale | Ramato trasparente | 4,5% Vol | Lazio. Agrumi mediterranei e note maltate." },
+        { nome: 'Bottiglia 33cl: Rebel\'s "Belvedere"', prezzo: 6.00, desc: "Keller Pils | 5% Vol | Lazio. Gusto scorrevole, mielato e leggermente amaro." },
+        { nome: 'Bottiglia 33cl: Rebel\'s "Parrot Invasion"', prezzo: 6.00, desc: "West Coast IPA | 6% Vol | Lazio. Amaro morbido con accenti floreali e agrumi." },
+        { nome: 'Bottiglia 33cl: Rebel\'s "Sunshine Blanche"', prezzo: 6.00, desc: "Blanche | 4,5% Vol | Lazio. Pepe di Sichuan, coriandolo e pepe rosa." },
+        { nome: 'Bottiglia 33cl: Rebel\'s "Lil Tropical"', prezzo: 6.00, desc: "Session IPA | 4,5% Vol | Lazio. Mix di frutta tropicale e note agrumate." },
+        { nome: 'Bottiglia 33cl: Amerino "Edwige"', prezzo: 6.00, desc: "Blanche | 4% Vol | Umbria. Zenzero, bergamotto e fiori di sambuco." },
+        { nome: 'Bottiglia 33cl: Amerino "Mario Rossi"', prezzo: 6.00, desc: "Italian Ale | 5,2% Vol | Umbria. Gusto dolce del malto con amaro morbido." },
+        { nome: 'Alcohol Free 33cl: Doge "Non Hai Più Scuse"', prezzo: 6.50, desc: "IPA < 0,5% Vol | Veneto. Note di pompelmo, mango e accenno erbaceo." }
+      ],
+      'cocktail': [
+        { nome: 'Acqua 0.75 L', prezzo: 2.00, desc: "Naturale o frizzante." },
+        { nome: 'Coca Cola / Coca Cola Zero (0.33 L)', prezzo: 3.00, desc: "In lattina / vetro." },
+        { nome: 'Estathé Limone / Pesca (0.25 L)', prezzo: 3.00, desc: "Tè freddo." },
+        { nome: 'Lurisia Aranciata / Limonata / Chinotto (0.3 L)', prezzo: 4.00, desc: "Bibite artigianali italiane." },
+        { nome: 'Caffè / Caffè Dek / Shakerato', prezzo: 1.50, desc: "Espresso € 1,50 | Caffè Shakerato € 3,00." },
+        { nome: 'Aperol / Campari / Hugo Spritz', prezzo: 6.00, desc: "Aperitivo classico." },
+        { nome: 'Americano / Negroni / Sbagliato', prezzo: 7.00, desc: "I grandi classici della miscelazione." },
+        { nome: 'London / Moscow Mule', prezzo: 6.00, desc: "Fresco e speziato allo zenzero." },
+        { nome: 'Gin Tonic Base', prezzo: 6.00, desc: "Gin selezionato e tonica." },
+        { nome: 'Our Gin Selection (10 Etichette Botanical)', prezzo: 12.00, desc: "Gin Onde, Gin Neve, Gin Campi, Old School, Paloma, Nippon, Mandala, Mediterranean N.8, Menta & Lime, Pino Mugo & Mirto." }
+      ],
+      'vini': [
+        { nome: 'Calice Kripia Cantina Orsogna (Rosato o Rosso)', prezzo: 4.00, desc: "Cerasuolo d'Abruzzo DOP 2025 (13%) oppure Montepulciano d'Abruzzo DOP 2024 (13,5%)." },
+        { nome: 'Bianco: Jasci e Marchesani Trebbiano DOP', prezzo: 16.00, desc: "Trebbiano d'Abruzzo DOC | 2025 | 12% Vol." },
+        { nome: 'Bianco: Jasci e Marchesani Riesling / Traminer / Pecorino', prezzo: 18.00, desc: "Terre d'Abruzzo IGT | 2025 | 12% - 12,5% Vol." },
+        { nome: 'Bianco: Ebrio Orsogna Passerina / Lunaria Civitas Pecorino', prezzo: 20.00, desc: "Terre d'Abruzzo / Terre di Chieti IGP | 12,5% - 13,5% Vol." },
+        { nome: 'Bianco: Cataldi Madonna Malandrino / Giulia', prezzo: 22.00, desc: "Trebbiano d'Abruzzo DOC / Pecorino Terre Aquilane IGP | 2024." },
+        { nome: 'Bianco: Zemmer Gewurztraminer / Pinot Grigio / Pinot Bianco', prezzo: 26.00, desc: "Alto Adige DOC | 2024 | 13% - 14% Vol." },
+        { nome: 'Rosato: Jasci e Marchesani / Kripia Orsogna Cerasuolo', prezzo: 16.00, desc: "Cerasuolo d'Abruzzo DOC/DOP | 2025." },
+        { nome: 'Rosato: Ebrio Orsogna / Lunaria Pettirosce / Ramoro Bio', prezzo: 20.00, desc: "Cerasuolo d'Abruzzo DOP / Pinot Grigio Ramato Bio." },
+        { nome: 'Rosato: Fonte Cupa (€22) / Cataldi Madonna Malandrino (€24)', prezzo: 22.00, desc: "Cerasuolo d'Abruzzo DOC | 2024." },
+        { nome: 'Bollicine: Gemin Brut Rosè (€20) / Valdobbiadene Brut (€22)', prezzo: 20.00, desc: "Pinot Nero / Glera DOCG | 12% Vol." },
+        { nome: 'Bollicine: Jasci e Marchesani Metodo Ancestrale (Bianco/Rosato)', prezzo: 22.00, desc: "Pecorino-Riesling-Chardonnay oppure Montepulciano | 12,5% Vol." },
+        { nome: 'Bollicine: La Genisia Metodo Classico (Extra Brut / Brut / Rosè)', prezzo: 32.00, desc: "Oltrepò Pavese DOCG | Pinot Nero | 12,5% Vol." },
+        { nome: 'Rosso: Jasci e Marchesani / Kripia Orsogna Montepulciano', prezzo: 16.00, desc: "Montepulciano d'Abruzzo DOC/DOP | 2024 | 13,5% Vol." },
+        { nome: 'Rosso: Ebrio Orsogna / Graffetta Syrah / Nero d\'Avola', prezzo: 20.00, desc: "Montepulciano DOP 2024 oppure Sicilia DOC 2021." },
+        { nome: 'Rosso: Nuraghe Crabioni Cannonau (€22) / Lunaria Bio (€23)', prezzo: 22.00, desc: "Cannonau di Sardegna DOC 2019 / Bucefalo / Coste di Moro Bio." },
+        { nome: 'Rosso: Cataldi Madonna (€26) / Steflhof Lagrein (€30)', prezzo: 26.00, desc: "Montepulciano DOC 2023 / Alto Adige Lagrein DOC 2021." },
+        { nome: 'Rosso: Caprera Le Vasche (€35) / Zumbo Manata Etna DOC (€36)', prezzo: 35.00, desc: "Montepulciano DOC 2020 / Nerello Mascalese Etna DOC 2017." }
+      ]
+    };
+
+    // Popola dinamicamente tutte le griglie del menù
+    Object.entries(MENU_DATA).forEach(([catKey, items]) => {
+      const container = document.getElementById(`grid-${catKey}`);
+      if (!container) return;
+
+      container.innerHTML = items.map(item => `
+        <div class="bg-white rounded-xl p-4 sm:p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-3 hover:border-senape/60 transition">
+          <div>
+            <h4 class="font-bold text-petrolio text-sm sm:text-base leading-snug">${item.nome}</h4>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">${item.desc}</p>
+          </div>
+          <div class="text-right shrink-0">
+            <span class="block font-bold text-petrolio text-sm sm:text-base">€ ${item.prezzo.toFixed(2).replace('.', ',')}</span>
+            <button type="button" onclick="aggiungiAlCarrello('${item.nome.replace(/'/g, "\\'")}', ${item.prezzo})" class="mt-2 text-[11px] font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-2.5 py-1 rounded-lg transition">
+              + Asporto
+            </button>
+          </div>
+        </div>
+      `).join('');
+    });
+
+    // ==========================================
+    // 2. CALENDARIO APERTURE / CHIUSURE DEL MESE
+    // ==========================================
+    const GIORNO_CHIUSURA_SETTIMANALE = 2; // 2 = Martedì (metti null a Dicembre se sempre aperto)
+    const DATE_CHIUSE_EXTRA = [];
 
     let calDate = new Date();
     calDate.setDate(1);
@@ -614,13 +745,11 @@
       const year = calDate.getFullYear();
       const month = calDate.getMonth();
 
-      const meseNome = calDate.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
-      title.textContent = meseNome;
+      title.textContent = calDate.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
       grid.innerHTML = '';
 
       let firstDay = new Date(year, month, 1).getDay();
       firstDay = firstDay === 0 ? 6 : firstDay - 1;
-
       const daysInMonth = new Date(year, month + 1, 0).getDate();
 
       for (let i = 0; i < firstDay; i++) {
@@ -631,19 +760,14 @@
         const current = new Date(year, month, day);
         const dayOfWeek = current.getDay();
         const isoDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-
-        const isClosed = (GIORNO_CHIUSURA_SETTIMANALE !== null && dayOfWeek === GIORNO_CHIUSURA_SETTIMANALE) || DATE_CHIUSE_EXTRA.includes(isoDate);
+        // Se è Dicembre, sempre aperto come da banner
+        const isDecember = month === 11;
+        const isClosed = !isDecember && ((GIORNO_CHIUSURA_SETTIMANALE !== null && dayOfWeek === GIORNO_CHIUSURA_SETTIMANALE) || DATE_CHIUSE_EXTRA.includes(isoDate));
 
         if (isClosed) {
-          grid.innerHTML += `
-            <div title="Chiuso" class="py-1.5 rounded-lg bg-red-50 text-red-600 border border-red-200 line-through">
-              ${day}
-            </div>`;
+          grid.innerHTML += `<div title="Chiuso" class="py-1 rounded bg-red-50 text-red-600 border border-red-200 line-through">${day}</div>`;
         } else {
-          grid.innerHTML += `
-            <div title="Aperto dalle 19:00" class="py-1.5 rounded-lg bg-petrolio-soft text-petrolio border border-petrolio/20">
-              ${day}
-            </div>`;
+          grid.innerHTML += `<div title="Aperto dalle 19:00" class="py-1 rounded bg-petrolio-soft text-petrolio border border-petrolio/20">${day}</div>`;
         }
       }
     }
@@ -661,7 +785,7 @@
     renderCalendario();
 
     // ==========================================
-    // 2. ORARI TAVOLI (30 min feriali / Turni Weekend)
+    // 3. ORARI TAVOLI (30 min feriali / Turni Weekend)
     // ==========================================
     const inputDataTavolo = document.getElementById('tavolo-data');
     const selectOraTavolo = document.getElementById('tavolo-ora');
@@ -679,19 +803,14 @@
       const giornoSettimana = new Date(y, m - 1, d).getDay(); // 5=Ven, 6=Sab, 0=Dom
 
       if (giornoSettimana === 5 || giornoSettimana === 6 || giornoSettimana === 0) {
-        const turni = [
-          '1° Turno (19:30 – 21:30)',
-          '2° Turno (21:30 – in poi)'
-        ];
-        turni.forEach(t => {
+        ['1° Turno (19:30 – 21:30)', '2° Turno (21:30 – in poi)'].forEach(t => {
           const opt = document.createElement('option');
           opt.value = t;
           opt.textContent = t;
           selectOraTavolo.appendChild(opt);
         });
       } else {
-        const fasceFeriali = ['19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30'];
-        fasceFeriali.forEach(ora => {
+        ['19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30'].forEach(ora => {
           const opt = document.createElement('option');
           opt.value = ora;
           opt.textContent = ora;
@@ -704,26 +823,22 @@
     aggiornaOrariTavolo();
 
     // ==========================================
-    // 3. ORARI ASPORTO (Ogni 10 minuti dalle 19:00)
+    // 4. ORARI ASPORTO (Ogni 10 minuti dalle 19:00)
     // ==========================================
     const selectOraAsporto = document.getElementById('asporto-ora');
-    function popolaOrariAsporto() {
-      selectOraAsporto.innerHTML = '';
-      for (let h = 19; h <= 22; h++) {
-        for (let m = 0; m < 60; m += 10) {
-          if (h === 22 && m > 40) break;
-          const label = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-          const opt = document.createElement('option');
-          opt.value = label;
-          opt.textContent = label;
-          selectOraAsporto.appendChild(opt);
-        }
+    for (let h = 19; h <= 22; h++) {
+      for (let m = 0; m < 60; m += 10) {
+        if (h === 22 && m > 40) break;
+        const label = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
+        const opt = document.createElement('option');
+        opt.value = label;
+        opt.textContent = label;
+        selectOraAsporto.appendChild(opt);
       }
     }
-    popolaOrariAsporto();
 
     // ==========================================
-    // 4. FILTRI CATEGORIA MENÙ
+    // 5. FILTRI CATEGORIA MENÙ
     // ==========================================
     const catBtns = document.querySelectorAll('.cat-btn');
     const categories = document.querySelectorAll('.menu-category');
@@ -749,7 +864,7 @@
     });
 
     // ==========================================
-    // 5. CARRELLO ASPORTO E INVIO WHATSAPP
+    // 6. CARRELLO ASPORTO E INVIO WHATSAPP
     // ==========================================
     const WHATSAPP_NUMBER = '390872703567';
     let carrello = [];
@@ -774,7 +889,7 @@
       const totaleEl = document.getElementById('carrello-totale');
 
       if (carrello.length === 0) {
-        lista.innerHTML = `<p class="text-xs italic text-slate-400">Nessuna pinsa selezionata. Aggiungile dal menù qui sopra oppure scrivile nelle note.</p>`;
+        lista.innerHTML = `<p class="text-xs italic text-slate-400">Nessun prodotto selezionato. Aggiungili dal menù qui sopra oppure scrivili nelle note.</p>`;
         totaleEl.textContent = '€ 0,00';
         return;
       }
