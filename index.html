@@ -1,954 +1,2339 @@
 <!DOCTYPE html>
-<html lang="it" class="scroll-smooth">
+<html lang="it">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fusion 3.0 — Pinsa &amp; Beverage | Lanciano</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Font condensati e geometrici coerenti con il brand manual ufficiale -->
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            petrolio: {
-              DEFAULT: '#0E4A56',
-              light: '#176271',
-              dark: '#08323B',
-              soft: '#EBF3F5'
-            },
-            senape: {
-              DEFAULT: '#B79438',
-              light: '#D2B154',
-              dark: '#8F7122'
-            },
-            legno: '#8C6239',
-            marmo: '#F7F6F2'
-          },
-          fontFamily: {
-            sans: ['Montserrat', 'sans-serif'],
-            logo: ['Barlow Condensed', 'sans-serif']
-          }
-        }
-      }
+  <title>Fusion 3.0 · Pinsa Artigianale a Lanciano | Asporto e Prenotazioni</title>
+  <meta name="description" content="Fusion 3.0 a Lanciano (Via del Mare, 49): pinse gourmet di terza generazione. Ordina comodamente l'asporto o prenota il tavolo su WhatsApp." />
+  <link rel="canonical" href="https://www.fusion30lanciano.it/" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 128 128' fill='none'%3E%3Crect width='128' height='128' rx='28' fill='%2318545F'/%3E%3Crect x='6' y='6' width='116' height='116' rx='22' stroke='%23C59B27' stroke-opacity='0.45' stroke-width='2'/%3E%3Cg transform='translate(8,12) scale(0.43)'%3E%3Cpath d='M14 78C52 84 88 81 128 73C148 69 152 38 146 18C141 6 129 7 126 22C122 44 121 96 122 128C122 146 134 148 137 132C140 116 134 94 124 84' stroke='%23E2B944' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M118 76C156 68 198 85 246 71' stroke='%23E2B944' stroke-width='5.5' stroke-linecap='round'/%3E%3C/g%3E%3C/svg%3E" />
+
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Fusion 3.0 · Lanciano | Asporto Rapido e Prenotazione Tavoli" />
+  <meta property="og:description" content="Terza generazione nell'arte bianca a Lanciano. Consulta il menù, verifica il calendario aperture e prenota asporto o tavolo su WhatsApp." />
+  <meta property="og:url" content="https://www.fusion30lanciano.it/" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Fusion 3.0",
+    "url": "https://www.fusion30lanciano.it/",
+    "servesCuisine": ["Pinsa Romana", "Pizza Contemporanea", "Hamburger Artigianali"],
+    "telephone": "+39 0872 703567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via del Mare, 49",
+      "addressLocality": "Lanciano",
+      "addressRegion": "CH",
+      "postalCode": "66034",
+      "addressCountry": "IT"
     }
+  }
   </script>
+
   <style>
-    .marble-bg {
-      background-color: #F7F6F2;
-      background-image: radial-gradient(circle at 18% 18%, rgba(14, 74, 86, 0.04) 0%, transparent 50%),
-                        radial-gradient(circle at 82% 82%, rgba(183, 148, 56, 0.06) 0%, transparent 50%);
+    :root {
+      --petrolio: #1e5963;
+      --petrolio-hover: #296f7b;
+      --petrolio-deep: #133c43;
+      --petrolio-soft: #eaf2f3;
+      --senape: #c59b27;
+      --senape-hover: #b1891d;
+      --senape-text: #946f10;
+      --senape-soft: #fbf5e4;
+      --legno: #8b5e3c;
+      --legno-deep: #6b462a;
+      --legno-light: #e9dfd5;
+      --marmo-bg: #faf8f5;
+      --marmo-surface: #f4efe8;
+      --bianco-foto: #ffffff;
+      --text-main: #1b2d30;
+      --text-muted: #536669;
+      --border-subtle: #e2dcd2;
+      --font-display: "Oswald", "Arial Narrow", sans-serif;
+      --font-body: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow-soft: 0 10px 30px rgba(19, 60, 67, 0.06);
+      --shadow-card: 0 6px 20px rgba(19, 60, 67, 0.07);
+      --shadow-elevated: 0 20px 50px rgba(19, 60, 67, 0.14);
+      --container-max: 1200px;
+      --transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 124px;
+      overflow-x: clip;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: clip;
+      font-family: var(--font-body);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-color: var(--marmo-bg);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Crect width='600' height='600' fill='%23FAF8F5'/%3E%3Cpath d='M-40 120 C 90 165, 190 65, 320 130 S 490 210, 640 150' stroke='%23E5DDD0' stroke-width='1.5' fill='none' opacity='0.55'/%3E%3Cpath d='M-30 390 C 120 330, 260 440, 410 370 S 540 310, 650 365' stroke='%23DDD3C4' stroke-width='1.2' fill='none' opacity='0.5'/%3E%3Cpath d='M140 -20 C 190 110, 120 260, 210 410 S 290 540, 260 630' stroke='%23E8E1D6' stroke-width='1' fill='none' opacity='0.6'/%3E%3Cpath d='M450 -30 C 410 140, 500 280, 430 460 S 470 570, 510 640' stroke='%23E2D8C8' stroke-width='1.3' fill='none' opacity='0.45'/%3E%3C/svg%3E");
+      background-attachment: fixed;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg { display: block; max-width: 100%; }
+    button, input, select, textarea { font-family: inherit; }
+    a { color: inherit; }
+
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    [hidden] { display: none !important; }
+
+    /* BARRA COMUNICAZIONE FISSA */
+    .top-notice {
+      background: linear-gradient(90deg, var(--petrolio-deep), var(--petrolio));
+      color: #ffffff;
+      font-size: 0.875rem;
+      border-bottom: 2px solid var(--senape);
+      position: relative;
+      z-index: 60;
+    }
+    .top-notice__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 9px 20px;
+      max-width: var(--container-max);
+      margin: 0 auto;
+    }
+    .top-notice__content { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .top-notice__badge {
+      background: var(--senape);
+      color: #162426;
+      font-weight: 700;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 9px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+    .top-notice__actions { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .top-notice__btn {
+      background: rgba(255, 255, 255, 0.14);
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 4px 11px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .top-notice__btn:hover { background: var(--senape); color: #162426; border-color: var(--senape); }
+
+    /* HEADER STICKY */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(250, 248, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .site-header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      height: 72px;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .brand-submark-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .brand-submark-link:hover { background: var(--senape-soft); }
+    .brand-submark-img { width: 66px; height: 42px; object-fit: contain; }
+    .brand-submark-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--petrolio);
+      border-left: 1px solid var(--border-subtle);
+      padding-left: 10px;
+    }
+    .main-nav { display: flex; align-items: center; gap: 22px; }
+    .main-nav a {
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-main);
+      position: relative;
+      padding: 4px 0;
+      transition: var(--transition);
+    }
+    .main-nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: var(--senape);
+      transition: var(--transition);
+    }
+    .main-nav a:hover { color: var(--petrolio); }
+    .main-nav a:hover::after { width: 100%; }
+    .header-actions { display: flex; align-items: center; gap: 10px; }
+
+    /* PULSANTI */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      text-align: center;
+      max-width: 100%;
+      white-space: normal;
+      line-height: 1.25;
+    }
+    .header-actions .btn, .mobile-sticky-bar .btn { white-space: nowrap; }
+    .btn--sm { padding: 8px 14px; font-size: 0.84rem; }
+    .btn--lg { padding: 14px 24px; font-size: 1rem; }
+    .btn--petrol { background: var(--petrolio); color: #ffffff; }
+    .btn--petrol:hover { background: var(--petrolio-hover); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(30, 89, 99, 0.22); }
+    .btn--mustard { background: var(--senape); color: #162325; }
+    .btn--mustard:hover { background: var(--senape-hover); transform: translateY(-1px); box-shadow: 0 8px 18px rgba(197, 155, 39, 0.28); }
+    .btn--outline { background: #ffffff; color: var(--petrolio); border-color: var(--petrolio); }
+    .btn--outline:hover { background: var(--petrolio-soft); }
+    .cart-trigger { position: relative; }
+    .cart-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 22px;
+      height: 22px;
+      padding: 0 6px;
+      border-radius: 999px;
+      background: var(--petrolio-deep);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 800;
+    }
+
+    /* HERO */
+    .hero { padding: 46px 0 64px; position: relative; overflow: hidden; }
+    .hero__grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 44px; align-items: center; }
+    .hero__logo-wrap { margin-bottom: 18px; }
+    .hero__logo-main { width: clamp(240px, 34vw, 350px); height: auto; }
+    .hero__status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--petrolio-deep);
+      margin-bottom: 16px;
+    }
+    .status-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #22a06b;
+      box-shadow: 0 0 0 4px rgba(34, 160, 107, 0.18);
+      flex-shrink: 0;
+    }
+    .status-dot--closed { background: var(--legno); box-shadow: 0 0 0 4px rgba(139, 94, 60, 0.18); }
+    .hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.6vw, 2.95rem);
+      line-height: 1.08;
+      letter-spacing: 0.02em;
+      color: var(--petrolio-deep);
+      margin: 0 0 12px;
+      text-transform: uppercase;
+    }
+    .hero__subtitle { font-size: 1.04rem; color: var(--text-muted); margin: 0 0 26px; max-width: 54ch; }
+    .hero__cta-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 22px; }
+    .cta-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      border: 1.5px solid var(--border-subtle);
+      background: #ffffff;
+      text-align: left;
+      cursor: pointer;
+      text-decoration: none;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
+    }
+    .cta-card--asporto { border-color: var(--senape); background: linear-gradient(155deg, #ffffff 0%, var(--senape-soft) 100%); }
+    .cta-card--asporto:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(197, 155, 39, 0.22); }
+    .cta-card--tavolo { border-color: var(--petrolio); background: linear-gradient(155deg, #ffffff 0%, var(--petrolio-soft) 100%); }
+    .cta-card--tavolo:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(30, 89, 99, 0.2); }
+    .cta-card__eyebrow { font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.07em; color: var(--senape-text); }
+    .cta-card--tavolo .cta-card__eyebrow { color: var(--petrolio); }
+    .cta-card__title { font-family: var(--font-display); font-size: 1.32rem; letter-spacing: 0.02em; color: var(--petrolio-deep); }
+    .cta-card__desc { font-size: 0.84rem; color: var(--text-muted); }
+    .hero__quick-info { display: flex; flex-wrap: wrap; gap: 14px 20px; font-size: 0.86rem; color: var(--text-muted); }
+    .hero__quick-info a { font-weight: 700; color: var(--petrolio); text-decoration: none; }
+    .hero__quick-info a:hover { text-decoration: underline; }
+
+    /* RIQUADRI BIANCHI SEGNAPOSTO FOTO */
+    .wood-frame {
+      padding: 12px;
+      border-radius: calc(var(--radius-lg) + 6px);
+      background-color: var(--legno);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240' viewBox='0 0 240 240'%3E%3Crect width='240' height='240' fill='%238B5E3C'/%3E%3Cpath d='M0 24 Q 120 14, 240 26 M0 62 Q 120 74, 240 60 M0 105 Q 110 92, 240 108 M0 150 Q 130 164, 240 146 M0 198 Q 120 186, 240 202' stroke='%236F492C' stroke-width='2' fill='none' opacity='0.48'/%3E%3C/svg%3E");
+      box-shadow: var(--shadow-elevated);
     }
     .photo-placeholder {
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(14, 74, 86, 0.035),
-        rgba(14, 74, 86, 0.035) 12px,
-        rgba(183, 148, 56, 0.065) 12px,
-        rgba(183, 148, 56, 0.065) 24px
-      );
+      background: var(--bianco-foto);
+      border: 2px dashed #d5cdbf;
+      border-radius: var(--radius-lg);
+      min-height: 300px;
+      padding: 28px 22px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
     }
-    /* Linea calligrafica fedele al submark "f" del brand manual */
-    .submark-stroke {
-      stroke: #B79438;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      fill: none;
+    .photo-placeholder--hero { min-height: 430px; }
+    .photo-placeholder--sm { min-height: 210px; border-radius: var(--radius-md); }
+    .photo-placeholder--has-img { padding: 0; border-style: solid; border-color: var(--border-subtle); }
+    .photo-placeholder img.photo-real { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .photo-placeholder__corner { position: absolute; width: 18px; height: 18px; border-color: var(--senape); border-style: solid; opacity: 0.75; }
+    .photo-placeholder__corner--tl { top: 12px; left: 12px; border-width: 2px 0 0 2px; }
+    .photo-placeholder__corner--br { bottom: 12px; right: 12px; border-width: 0 2px 2px 0; }
+    .photo-placeholder__icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--senape-soft);
+      color: var(--senape-text);
+      display: grid;
+      place-items: center;
+      margin-bottom: 12px;
+    }
+    .photo-placeholder__label {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--petrolio-deep);
+      margin: 0 0 6px;
+    }
+    .photo-placeholder__hint { font-size: 0.85rem; color: var(--text-muted); max-width: 34ch; margin: 0 0 10px; }
+    .photo-placeholder__tag {
+      display: inline-block;
+      padding: 4px 11px;
+      border-radius: 999px;
+      background: var(--marmo-surface);
+      border: 1px solid var(--border-subtle);
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--legno-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* SEZIONI */
+    .section { padding: 72px 0; position: relative; }
+    .section--marble-tint {
+      background: rgba(244, 239, 232, 0.72);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .section-head { text-align: center; max-width: 680px; margin: 0 auto 42px; }
+    .section-head__submark { width: 58px; height: 36px; margin: 0 auto 8px; }
+    .section-head__eyebrow {
+      display: inline-block;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--senape-text);
+      margin-bottom: 6px;
+    }
+    .section-head__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 3vw, 2.5rem);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--petrolio-deep);
+      margin: 0 0 10px;
+    }
+    .section-head__desc { color: var(--text-muted); margin: 0; }
+
+    /* CHI SIAMO */
+    .about-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 44px; align-items: center; }
+    .about-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-left: 5px solid var(--legno);
+      border-radius: var(--radius-lg);
+      padding: 34px 32px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card__watermark { position: absolute; right: -12px; bottom: -16px; width: 170px; opacity: 0.08; pointer-events: none; }
+    .about-card__quote { font-family: var(--font-display); font-size: 1.5rem; letter-spacing: 0.03em; color: var(--petrolio); margin: 0 0 14px; }
+    .about-card p { margin: 0 0 14px; color: var(--text-main); }
+    .about-pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 22px; }
+    .pillar-box { background: var(--marmo-bg); border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); padding: 12px; }
+    .pillar-box strong { display: block; font-size: 0.9rem; color: var(--petrolio-deep); }
+    .pillar-box span { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* MENÙ */
+    .menu-controls { display: flex; flex-direction: column; gap: 16px; margin-bottom: 26px; }
+    .menu-filters { display: flex; flex-wrap: wrap; justify-content: center; gap: 9px; }
+    .filter-pill {
+      border: 1.5px solid var(--border-subtle);
+      background: #ffffff;
+      color: var(--text-main);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .filter-pill:hover { border-color: var(--petrolio); color: var(--petrolio); }
+    .filter-pill.is-active {
+      background: var(--petrolio);
+      border-color: var(--petrolio);
+      color: #ffffff;
+      box-shadow: 0 6px 16px rgba(30, 89, 99, 0.22);
+    }
+    .menu-search-row { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .search-input-wrap { position: relative; flex: 1 1 280px; max-width: 420px; }
+    .search-input-wrap input {
+      width: 100%;
+      padding: 11px 16px 11px 40px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border-subtle);
+      background: #ffffff;
+      font-size: 0.92rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+    .search-input-wrap input:focus { outline: none; border-color: var(--petrolio); box-shadow: 0 0 0 4px rgba(30, 89, 99, 0.1); }
+    .search-input-wrap svg { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+    .menu-service-badges { display: flex; flex-wrap: wrap; gap: 8px; font-size: 0.8rem; }
+    .service-chip {
+      background: var(--senape-soft);
+      border: 1px solid rgba(197, 155, 39, 0.4);
+      color: var(--petrolio-deep);
+      padding: 5px 11px;
+      border-radius: 999px;
+      font-weight: 600;
+    }
+
+    .category-showcase {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+    .category-showcase__watermark { position: absolute; right: 18px; top: 12px; width: 130px; opacity: 0.08; pointer-events: none; }
+    .category-showcase__head { display: flex; align-items: baseline; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .category-showcase__title { font-family: var(--font-display); font-size: 1.45rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--petrolio-deep); margin: 0; }
+    .category-showcase__desc { font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+    .category-showcase__photos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+    .showcase-photo-btn { padding: 0; border: none; background: transparent; text-align: inherit; cursor: pointer; width: 100%; }
+    .showcase-photo-btn:hover .photo-placeholder { border-color: var(--senape); transform: translateY(-2px); }
+
+    .menu-group { margin-bottom: 36px; }
+    .menu-group__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 2px solid var(--senape);
+      padding-bottom: 8px;
+      margin-bottom: 18px;
+    }
+    .menu-group__title { font-family: var(--font-display); font-size: 1.55rem; letter-spacing: 0.03em; text-transform: uppercase; color: var(--petrolio-deep); margin: 0; }
+    .menu-group__count { font-size: 0.8rem; font-weight: 700; color: var(--senape-text); background: var(--senape-soft); padding: 3px 10px; border-radius: 999px; }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; }
+
+    .dish-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: 0 4px 14px rgba(19, 60, 67, 0.04);
+      transition: var(--transition);
+    }
+    .dish-card:hover { border-color: var(--petrolio); box-shadow: var(--shadow-card); }
+    .dish-card__top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .dish-card__name { font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0.02em; text-transform: uppercase; color: var(--petrolio-deep); margin: 0; line-height: 1.2; }
+    .dish-card__price { font-family: var(--font-display); font-size: 1.24rem; color: var(--senape-text); white-space: nowrap; }
+    .dish-card__ingredients { font-size: 0.9rem; color: var(--text-muted); margin: 6px 0 8px; }
+    .dish-card__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+    .dish-tag { font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--petrolio-soft); color: var(--petrolio-deep); }
+    .dish-allergens { font-size: 0.74rem; color: #728285; }
+    .dish-card__footer { display: flex; flex-direction: column; gap: 10px; padding-top: 10px; border-top: 1px dashed var(--border-subtle); }
+    .gf-toggle { display: inline-flex; align-items: center; gap: 7px; font-size: 0.8rem; font-weight: 600; color: var(--legno-deep); cursor: pointer; }
+    .gf-toggle input { accent-color: var(--petrolio); width: 15px; height: 15px; }
+    .dish-card__actions { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+
+    .qty-stepper {
+      display: inline-flex;
+      align-items: center;
+      border: 1.5px solid var(--petrolio);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--petrolio-soft);
+      flex-shrink: 0;
+    }
+    .qty-stepper button { width: 32px; height: 32px; border: none; background: transparent; color: var(--petrolio-deep); font-weight: 800; font-size: 1rem; cursor: pointer; }
+    .qty-stepper button:hover { background: var(--petrolio); color: #ffffff; }
+    .qty-stepper span { min-width: 28px; text-align: center; font-weight: 800; font-size: 0.9rem; color: var(--petrolio-deep); }
+
+    .allergens-panel { margin-top: 26px; background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 20px; }
+    .allergens-panel summary { cursor: pointer; font-weight: 700; color: var(--petrolio-deep); }
+    .allergens-panel__body { margin-top: 12px; font-size: 0.83rem; color: var(--text-muted); display: grid; gap: 8px; }
+
+    /* IL LOCALE */
+    .locale-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .locale-card { background: var(--legno-light); padding: 10px; border-radius: var(--radius-md); border: 1px solid #d7c7b6; }
+
+    /* CALENDARIO + PRENOTAZIONI */
+    .booking-hub-grid { display: grid; grid-template-columns: 0.92fr 1.08fr; gap: 28px; align-items: start; }
+    .panel-card { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 26px; box-shadow: var(--shadow-soft); }
+    .cal-header { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
+    .cal-month-title { font-family: var(--font-display); font-size: 1.4rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--petrolio-deep); margin: 0; }
+    .cal-nav-btn { width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--marmo-bg); color: var(--petrolio-deep); font-weight: 800; cursor: pointer; transition: var(--transition); }
+    .cal-nav-btn:hover { background: var(--petrolio); color: #ffffff; }
+    .cal-weekdays, .cal-days { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+    .cal-weekdays span { text-align: center; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; color: var(--text-muted); padding: 4px 0; }
+    .cal-day {
+      aspect-ratio: 1 / 1;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-subtle);
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+      padding: 0;
+    }
+    .cal-day--empty { border-color: transparent; background: transparent; cursor: default; }
+    .cal-day--open:hover { border-color: var(--petrolio); background: var(--petrolio-soft); }
+    .cal-day--weekend { background: var(--senape-soft); border-color: rgba(197, 155, 39, 0.55); }
+    .cal-day--special { background: #edf7f2; border-color: #22a06b; }
+    .cal-day--closed { background: #f5f2ee; color: #a39d94; border-style: dashed; }
+    .cal-day--past { opacity: 0.45; cursor: not-allowed; }
+    .cal-day.is-selected {
+      background: var(--petrolio) !important;
+      border-color: var(--petrolio-deep) !important;
+      color: #ffffff !important;
+      box-shadow: 0 6px 14px rgba(30, 89, 99, 0.25);
+    }
+    .cal-day__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: 0.75; }
+    .cal-legend { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-subtle); font-size: 0.78rem; color: var(--text-muted); }
+    .cal-legend__item { display: inline-flex; align-items: center; gap: 6px; }
+    .cal-swatch { width: 12px; height: 12px; border-radius: 4px; border: 1px solid var(--border-subtle); }
+    .cal-detail-box { margin-top: 14px; padding: 14px; border-radius: var(--radius-md); background: var(--marmo-surface); border-left: 4px solid var(--senape); }
+    .cal-detail-box strong { display: block; color: var(--petrolio-deep); margin-bottom: 4px; }
+    .cal-detail-box p { margin: 0 0 10px; font-size: 0.87rem; color: var(--text-muted); }
+
+    .booking-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; background: var(--marmo-surface); padding: 6px; border-radius: 999px; margin-bottom: 22px; }
+    .booking-tab { border: none; background: transparent; padding: 11px 14px; border-radius: 999px; font-weight: 800; font-size: 0.92rem; color: var(--text-muted); cursor: pointer; transition: var(--transition); }
+    .booking-tab.is-active { background: var(--petrolio); color: #ffffff; box-shadow: 0 4px 12px rgba(30, 89, 99, 0.22); }
+    .booking-tab[data-tab="asporto"].is-active { background: var(--senape); color: #162325; }
+
+    .form-grid { display: grid; gap: 16px; }
+    .form-grid > *, .form-row-2 > *, .turni-grid > * { min-width: 0; max-width: 100%; }
+    .form-row-2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+    .field-label { display: block; font-size: 0.84rem; font-weight: 700; color: var(--petrolio-deep); margin-bottom: 6px; }
+    .field-input, .field-textarea, .field-select {
+      width: 100%;
+      padding: 11px 14px;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--border-subtle);
+      background: #ffffff;
+      font-size: 0.94rem;
+      color: var(--text-main);
+      transition: var(--transition);
+    }
+    .field-input:focus, .field-textarea:focus, .field-select:focus { outline: none; border-color: var(--petrolio); box-shadow: 0 0 0 4px rgba(30, 89, 99, 0.1); }
+    .quick-date-pills, .guest-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
+    .mini-pill { padding: 6px 12px; border-radius: 999px; border: 1px solid var(--border-subtle); background: var(--marmo-bg); font-size: 0.8rem; font-weight: 700; color: var(--text-main); cursor: pointer; }
+    .mini-pill.is-selected { background: var(--petrolio); border-color: var(--petrolio); color: #ffffff; }
+
+    .slots-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(74px, 1fr)); gap: 7px; max-height: 210px; overflow-y: auto; padding: 4px 2px; }
+    .slot-btn { padding: 8px 6px; border-radius: var(--radius-sm); border: 1.5px solid var(--border-subtle); background: #ffffff; font-size: 0.84rem; font-weight: 700; color: var(--text-main); cursor: pointer; transition: var(--transition); }
+    .slot-btn:hover { border-color: var(--petrolio); }
+    .slot-btn.is-selected { background: var(--petrolio); border-color: var(--petrolio); color: #ffffff; }
+    .slot-btn--asporto.is-selected { background: var(--senape); border-color: var(--senape-hover); color: #162325; }
+
+    .turni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .turno-card { border: 1.5px solid var(--border-subtle); background: var(--marmo-bg); border-radius: var(--radius-md); padding: 14px; text-align: left; cursor: pointer; transition: var(--transition); }
+    .turno-card:hover { border-color: var(--petrolio); }
+    .turno-card.is-selected { background: var(--petrolio-soft); border-color: var(--petrolio); box-shadow: 0 0 0 2px rgba(30, 89, 99, 0.2); }
+    .turno-card strong { display: block; color: var(--petrolio-deep); font-size: 0.96rem; }
+    .turno-card span { display: block; font-size: 0.84rem; font-weight: 700; color: var(--senape-text); margin: 2px 0 4px; }
+    .turno-card small { display: block; font-size: 0.76rem; color: var(--text-muted); }
+
+    .closed-alert { padding: 14px; border-radius: var(--radius-md); background: #fdf2ee; border: 1px solid #e5b7a7; color: #7c2d12; font-size: 0.88rem; font-weight: 600; }
+    .disclaimer-box { background: var(--senape-soft); border: 1px solid rgba(197, 155, 39, 0.55); border-left: 4px solid var(--senape); border-radius: var(--radius-sm); padding: 12px 14px; font-size: 0.84rem; color: #46370a; }
+    .phone-fallback-box { margin-top: 16px; padding: 14px 16px; border-radius: var(--radius-md); background: var(--petrolio-soft); border: 1px solid rgba(30, 89, 99, 0.22); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.85rem; }
+    .phone-fallback-box strong { color: var(--petrolio-deep); }
+
+    /* MAPS */
+    .location-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: stretch; }
+    .map-frame-wrap { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-subtle); box-shadow: var(--shadow-soft); min-height: 360px; background: #ffffff; }
+    .map-frame-wrap iframe { width: 100%; height: 100%; min-height: 360px; border: 0; }
+
+    /* DRAWER CARRELLO & MODALI */
+    .drawer-backdrop, .modal-backdrop { position: fixed; inset: 0; background: rgba(16, 36, 40, 0.56); backdrop-filter: blur(4px); z-index: 90; display: none; }
+    .drawer-backdrop.is-open, .modal-backdrop.is-open { display: flex; }
+    .cart-drawer { margin-left: auto; width: min(460px, 100vw); height: 100%; background: var(--marmo-bg); display: flex; flex-direction: column; box-shadow: -12px 0 40px rgba(0, 0, 0, 0.22); }
+    .cart-drawer__head { padding: 18px 22px; background: #ffffff; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .cart-drawer__brand { display: flex; align-items: center; gap: 10px; }
+    .cart-drawer__brand img { width: 48px; }
+    .cart-drawer__body { padding: 18px 22px; overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 16px; }
+    .cart-item { background: #ffffff; border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .cart-item__title { font-weight: 700; color: var(--petrolio-deep); font-size: 0.94rem; }
+    .cart-item__sub { font-size: 0.8rem; color: var(--text-muted); }
+    .cart-drawer__foot { padding: 16px 22px; background: #ffffff; border-top: 1px solid var(--border-subtle); display: grid; gap: 12px; }
+    .cart-total-row { display: flex; align-items: center; justify-content: space-between; font-size: 1.08rem; font-weight: 800; color: var(--petrolio-deep); }
+
+    .modal-backdrop { align-items: center; justify-content: center; padding: 20px; }
+    .modal-card { width: min(560px, 100%); background: #ffffff; border-radius: var(--radius-lg); border: 2px solid var(--senape); padding: 28px; position: relative; box-shadow: var(--shadow-elevated); text-align: center; }
+    .modal-close { position: absolute; top: 14px; right: 14px; width: 36px; height: 36px; border-radius: 50%; border: 1px solid var(--border-subtle); background: var(--marmo-bg); color: var(--petrolio-deep); font-weight: 800; cursor: pointer; }
+    .modal-close:hover { background: var(--petrolio); color: #ffffff; }
+
+    /* FOOTER & MOBILE BAR */
+    .site-footer { background: var(--petrolio-deep); color: #e9f0f1; padding: 46px 0 34px; border-top: 4px solid var(--senape); }
+    .footer-grid { display: grid; grid-template-columns: 1.1fr 0.9fr 1fr; gap: 28px; align-items: start; }
+    .footer-submark { width: 82px; margin-bottom: 10px; filter: brightness(1.18); }
+    .footer-bottom { margin-top: 30px; padding-top: 18px; border-top: 1px solid rgba(255, 255, 255, 0.14); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; color: #b7cbce; }
+    .mobile-sticky-bar { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 45; background: rgba(250, 248, 245, 0.96); backdrop-filter: blur(10px); border-top: 1px solid var(--border-subtle); padding: 10px 14px; gap: 10px; }
+    .mobile-sticky-bar .btn { flex: 1; }
+
+    .toast-msg {
+      position: fixed;
+      left: 50%;
+      bottom: 84px;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--petrolio-deep);
+      color: #ffffff;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--senape);
+      font-size: 0.88rem;
+      font-weight: 600;
+      opacity: 0;
+      pointer-events: none;
+      transition: var(--transition);
+      z-index: 85;
+    }
+    .toast-msg.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    .hero__grid > *, .about-grid > *, .booking-hub-grid > *, .location-grid > *, .menu-grid > *, .locale-grid > * { min-width: 0; }
+
+    @media (max-width: 1120px) {
+      .brand-submark-tag { display: none; }
+      .main-nav { gap: 14px; }
+    }
+    @media (max-width: 980px) {
+      .hero__grid, .about-grid, .booking-hub-grid, .location-grid, .footer-grid { grid-template-columns: minmax(0, 1fr); }
+      .locale-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 820px) {
+      .main-nav { display: none; }
+    }
+    @media (max-width: 680px) {
+      body { padding-bottom: 72px; }
+      .header-actions .btn--outline { display: none; }
+      .menu-grid { grid-template-columns: minmax(0, 1fr); }
+      .panel-card { padding: 18px 16px; }
+      .hero__cta-cards, .category-showcase__photos, .form-row-2, .turni-grid, .about-pillars, .locale-grid { grid-template-columns: 1fr; }
+      .mobile-sticky-bar { display: flex; }
+      .top-notice__inner { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
-<body class="marble-bg text-slate-800 font-sans antialiased">
-
-  <!-- SOVRAIMPRESSIONE SUPERIORE (Ripristinata come concordato) -->
-  <div class="sticky top-0 z-50 bg-senape text-petrolio-dark text-xs sm:text-sm font-bold py-2 px-4 text-center tracking-wide shadow-sm">
-    <span id="banner-testo">A Dicembre siamo SEMPRE APERTI — Anche il martedì! | Via del Mare 49, Lanciano</span>
+<body>
+  <!-- BARRA COMUNICAZIONI SEMPRE VISIBILE IN ALTO -->
+  <div class="top-notice" id="topNoticeBar" role="region" aria-label="Comunicazioni del locale">
+    <div class="top-notice__inner">
+      <div class="top-notice__content">
+        <span class="top-notice__badge" id="topNoticeBadge">Avviso</span>
+        <span id="topNoticeText">A Dicembre siamo SEMPRE APERTI tutte le sere dalle 19:00!</span>
+      </div>
+      <div class="top-notice__actions">
+        <button type="button" class="top-notice__btn" id="openNoticeModalBtn">Leggi avviso</button>
+        <a class="top-notice__btn" href="#calendario-prenotazioni">Calendario</a>
+      </div>
+    </div>
   </div>
 
-  <!-- NAVBAR FISSA CON SOLO SUBMARK "f" -->
-  <header class="sticky top-8 sm:top-9 z-40 bg-petrolio/95 backdrop-blur-md border-b border-senape/30 shadow-md">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-14 sm:h-16 flex items-center justify-between">
-      <a href="#top" class="flex items-center gap-2.5 group" aria-label="Torna all'inizio">
-        <!-- Submark "f" fedele al PDF ufficiale (occhiello superiore stretto, tratto obliquo, occhiello inferiore piccolo, coda orizzontale) -->
-        <svg viewBox="0 0 180 120" class="w-12 h-8 overflow-visible" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
-        </svg>
-        <span class="hidden sm:inline-block text-[10px] uppercase tracking-[0.28em] text-senape-light font-medium">Pinsa &amp; Beverage</span>
+  <!-- HEADER STICKY: SOLO SUBMARK 'f' + TASTI IN ALTO A DESTRA -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="#top" class="brand-submark-link" aria-label="Torna all'inizio">
+        <img data-submark alt="Submark F" class="brand-submark-img" />
+        <span class="brand-submark-tag">Lanciano · Via del Mare, 49</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-white/90">
-        <a href="#menu" class="hover:text-senape-light transition">Menù</a>
-        <a href="#locale" class="hover:text-senape-light transition">Locale</a>
-        <a href="#prenota" class="hover:text-senape-light transition">Prenota</a>
-        <a href="#chi-siamo" class="hover:text-senape-light transition">Chi Siamo</a>
-        <a href="#dove-siamo" class="hover:text-senape-light transition">Dove Siamo</a>
+      <nav class="main-nav" aria-label="Navigazione principale">
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#menu">Menù</a>
+        <a href="#locale">Il Locale</a>
+        <a href="#calendario-prenotazioni">Calendario</a>
+        <a href="#dove-siamo">Dove Siamo</a>
       </nav>
 
-      <div class="flex items-center gap-2">
-        <a href="#asporto-box" class="bg-senape hover:bg-senape-light text-petrolio-dark font-bold text-xs sm:text-sm px-4 py-2 rounded-full transition shadow">
-          Prenota Asporto
-        </a>
+      <div class="header-actions">
+        <button type="button" class="btn btn--outline btn--sm" data-open-booking="tavolo">Prenota Tavolo</button>
+        <button type="button" class="btn btn--mustard btn--sm cart-trigger" id="headerCartBtn" aria-label="Apri carrellino asporto">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span>Asporto</span>
+          <span class="cart-badge" id="headerCartCount">0</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION: Logo Principale Integrato Naturalmente + CTA Prenota Asporto + Calendario Compatto -->
-  <section id="top" class="relative bg-gradient-to-br from-petrolio-dark via-petrolio to-petrolio-light text-white overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-10 lg:py-14 grid lg:grid-cols-12 gap-8 items-center">
-      
-      <!-- Colonna Sinistra: Logo Principale Ufficiale (senza riquadro bianco posticcio) -->
-      <div class="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left">
-        
-        <!-- LOGO PRINCIPALE UFFICIALE (Submark dorato sopra + FUSION 3.0 condensato + PINSA & BEVERAGE) -->
-        <div class="mb-6 inline-flex flex-col items-center">
-          <svg viewBox="0 0 180 120" class="w-28 h-20 -mb-2" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="3.6"/>
-          </svg>
-          <div class="font-logo font-bold text-5xl sm:text-6xl tracking-[0.06em] text-white leading-none">
-            FUSION 3.0
-          </div>
-          <div class="font-sans font-medium text-[11px] sm:text-xs tracking-[0.36em] text-senape-light mt-1.5 uppercase">
-            PINSA &amp; BEVERAGE
-          </div>
-        </div>
-
-        <p class="text-xs uppercase tracking-[0.25em] text-senape-light font-semibold mb-2">
-          ...Tre generazioni, un'unica passione
-        </p>
-        <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight mb-4">
-          Alta idratazione, croccantezza unica e abbinamenti ricercati a Lanciano.
-        </h1>
-        <p class="text-white/85 text-sm sm:text-base max-w-xl mb-7 leading-relaxed">
-          Impasto leggero a lunga maturazione (disponibile anche senza glutine), materie prime selezionate e una carta beverage pensata per esaltare ogni pinsa.
-        </p>
-
-        <div class="flex flex-wrap justify-center lg:justify-start gap-3.5 w-full sm:w-auto">
-          <a href="#asporto-box" class="w-full sm:w-auto text-center bg-senape hover:bg-senape-light text-petrolio-dark font-extrabold px-7 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
-            Prenota Asporto
-          </a>
-          <a href="#tavolo-box" class="w-full sm:w-auto text-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-7 py-3 rounded-xl transition">
-            Prenota un Tavolo
-          </a>
-        </div>
-      </div>
-
-      <!-- Colonna Destra: Calendario Aperture/Chiusure Compatto -->
-      <div class="lg:col-span-5 flex justify-center lg:justify-end">
-        <div class="w-full max-w-sm bg-white/95 text-slate-800 rounded-2xl shadow-xl border border-senape/40 p-4">
-          <div class="flex items-center justify-between border-b border-slate-200 pb-2.5 mb-3">
-            <div>
-              <span class="text-[10px] uppercase tracking-widest text-legno font-bold block">Aperture del Mese</span>
-              <h2 id="cal-month-title" class="text-base font-bold text-petrolio capitalize">Novembre 2026</h2>
-            </div>
-            <div class="flex items-center gap-1">
-              <button type="button" id="cal-prev" class="px-2 py-1 rounded border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese precedente">&larr;</button>
-              <button type="button" id="cal-next" class="px-2 py-1 rounded border border-slate-200 hover:bg-petrolio-soft text-petrolio text-xs font-bold" aria-label="Mese successivo">&rarr;</button>
-            </div>
+  <main id="top">
+    <!-- HERO CON LOGO PRINCIPALE GRANDE -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <div class="hero__logo-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 250" fill="none" role="img" aria-label="Logo Principale Fusion 3.0 Pinsa &amp; Beverage" class="hero__logo-main">
+              <g transform="translate(50, 6)">
+                <path d="M 14 78 C 52 84, 88 81, 128 73 C 148 69, 152 38, 146 18 C 141 6, 129 7, 126 22 C 122 44, 121 96, 122 128 C 122 146, 134 148, 137 132 C 140 116, 134 94, 124 84" stroke="#B58E22" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M 118 76 C 156 68, 198 85, 246 71" stroke="#B58E22" stroke-width="3.6" stroke-linecap="round" />
+              </g>
+              <text x="180" y="204" text-anchor="middle" fill="#18545F" font-family="'Oswald', 'DIN Condensed', 'Arial Narrow', sans-serif" font-size="52" font-weight="600" letter-spacing="4">FUSION 3.0</text>
+              <text x="180" y="231" text-anchor="middle" fill="#18545F" font-family="'Oswald', 'DIN Condensed', 'Arial Narrow', sans-serif" font-size="15.5" font-weight="500" letter-spacing="6.2">PINSA &amp; BEVERAGE</text>
+            </svg>
           </div>
 
-          <div class="grid grid-cols-7 text-center text-[10px] font-bold text-slate-400 uppercase mb-1.5">
-            <div>Lun</div>
-            <div>Mar</div>
-            <div>Mer</div>
-            <div>Gio</div>
-            <div>Ven</div>
-            <div>Sab</div>
-            <div>Dom</div>
+          <div class="hero__status-pill" id="heroStatusPill">
+            <span class="status-dot" id="heroStatusDot"></span>
+            <span id="heroStatusText">Stasera aperti dalle 19:00 · Lanciano</span>
           </div>
 
-          <div id="cal-grid" class="grid grid-cols-7 gap-1 text-center text-[11px] font-semibold"></div>
-
-          <div class="mt-3 pt-2.5 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-600">
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-petrolio-soft border border-petrolio inline-block"></span>
-              <span>Aperto (dalle 19:00)</span>
-            </div>
-            <div class="flex items-center gap-1.5">
-              <span class="w-2.5 h-2.5 rounded-full bg-red-100 border border-red-400 inline-block"></span>
-              <span>Chiuso</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- SEZIONE MENÙ COMPLETO CON SEGAPOSTO FOTO PER CATEGORIA -->
-  <section id="menu" class="py-14 px-4 sm:px-6 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-8">
-      <div class="inline-flex items-center justify-center mb-1">
-        <svg viewBox="0 0 180 120" class="w-12 h-8" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
-        </svg>
-      </div>
-      <h2 class="text-3xl sm:text-4xl font-bold text-petrolio">Il Nostro Menù</h2>
-      <p class="text-slate-600 text-sm sm:text-base mt-1.5">
-        Pinsa disponibile anche <strong>senza glutine su richiesta (+ € 3,50)</strong>. Clicca su <em>+ Asporto</em> per comporre il tuo ordine.
-      </p>
-    </div>
-
-    <!-- Filtri Categoria -->
-    <div class="flex flex-wrap justify-center gap-2 mb-10" id="category-tabs">
-      <button type="button" data-cat="tutte" class="cat-btn bg-petrolio text-white px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold shadow-sm transition">Tutto il Menù</button>
-      <button type="button" data-cat="fuori-menu" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Fuori Menù</button>
-      <button type="button" data-cat="cominciare" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">...Per Cominciare</button>
-      <button type="button" data-cat="rosse" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Rosse</button>
-      <button type="button" data-cat="bianche" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse Bianche</button>
-      <button type="button" data-cat="focacce" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Focacce e Ripiene</button>
-      <button type="button" data-cat="pinse-30" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Pinse 3.0</button>
-      <button type="button" data-cat="hamburger" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Hamburger</button>
-      <button type="button" data-cat="birre" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Birre Artigianali</button>
-      <button type="button" data-cat="cocktail" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Drink &amp; Analcolici</button>
-      <button type="button" data-cat="vini" class="cat-btn bg-white text-petrolio border border-petrolio/20 hover:border-petrolio px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-semibold transition">Vini</button>
-    </div>
-
-    <!-- Contenitore Categorie Completo -->
-    <div id="menu-container" class="space-y-12">
-
-      <!-- 1. FUORI MENÙ -->
-      <div class="menu-category" data-category="fuori-menu">
-        <div class="rounded-2xl border-2 border-dashed border-senape/60 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Proposte Stagionali</span>
-            <h3 class="text-2xl font-bold text-petrolio">Fuori Menù</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-senape/40 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Fuori Menù ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="grid-fuori-menu"></div>
-      </div>
-
-      <!-- 2. ...PER COMINCIARE -->
-      <div class="menu-category" data-category="cominciare">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Sfizi &amp; Fritti</span>
-            <h3 class="text-2xl font-bold text-petrolio">...Per Cominciare</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: ...Per Cominciare ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-cominciare"></div>
-      </div>
-
-      <!-- 3. PINSE CLASSICHE / ROSSE -->
-      <div class="menu-category" data-category="rosse">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Pinse Classiche</span>
-            <h3 class="text-2xl font-bold text-petrolio">Pinse Rosse</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Pinse Rosse ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-rosse"></div>
-      </div>
-
-      <!-- 4. PINSE CLASSICHE / BIANCHE -->
-      <div class="menu-category" data-category="bianche">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Pinse Classiche</span>
-            <h3 class="text-2xl font-bold text-petrolio">Pinse Bianche</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Pinse Bianche ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-bianche"></div>
-      </div>
-
-      <!-- 5. FOCACCE E RIPIENE -->
-      <div class="menu-category" data-category="focacce">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Basi Speciali</span>
-            <h3 class="text-2xl font-bold text-petrolio">Focacce e Ripiene</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Focacce e Ripiene ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-focacce"></div>
-      </div>
-
-      <!-- 6. PINSE 3.0 -->
-      <div class="menu-category" data-category="pinse-30">
-        <div class="rounded-2xl border-2 border-dashed border-senape/60 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Le Signature della Casa</span>
-            <h3 class="text-2xl font-bold text-petrolio">Pinse 3.0</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-senape/40 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Pinse 3.0 ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-pinse-30"></div>
-      </div>
-
-      <!-- 7. HAMBURGER (PANINO ARTIGIANALE) -->
-      <div class="menu-category" data-category="hamburger">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Panino Artigianale — Scottona 200 gr</span>
-            <h3 class="text-2xl font-bold text-petrolio">Hamburger</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Hamburger ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-4" id="grid-hamburger"></div>
-      </div>
-
-      <!-- 8. BIRRE ARTIGIANALI -->
-      <div class="menu-category" data-category="birre">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Beverage Selection</span>
-            <h3 class="text-2xl font-bold text-petrolio">Birre Artigianali</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Birre Artigianali ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-birre"></div>
-      </div>
-
-      <!-- 9. ANALCOLICI & COCKTAIL / OUR GIN SELECTION -->
-      <div class="menu-category" data-category="cocktail">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Mixology &amp; Soft Drinks</span>
-            <h3 class="text-2xl font-bold text-petrolio">Analcolici, Cocktail &amp; Gin Selection</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Cocktail &amp; Gin ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-4" id="grid-cocktail"></div>
-      </div>
-
-      <!-- 10. CARTA DEI VINI -->
-      <div class="menu-category" data-category="vini">
-        <div class="rounded-2xl border-2 border-dashed border-petrolio/35 photo-placeholder p-5 mb-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <div>
-            <span class="text-[11px] font-bold uppercase tracking-widest text-legno">Calici, Bianchi, Rosati, Bollicine &amp; Rossi</span>
-            <h3 class="text-2xl font-bold text-petrolio">Carta dei Vini</h3>
-          </div>
-          <div class="px-3.5 py-1.5 rounded-lg bg-white/90 border border-petrolio/20 text-xs font-semibold text-petrolio">
-            [ Segnaposto Foto Reali: Cantina Vini ]
-          </div>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="grid-vini"></div>
-      </div>
-
-    </div>
-
-    <!-- Note di servizio e Legenda Allergeni (dal listino ufficiale) -->
-    <div class="mt-12 bg-white rounded-2xl border border-slate-200 p-5 sm:p-6 text-xs text-slate-600 space-y-3">
-      <div class="flex flex-wrap gap-4 font-bold text-petrolio border-b border-slate-100 pb-3">
-        <span>Coperto: € 2,50</span>
-        <span>&bull;</span>
-        <span>Base senza glutine: + € 3,50</span>
-        <span>&bull;</span>
-        <span>Servizio torta p.p.: € 0,50</span>
-      </div>
-      <p class="leading-relaxed">
-        <strong>Allergeni:</strong> 1_cereali contenenti glutine e prodotti derivati; 2_crostacei e prodotti a base di crostacei; 3_pesce e prodotti a base di pesce; 4_arachidi e prodotti a base di arachidi; 5_soia e prodotti a base di soia; 6_uova e prodotti a base di uova; 7_latte e prodotti a base di latte; 8_frutta a guscio e loro prodotti; 9_sedano e prodotti a base di sedano; 10_senape e prodotti a base di senape; 11_sesamo e prodotti a base di sesamo; 12_solfiti in concentrazione superiore a 10 mg/kg; 13_lupini e prodotti a base di lupini; 14_molluschi e prodotti a base di molluschi.
-      </p>
-      <p class="text-[11px] text-slate-500">
-        * Prodotto surgelato in mancanza del fresco. Prodotto sottoposto a trattamento di bonifica preventiva in conformità alle prescrizioni del Reg. CE 853/2004.
-      </p>
-    </div>
-  </section>
-
-  <!-- SEZIONE DEDICATA: IL LOCALE -->
-  <section id="locale" class="py-16 bg-petrolio-soft/70 border-y border-petrolio/10 px-4 sm:px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-10">
-        <span class="text-xs font-bold uppercase tracking-widest text-legno">Atmosfera &amp; Design</span>
-        <h2 class="text-3xl sm:text-4xl font-bold text-petrolio mt-1">Il Locale</h2>
-        <p class="text-slate-600 text-sm sm:text-base mt-2">
-          Un ambiente moderno tra toni petrolio, dettagli in legno naturale e marmo, pensato per la tua serata a Lanciano.
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70">
-          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">1</span>
-          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Sala Interna ]</p>
-          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
-        </div>
-
-        <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70">
-          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">2</span>
-          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Bancone &amp; Beverage ]</p>
-          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
-        </div>
-
-        <div class="aspect-[4/3] rounded-2xl border-2 border-dashed border-petrolio/40 photo-placeholder flex flex-col items-center justify-center p-6 text-center bg-white/70 sm:col-span-2 lg:col-span-1">
-          <span class="w-9 h-9 rounded-full bg-petrolio/10 text-petrolio flex items-center justify-center font-bold mb-2">3</span>
-          <p class="font-bold text-petrolio text-sm">[ Foto Definitiva Dettagli &amp; Forno ]</p>
-          <p class="text-xs text-slate-500 mt-1">Da inserire al ricevimento degli scatti reali</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SEZIONE PRENOTAZIONI: TAVOLO & ASPORTO -->
-  <section id="prenota" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-    <div class="text-center max-w-2xl mx-auto mb-12">
-      <h2 class="text-3xl sm:text-4xl font-bold text-petrolio">Prenota Tavolo o Asporto</h2>
-      <p class="text-slate-600 text-sm sm:text-base mt-2">
-        Scegli se accomodarti in sala oppure ritirare le tue pinse calde all'orario che preferisci.
-      </p>
-    </div>
-
-    <div class="grid lg:grid-cols-2 gap-8 items-start">
-
-      <!-- BOX 1: PRENOTA UN TAVOLO -->
-      <div id="tavolo-box" class="bg-white rounded-2xl shadow-lg border border-slate-200 p-6 sm:p-8">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-legno">Sala &amp; Dehor</span>
-            <h3 class="text-2xl font-bold text-petrolio">Prenota un Tavolo</h3>
-          </div>
-          <svg viewBox="0 0 180 120" class="w-11 h-7" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
-          </svg>
-        </div>
-
-        <form id="form-tavolo" class="space-y-4">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome e Cognome</label>
-              <input type="text" id="tavolo-nome" required placeholder="Es. Marco Rossi" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Numero Persone</label>
-              <select id="tavolo-persone" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio">
-                <option value="2 persone">2 persone</option>
-                <option value="3 persone">3 persone</option>
-                <option value="4 persone" selected>4 persone</option>
-                <option value="5 persone">5 persone</option>
-                <option value="6 persone">6 persone</option>
-                <option value="7+ persone (gruppo)">7+ persone (gruppo)</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Data</label>
-              <input type="date" id="tavolo-data" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio" />
-            </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Orario / Turno</label>
-              <select id="tavolo-ora" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio"></select>
-            </div>
-          </div>
-
-          <p class="text-xs text-petrolio bg-petrolio-soft px-3.5 py-2 rounded-lg font-medium">
-            Dal lunedì al giovedì: fasce ogni 30 minuti dalle 19:00. Venerdì, sabato e domenica: 1° Turno (19:30–21:30) o 2° Turno (21:30–in poi).
+          <h1 class="hero__title">Tradizione di terza generazione, impasto leggero ogni sera.</h1>
+          <p class="hero__subtitle">
+            Scegli dal menù, prepara il tuo ordine d'asporto con ritiro veloce ogni 10 minuti dalle 19:00 oppure prenota il tuo tavolo su WhatsApp in pochi secondi.
           </p>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Note (Seggiolone, allergie, tavolo)</label>
-            <textarea id="tavolo-note" rows="2" placeholder="Eventuali richieste per il tavolo..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:outline-none focus:border-petrolio"></textarea>
+          <div class="hero__cta-cards">
+            <button type="button" class="cta-card cta-card--asporto" id="heroAsportoBtn">
+              <span class="cta-card__eyebrow">Rapido &amp; Senza Attese</span>
+              <span class="cta-card__title">Ordina Asporto →</span>
+              <span class="cta-card__desc">Carrello riepilogo + ritiro ogni 10 min dalle 19:00</span>
+            </button>
+
+            <button type="button" class="cta-card cta-card--tavolo" data-open-booking="tavolo">
+              <span class="cta-card__eyebrow">Sala a Lanciano</span>
+              <span class="cta-card__title">Prenota un Tavolo →</span>
+              <span class="cta-card__desc">Ogni 30 min feriali · 2 turni Ven–Dom</span>
+            </button>
           </div>
 
-          <button type="submit" class="w-full bg-petrolio hover:bg-petrolio-light text-white font-bold py-3.5 rounded-xl shadow transition">
-            Invia Prenotazione Tavolo su WhatsApp
-          </button>
-        </form>
-      </div>
-
-      <!-- BOX 2: PRENOTA ASPORTO -->
-      <div id="asporto-box" class="bg-white rounded-2xl shadow-lg border-2 border-senape/60 p-6 sm:p-8">
-        <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
-          <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-legno">Ritiro al Locale</span>
-            <h3 class="text-2xl font-bold text-petrolio">Prenota Asporto</h3>
-          </div>
-          <span class="bg-senape/20 text-petrolio-dark text-xs font-bold px-3 py-1 rounded-full">Fasce ogni 10 min</span>
-        </div>
-
-        <!-- Riepilogo Pinse Selezionate -->
-        <div class="bg-marmo rounded-xl p-4 border border-slate-200 mb-5">
-          <div class="flex items-center justify-between mb-2">
-            <span class="text-xs font-bold uppercase text-petrolio">Il tuo ordine</span>
-            <button type="button" onclick="svuotaCarrello()" class="text-xs text-red-600 hover:underline font-medium">Svuota</button>
-          </div>
-          <div id="carrello-lista" class="text-sm text-slate-600 space-y-1.5">
-            <p class="text-xs italic text-slate-400">Nessun prodotto selezionato. Aggiungili dal menù qui sopra oppure scrivili nelle note.</p>
-          </div>
-          <div class="border-t border-slate-200 mt-3 pt-2 flex justify-between items-center font-bold text-petrolio text-sm">
-            <span>Totale stimato:</span>
-            <span id="carrello-totale">€ 0,00</span>
+          <div class="hero__quick-info">
+            <span>WhatsApp: <a href="https://wa.me/393314035336" target="_blank" rel="noopener">331 403 5336</a></span>
+            <span>Fisso (anche se WhatsApp è bloccato): <a href="tel:0872703567">0872 703567</a></span>
           </div>
         </div>
 
-        <form id="form-asporto" class="space-y-4">
-          <div class="grid sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Nome per il ritiro</label>
-              <input type="text" id="asporto-nome" required placeholder="Es. Giulia Bianchi" class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio" />
+        <div class="wood-frame">
+          <div class="photo-placeholder photo-placeholder--hero" data-photo-slot="hero">
+            <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+            <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+            <div class="photo-placeholder__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M8 5l1.5-2h5L16 5"></path>
+              </svg>
             </div>
-            <div>
-              <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Orario di ritiro (dalle 19:00)</label>
-              <select id="asporto-ora" required class="w-full rounded-xl border border-slate-300 px-3.5 py-2.5 text-sm focus:outline-none focus:border-petrolio"></select>
+            <p class="photo-placeholder__label">Foto Principale del Locale &amp; Pinsa</p>
+            <p class="photo-placeholder__hint">Riquadro riservato allo scatto principale che invierà il proprietario.</p>
+            <span class="photo-placeholder__tag">Foto da inviare</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHI SIAMO -->
+    <section class="section section--marble-tint" id="chi-siamo">
+      <div class="container">
+        <div class="section-head">
+          <img data-submark alt="" class="section-head__submark" aria-hidden="true" />
+          <span class="section-head__eyebrow">La Nostra Storia</span>
+          <h2 class="section-head__title">Chi Siamo</h2>
+          <p class="section-head__desc">Una storia familiare semplice e autentica, arrivata oggi alla terza generazione.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="wood-frame">
+            <div class="photo-placeholder" data-photo-slot="chi-siamo">
+              <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+              <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+              <div class="photo-placeholder__icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <p class="photo-placeholder__label">Foto Storia &amp; Impasto</p>
+              <p class="photo-placeholder__hint">Spazio per ritratto di famiglia, mani in pasta o bancone.</p>
+              <span class="photo-placeholder__tag">Foto da inviare</span>
             </div>
           </div>
 
-          <div>
-            <label class="block text-xs font-bold text-slate-700 uppercase mb-1">Note ordine / Allergie / Senza Glutine</label>
-            <textarea id="asporto-note" rows="2" placeholder="Es. Base senza glutine, ben cotta, senza cipolla..." class="w-full rounded-xl border border-slate-300 px-3.5 py-2 text-sm focus:outline-none focus:border-petrolio"></textarea>
+          <div class="about-card">
+            <img data-submark alt="" class="about-card__watermark" aria-hidden="true" />
+            <p class="about-card__quote">“...Tre generazioni, un'unica passione”</p>
+            <p>
+              Quella che portiamo in tavola ogni sera a Lanciano è una storia di famiglia semplice e sincera: siamo la <strong>terza generazione</strong> che porta avanti questo mestiere con dedizione, rispetto per la lievitazione e amore per la buona accoglienza.
+            </p>
+            <p>
+              Abbiamo raccolto i segreti tramandati nel tempo unendoli a un approccio attuale fatto di impasti leggeri, materie prime selezionate e un ambiente curato tra marmo, legno caldo e toni petrolio.
+            </p>
+
+            <div class="about-pillars">
+              <div class="pillar-box">
+                <strong>3ª Generazione</strong>
+                <span>Mestiere di famiglia</span>
+              </div>
+              <div class="pillar-box">
+                <strong>Impasto Leggero</strong>
+                <span>Alta digeribilità</span>
+              </div>
+              <div class="pillar-box">
+                <strong>Asporto &amp; Sala</strong>
+                <span>Aperti dalle 19:00</span>
+              </div>
+            </div>
           </div>
-
-          <!-- DISCLAIMER MODIFICHE AL CIBO -->
-          <div class="bg-amber-50 border-l-4 border-senape p-3.5 rounded-r-xl text-xs text-slate-700 leading-relaxed">
-            <strong class="text-petrolio-dark block mb-0.5">Vuoi apportare modifiche agli ingredienti?</strong>
-            Per eventuali varianti al cibo (es. base bianca anziché rossa, aggiunte o sostituzioni), puoi scriverlo <strong>direttamente su WhatsApp</strong> una volta inviato questo messaggio.
-          </div>
-
-          <button type="submit" class="w-full bg-senape hover:bg-senape-light text-petrolio-dark font-extrabold py-3.5 rounded-xl shadow transition">
-            Invia Ordine Asporto su WhatsApp
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CHI SIAMO -->
-  <section id="chi-siamo" class="py-16 bg-petrolio text-white px-4 sm:px-6">
-    <div class="max-w-5xl mx-auto grid md:grid-cols-12 gap-8 items-center">
-      <div class="md:col-span-5">
-        <div class="aspect-square rounded-2xl border-2 border-dashed border-senape/60 bg-petrolio-dark/60 flex flex-col items-center justify-center p-6 text-center">
-          <svg viewBox="0 0 180 120" class="w-16 h-11 mb-3" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
-          </svg>
-          <p class="font-bold text-senape-light text-sm">[ Foto Definitiva Team / Impasto ]</p>
-          <p class="text-xs text-white/70 mt-1">Scatto reale da inserire prima della pubblicazione</p>
         </div>
       </div>
-      <div class="md:col-span-7">
-        <span class="text-xs font-bold uppercase tracking-widest text-senape-light">...Tre generazioni, un'unica passione</span>
-        <h2 class="text-3xl sm:text-4xl font-bold mt-1 mb-4">Tradizione e ricerca in ogni impasto.</h2>
-        <p class="text-white/85 text-sm sm:text-base leading-relaxed mb-4">
-          Fusion 3.0 nasce a Lanciano con un'idea precisa: portare in tavola una pinsa altamente digeribile, fragrante fuori e soffice dentro, capace di valorizzare tanto i prodotti del territorio abruzzese quanto abbinamenti contemporanei.
-        </p>
-        <p class="text-white/85 text-sm sm:text-base leading-relaxed">
-          Ogni sera accompagniamo le nostre proposte con una selezione curata di birre artigianali, vini abruzzesi e nazionali, gin botanical e cocktail pensati per completare l'esperienza.
-        </p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- DOVE SIAMO & CONTATTI -->
-  <section id="dove-siamo" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
-    <div class="bg-white rounded-2xl shadow-lg border border-slate-200 overflow-hidden grid lg:grid-cols-12">
-      <div class="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between">
+    <!-- MENÙ & ORDINE ASPORTO -->
+    <section class="section" id="menu">
+      <div class="container">
+        <div class="section-head">
+          <img data-submark alt="" class="section-head__submark" aria-hidden="true" />
+          <span class="section-head__eyebrow">Le Nostre Proposte</span>
+          <h2 class="section-head__title">Il Menù &amp; Ordine Asporto</h2>
+          <p class="section-head__desc">
+            Filtra per categoria, scopri gli scatti dedicati e aggiungi direttamente al carrellino in alto a destra per ordinare il tuo asporto.
+          </p>
+        </div>
+
+        <div class="menu-controls">
+          <div class="menu-filters" id="menuFilters" role="tablist" aria-label="Filtra categorie del menù"></div>
+
+          <div class="menu-search-row">
+            <div class="search-input-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+              <label for="menuSearchInput" class="sr-only">Cerca nel menù</label>
+              <input type="search" id="menuSearchInput" placeholder="Cerca per nome o ingrediente (es. pistacchio, nduja, tartare...)" />
+            </div>
+
+            <div class="menu-service-badges">
+              <span class="service-chip">Base Senza Glutine +€ 3,50</span>
+              <span class="service-chip">Coperto € 2,50</span>
+              <span class="service-chip">Servizio Torta P.P. € 0,50</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="categoryShowcase"></div>
+        <div id="menuList"></div>
+
+        <details class="allergens-panel">
+          <summary>Legenda Allergeni e Note Informative (1–14)</summary>
+          <div class="allergens-panel__body" id="allergensBody"></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- IL LOCALE -->
+    <section class="section section--marble-tint" id="locale">
+      <div class="container">
+        <div class="section-head">
+          <img data-submark alt="" class="section-head__submark" aria-hidden="true" />
+          <span class="section-head__eyebrow">Atmosfera &amp; Matericità</span>
+          <h2 class="section-head__title">Il Locale</h2>
+          <p class="section-head__desc">
+            Un ambiente moderno pensato tra marmo chiaro, legno caldo e toni petrolio e senape. Riquadri predisposti per le fotografie ufficiali della sala.
+          </p>
+        </div>
+
+        <div class="locale-grid">
+          <div class="locale-card">
+            <div class="photo-placeholder photo-placeholder--sm">
+              <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+              <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+              <p class="photo-placeholder__label">Sala Interna</p>
+              <p class="photo-placeholder__hint">Vista principale dei tavoli e vetrate.</p>
+              <span class="photo-placeholder__tag">Foto da inviare</span>
+            </div>
+          </div>
+          <div class="locale-card">
+            <div class="photo-placeholder photo-placeholder--sm">
+              <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+              <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+              <p class="photo-placeholder__label">Marmo &amp; Legno</p>
+              <p class="photo-placeholder__hint">Dettagli di arredo e bancone.</p>
+              <span class="photo-placeholder__tag">Foto da inviare</span>
+            </div>
+          </div>
+          <div class="locale-card">
+            <div class="photo-placeholder photo-placeholder--sm">
+              <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+              <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+              <p class="photo-placeholder__label">Forno &amp; Stesura</p>
+              <p class="photo-placeholder__hint">La lavorazione delle pinse dal vivo.</p>
+              <span class="photo-placeholder__tag">Foto da inviare</span>
+            </div>
+          </div>
+          <div class="locale-card">
+            <div class="photo-placeholder photo-placeholder--sm">
+              <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+              <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+              <p class="photo-placeholder__label">Atmosfera Serale</p>
+              <p class="photo-placeholder__hint">Il locale illuminato la sera.</p>
+              <span class="photo-placeholder__tag">Foto da inviare</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALENDARIO INTERATTIVO + PRENOTAZIONI -->
+    <section class="section" id="calendario-prenotazioni">
+      <div class="container">
+        <div class="section-head">
+          <img data-submark alt="" class="section-head__submark" aria-hidden="true" />
+          <span class="section-head__eyebrow">Date &amp; Prenotazioni WhatsApp</span>
+          <h2 class="section-head__title">Calendario Aperture, Asporto &amp; Tavoli</h2>
+          <p class="section-head__desc">
+            Verifica i giorni di apertura dal calendario interattivo e invia subito la tua prenotazione su WhatsApp al <strong>331 403 5336</strong>.
+          </p>
+        </div>
+
+        <div class="booking-hub-grid">
+          <div class="panel-card" aria-label="Calendario mensile aperture">
+            <div class="cal-header">
+              <button type="button" class="cal-nav-btn" id="calPrevBtn" aria-label="Mese precedente">‹</button>
+              <h3 class="cal-month-title" id="calMonthTitle">Dicembre 2026</h3>
+              <button type="button" class="cal-nav-btn" id="calNextBtn" aria-label="Mese successivo">›</button>
+            </div>
+
+            <div class="cal-weekdays">
+              <span>Lun</span><span>Mar</span><span>Mer</span><span>Gio</span><span>Ven</span><span>Sab</span><span>Dom</span>
+            </div>
+            <div class="cal-days" id="calDaysGrid"></div>
+
+            <div class="cal-legend">
+              <span class="cal-legend__item"><span class="cal-swatch" style="background:#ffffff;"></span> Aperto</span>
+              <span class="cal-legend__item"><span class="cal-swatch" style="background:var(--senape-soft);border-color:var(--senape);"></span> Ven–Dom (2 Turni Tavolo)</span>
+              <span class="cal-legend__item"><span class="cal-swatch" style="background:#edf7f2;border-color:#22a06b;"></span> Apertura Extra</span>
+              <span class="cal-legend__item"><span class="cal-swatch" style="background:#f5f2ee;"></span> Chiuso</span>
+            </div>
+
+            <div class="cal-detail-box" id="calDetailBox">
+              <strong id="calDetailTitle">Seleziona una data</strong>
+              <p id="calDetailText">Tocca un giorno del calendario per vedere gli orari di apertura e precompilare la prenotazione.</p>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button type="button" class="btn btn--mustard btn--sm" id="calUseAsportoBtn">Prenota Asporto</button>
+                <button type="button" class="btn btn--petrol btn--sm" id="calUseTavoloBtn">Prenota Tavolo</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-card" id="bookingPanel">
+            <div class="booking-tabs" role="tablist">
+              <button type="button" class="booking-tab is-active" data-tab="asporto" id="tabAsportoBtn">Ordina Asporto</button>
+              <button type="button" class="booking-tab" data-tab="tavolo" id="tabTavoloBtn">Prenota un Tavolo</button>
+            </div>
+
+            <!-- PANNELLO ASPORTO -->
+            <form id="asportoForm" class="form-grid" novalidate>
+              <div class="service-chip" id="asportoCartSummaryInline" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; padding:10px 14px; border-radius:12px;">
+                <span>Carrello Asporto: <strong id="inlineCartCount">0 prodotti</strong> (<strong id="inlineCartTotal">€ 0,00</strong>)</span>
+                <button type="button" class="btn btn--outline btn--sm" id="inlineOpenCartBtn">Apri Carrellino</button>
+              </div>
+
+              <div class="form-row-2">
+                <div>
+                  <label class="field-label" for="asportoDate">Data Ritiro</label>
+                  <input type="date" id="asportoDate" class="field-input" required />
+                </div>
+                <div>
+                  <label class="field-label" for="asportoName">Nome e Cognome *</label>
+                  <input type="text" id="asportoName" class="field-input" placeholder="Es. Marco Rossi" required />
+                </div>
+              </div>
+
+              <div id="asportoClosedAlert" class="closed-alert" hidden></div>
+
+              <div id="asportoTimeWrap">
+                <label class="field-label">Orario Ritiro Asporto (dalle 19:00 ogni 10 minuti)</label>
+                <div class="slots-grid" id="asportoSlotsGrid"></div>
+              </div>
+
+              <div>
+                <label class="field-label" for="asportoNotes">Note o modifiche dal sito (opzionale)</label>
+                <textarea id="asportoNotes" class="field-textarea" rows="2" placeholder="Scrivi qui eventuali variazioni sugli ingredienti, allergie, cottura o dettagli utili..."></textarea>
+              </div>
+
+              <div class="disclaimer-box">
+                <strong>Nota importante sull'asporto:</strong> dopo aver cliccato su conferma ed essere stato reindirizzato su WhatsApp, <strong>eventuali cambiamenti successivi</strong> all'ordine o all'orario andranno comunicati direttamente nella chat WhatsApp al proprietario.
+              </div>
+
+              <button type="submit" class="btn btn--mustard btn--lg" style="width:100%;">
+                Invia Ordine Asporto su WhatsApp (331 403 5336)
+              </button>
+            </form>
+
+            <!-- PANNELLO TAVOLO -->
+            <form id="tavoloForm" class="form-grid" hidden novalidate>
+              <div>
+                <label class="field-label" for="tavoloDate">Data Prenotazione</label>
+                <div class="quick-date-pills" id="tavoloQuickDates"></div>
+                <input type="date" id="tavoloDate" class="field-input" required />
+              </div>
+
+              <div id="tavoloClosedAlert" class="closed-alert" hidden></div>
+
+              <div id="tavoloTimeWrap">
+                <label class="field-label" id="tavoloTimeLabel">Fascia Oraria</label>
+                <div id="tavoloTimeContainer"></div>
+              </div>
+
+              <div class="form-row-2">
+                <div>
+                  <label class="field-label" for="tavoloGuests">Numero Persone *</label>
+                  <div class="guest-pills" id="guestQuickPills"></div>
+                  <input type="number" id="tavoloGuests" class="field-input" min="1" max="30" value="2" required />
+                </div>
+                <div>
+                  <label class="field-label" for="tavoloName">Nome e Cognome *</label>
+                  <input type="text" id="tavoloName" class="field-input" placeholder="Es. Giulia Bianchi" required />
+                </div>
+              </div>
+
+              <div>
+                <label class="field-label" for="tavoloNotes">Note o eventuali richieste/cambiamenti dal sito (opzionale)</label>
+                <textarea id="tavoloNotes" class="field-textarea" rows="2" placeholder="Es. tavolo vicino alla vetrata, seggiolone, base senza glutine, allergie o variazioni..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--petrol btn--lg" style="width:100%;">
+                Invia Prenotazione Tavolo su WhatsApp (331 403 5336)
+              </button>
+            </form>
+
+            <div class="phone-fallback-box">
+              <div>
+                <strong>WhatsApp temporaneamente bloccato o preferisci chiamare?</strong><br />
+                <span>Chiama direttamente il numero fisso del locale: <strong>0872 703567</strong></span>
+              </div>
+              <a href="tel:0872703567" class="btn btn--outline btn--sm">Chiama 0872 703567</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOVE SIAMO & GOOGLE MAPS -->
+    <section class="section section--marble-tint" id="dove-siamo">
+      <div class="container">
+        <div class="section-head">
+          <img data-submark alt="" class="section-head__submark" aria-hidden="true" />
+          <span class="section-head__eyebrow">Raggiungici a Lanciano</span>
+          <h2 class="section-head__title">Dove Siamo &amp; Contatti</h2>
+          <p class="section-head__desc">Ti aspettiamo in Via del Mare, 49 a Lanciano (CH) per cena e asporto.</p>
+        </div>
+
+        <div class="location-grid">
+          <div class="panel-card" style="display:flex; flex-direction:column; justify-content:space-between; gap:18px;">
+            <div>
+              <h3 style="font-family:var(--font-display); font-size:1.45rem; color:var(--petrolio-deep); margin:0 0 12px; text-transform:uppercase;">Contatti Diretti</h3>
+              <p style="margin:0 0 10px;"><strong>Indirizzo:</strong> Via del Mare, 49 — 66034 Lanciano (CH)</p>
+              <p style="margin:0 0 10px;">
+                <strong>WhatsApp (Asporto &amp; Tavoli):</strong>
+                <a href="https://wa.me/393314035336" target="_blank" rel="noopener" style="color:var(--petrolio); font-weight:700;">331 403 5336</a>
+              </p>
+              <p style="margin:0 0 10px;">
+                <strong>Telefono Fisso (Emergenze / Info):</strong>
+                <a href="tel:0872703567" style="color:var(--petrolio); font-weight:700;">0872 703567</a>
+              </p>
+              <p style="margin:0 0 10px;"><strong>Orari Asporto:</strong> Dalle 19:00 in poi (slot ogni 10 minuti)</p>
+              <p style="margin:0;">
+                <strong>Orari Tavoli:</strong> Lun/Mer/Gio dalle 19:00 ogni 30 min · Ven/Sab/Dom doppio turno (19:30–21:30 e dalle 21:30 in poi)
+              </p>
+            </div>
+
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a href="https://www.google.com/maps/search/?api=1&query=Fusion+3.0+Via+del+Mare+49+66034+Lanciano+CH" target="_blank" rel="noopener" class="btn btn--petrol">
+                Apri su Google Maps
+              </a>
+              <a href="tel:0872703567" class="btn btn--outline">Chiama 0872 703567</a>
+            </div>
+          </div>
+
+          <div class="map-frame-wrap">
+            <iframe title="Mappa Google Maps Fusion 3.0 Lanciano" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Via+del+Mare+49,+66034+Lanciano+CH&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
         <div>
-          <span class="text-xs font-bold uppercase tracking-widest text-legno">Vieni a Trovarci</span>
-          <h2 class="text-2xl sm:text-3xl font-bold text-petrolio mt-1 mb-6">Dove Siamo</h2>
-
-          <div class="space-y-4 text-sm text-slate-700">
-            <div>
-              <strong class="block text-petrolio">Indirizzo</strong>
-              Via del Mare 49, 66034 Lanciano (CH)
-            </div>
-            <div>
-              <strong class="block text-petrolio">Telefono Fisso</strong>
-              <a href="tel:0872703567" class="text-legno font-bold hover:underline">0872 703567</a>
-            </div>
-            <div>
-              <strong class="block text-petrolio">Orari Serali</strong>
-              Dalle 19:00 alle 23:30 (verifica il calendario in alto per le aperture del mese)
-            </div>
-          </div>
+          <img data-submark alt="Submark F" class="footer-submark" />
+          <p style="margin:0; font-size:0.9rem; color:#d4e2e4;">
+            Via del Mare, 49 — 66034 Lanciano (CH)<br />
+            Terza generazione nell'arte bianca.
+          </p>
         </div>
-
-        <div class="mt-8">
-          <a href="https://www.google.com/maps/search/?api=1&query=Via+del+Mare+49+Lanciano" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-full bg-petrolio hover:bg-petrolio-light text-white font-bold py-3 px-5 rounded-xl transition">
-            Apri su Google Maps &rarr;
-          </a>
+        <div>
+          <strong style="display:block; margin-bottom:8px; color:var(--senape);">Prenotazioni &amp; Asporto</strong>
+          <p style="margin:0; font-size:0.9rem;">
+            WhatsApp: <a href="https://wa.me/393314035336" target="_blank" rel="noopener">331 403 5336</a><br />
+            Telefono Fisso: <a href="tel:0872703567">0872 703567</a>
+          </p>
+        </div>
+        <div>
+          <strong style="display:block; margin-bottom:8px; color:var(--senape);">Navigazione</strong>
+          <p style="margin:0; font-size:0.9rem; display:grid; gap:4px;">
+            <a href="#chi-siamo">Chi Siamo</a>
+            <a href="#menu">Menù &amp; Asporto</a>
+            <a href="#calendario-prenotazioni">Calendario &amp; Tavoli</a>
+          </p>
         </div>
       </div>
 
-      <div class="lg:col-span-7 min-h-[300px] bg-slate-100">
-        <iframe
-          title="Mappa Fusion 3.0 Lanciano"
-          src="https://www.google.com/maps?q=Via+del+Mare+49,+66034+Lanciano+CH&output=embed"
-          class="w-full h-full min-h-[320px] border-0"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
-        </iframe>
+      <div class="footer-bottom">
+        <span>Dominio ufficiale: fusion30lanciano.it</span>
+        <span>Ordini e prenotazioni gestiti direttamente con il locale senza intermediari.</span>
       </div>
-    </div>
-  </section>
-
-  <!-- FOOTER CON SOLO SUBMARK -->
-  <footer class="bg-petrolio-dark text-white/80 py-10 px-4 text-center border-t border-senape/30">
-    <div class="max-w-4xl mx-auto flex flex-col items-center">
-      <svg viewBox="0 0 180 120" class="w-16 h-11 mb-2" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 72 C48 68, 86 52, 102 22 C108 10, 96 6, 92 20 C86 44, 82 84, 86 102 C89 112, 99 106, 96 92 C93 80, 82 74, 78 72 C106 78, 144 82, 170 68" class="submark-stroke" stroke-width="4.2"/>
-      </svg>
-      <p class="text-[11px] uppercase tracking-[0.3em] text-senape-light font-medium">Pinsa &amp; Beverage — Lanciano</p>
-      <p class="text-xs text-white/50 mt-2">Via del Mare 49, Lanciano (CH) &bull; Tel. 0872 703567</p>
     </div>
   </footer>
 
+  <!-- BARRA MOBILE IN BASSO -->
+  <div class="mobile-sticky-bar">
+    <button type="button" class="btn btn--petrol btn--sm" data-open-booking="tavolo">Prenota Tavolo</button>
+    <button type="button" class="btn btn--mustard btn--sm" id="mobileCartBtn">
+      Asporto (<span id="mobileCartCount">0</span>)
+    </button>
+  </div>
+
+  <!-- DRAWER CARRELLINO ASPORTO -->
+  <div class="drawer-backdrop" id="cartDrawerBackdrop" aria-hidden="true">
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-labelledby="cartDrawerTitle">
+      <div class="cart-drawer__head">
+        <div class="cart-drawer__brand">
+          <img data-submark alt="" aria-hidden="true" />
+          <div>
+            <h2 id="cartDrawerTitle" style="font-family:var(--font-display); font-size:1.3rem; margin:0; color:var(--petrolio-deep); text-transform:uppercase;">Riepilogo Asporto</h2>
+            <small style="color:var(--text-muted);">Ritiro ogni 10 minuti dalle 19:00</small>
+          </div>
+        </div>
+        <button type="button" class="modal-close" id="closeCartDrawerBtn" aria-label="Chiudi carrello" style="position:static;">✕</button>
+      </div>
+
+      <div class="cart-drawer__body" id="cartDrawerBody"></div>
+
+      <div class="cart-drawer__foot">
+        <div class="cart-total-row">
+          <span>Totale Stimato</span>
+          <span id="drawerCartTotal">€ 0,00</span>
+        </div>
+        <div class="disclaimer-box" style="font-size:0.78rem; padding:10px 12px;">
+          Eventuali cambiamenti successivi alla conferma andranno comunicati su WhatsApp dopo il reindirizzamento. Per emergenze chiama il fisso <strong>0872 703567</strong>.
+        </div>
+        <button type="button" class="btn btn--mustard btn--lg" id="drawerProceedBtn" style="width:100%;">
+          Conferma Orario e Invia su WhatsApp
+        </button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- MODAL COMUNICAZIONE IN SOVRAIMPRESSIONE -->
+  <div class="modal-backdrop" id="noticeModalBackdrop" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="noticeModalTitle">
+      <button type="button" class="modal-close" id="closeNoticeModalBtn" aria-label="Chiudi comunicazione">✕</button>
+      <img data-submark alt="" style="width:76px; margin:0 auto 10px;" aria-hidden="true" />
+      <span class="top-notice__badge" id="modalNoticeBadge" style="display:inline-block; margin-bottom:10px;">Comunicazione</span>
+      <h2 id="noticeModalTitle" style="font-family:var(--font-display); font-size:1.85rem; color:var(--petrolio-deep); margin:0 0 10px; text-transform:uppercase;"></h2>
+      <p id="noticeModalMessage" style="margin:0 0 10px; color:var(--text-main);"></p>
+      <p id="noticeModalExtra" style="margin:0 0 20px; font-size:0.88rem; color:var(--text-muted);"></p>
+      <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+        <button type="button" class="btn btn--mustard" id="modalNoticeCtaBtn">Vedi Calendario Aperture</button>
+        <button type="button" class="btn btn--outline" id="modalNoticeDismissBtn">Vai al Sito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIGHTBOX FOTO CATEGORIA -->
+  <div class="modal-backdrop" id="photoModalBackdrop" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="photoModalTitle">
+      <button type="button" class="modal-close" id="closePhotoModalBtn" aria-label="Chiudi anteprima foto">✕</button>
+      <img data-submark alt="" style="width:54px; margin:0 auto 8px;" aria-hidden="true" />
+      <h3 id="photoModalTitle" style="font-family:var(--font-display); font-size:1.5rem; color:var(--petrolio-deep); margin:0 0 12px; text-transform:uppercase;"></h3>
+      <div id="photoModalContent"></div>
+    </div>
+  </div>
+
+  <div class="toast-msg" id="toastMsg" role="status" aria-live="polite"></div>
+
   <script>
-    // ==========================================
-    // 1. DATI COMPLETI DEL MENÙ (DAL PDF UFFICIALE)
-    // ==========================================
-    const MENU_DATA = {
-      'fuori-menu': [
-        { nome: 'Tonno e Cipolla', prezzo: 13.00, desc: "Fiordilatte, filetti di tonno sott'olio, cipolla caramellata, salsa verde. [1-3-5-7-10]" },
-        { nome: 'Zucca', prezzo: 12.00, desc: "Fiordilatte, gorgonzola, pancetta, chips di zucca. [1-5-7-10]" },
-        { nome: 'Porcini', prezzo: 15.00, desc: "Fiordilatte, funghi porcini*, salsiccia, ricotta aromatizzata al timo, nocciole tostate. [1-5-7-8-10]" }
+    /* SUBMARK SVG DATA URI INCORPORATO */
+    window.FUSION_SUBMARK_URI = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 260 160' fill='none'%3E%3Cpath d='M14 78C52 84 88 81 128 73C148 69 152 38 146 18C141 6 129 7 126 22C122 44 121 96 122 128C122 146 134 148 137 132C140 116 134 94 124 84' stroke='%23B58E22' stroke-width='4.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M118 76C156 68 198 85 246 71' stroke='%23B58E22' stroke-width='3.6' stroke-linecap='round'/%3E%3C/svg%3E";
+    document.querySelectorAll("img[data-submark]").forEach((img) => { img.src = window.FUSION_SUBMARK_URI; });
+
+    /* 1. CONFIGURAZIONE CENTRALE */
+    window.FUSION_CONFIG = {
+      brand: {
+        nome: "Fusion 3.0",
+        payoff: "...Tre generazioni, un'unica passione",
+        citta: "Lanciano (CH)",
+        dominio: "https://www.fusion30lanciano.it"
+      },
+      contatti: {
+        whatsappNumero: "393314035336",
+        whatsappDisplay: "331 403 5336",
+        fissoNumero: "0872703567",
+        fissoDisplay: "0872 703567",
+        indirizzo: "Via del Mare, 49 — 66034 Lanciano (CH)",
+        mapsQueryUrl: "https://www.google.com/maps/search/?api=1&query=Fusion+3.0+Via+del+Mare+49+66034+Lanciano+CH",
+        mapsEmbedUrl: "https://www.google.com/maps?q=Via+del+Mare+49,+66034+Lanciano+CH&output=embed"
+      },
+      comunicazioneOverlay: {
+        attiva: true,
+        mostraModalAllApertura: true,
+        badge: "Comunicazione Speciale · Dicembre",
+        titolo: "A Dicembre siamo SEMPRE APERTI!",
+        messaggio: "Per tutto il mese di Dicembre ti aspettiamo tutte le sere dalle 19:00, inclusi tutti i martedì! Prenota il tuo asporto con ritiro ogni 10 minuti oppure riserva comodamente il tuo tavolo su WhatsApp.",
+        dettaglioExtra: "Nei weekend (Venerdì, Sabato e Domenica) i tavoli sono organizzati in due turni: 19:30–21:30 e dalle 21:30 in poi.",
+        testoBarraFissa: "Comunicazione del Locale: a Dicembre siamo SEMPRE APERTI tutte le sere dalle 19:00!",
+        ctaTesto: "Vedi Calendario Aperture"
+      },
+      prenotazioni: {
+        asporto: { oraInizio: "19:00", oraFine: "23:00", intervalloMinuti: 10 },
+        tavoloFeriali: { oraInizio: "19:00", oraFine: "23:00", intervalloMinuti: 30 },
+        giorniDoppioTurno: [5, 6, 0],
+        turniWeekend: [
+          {
+            id: "turno-1",
+            titolo: "1° Turno",
+            fascia: "19:30 – 21:30",
+            labelCompleta: "1° Turno (dalle 19:30 alle 21:30)",
+            descrizione: "Prima fascia serale · tavolo disponibile fino alle 21:30"
+          },
+          {
+            id: "turno-2",
+            titolo: "2° Turno",
+            fascia: "dalle 21:30 in poi",
+            labelCompleta: "2° Turno (dalle 21:30 in poi)",
+            descrizione: "Seconda fascia serale · dalle 21:30 fino a chiusura"
+          }
+        ],
+        extra: { baseSenzaGlutine: 3.5, coperto: 2.5, servizioTortaPP: 0.5 }
+      },
+      calendario: {
+        giorniChiusuraDefault: [2],
+        mesiSempreAperti: ["2026-12"],
+        apertureStraordinarie: [],
+        chiusureStraordinarie: [],
+        noteGiorni: {
+          "2026-12-08": "Immacolata · Aperti dalle 19:00 (asporto e tavoli)",
+          "2026-12-24": "Vigilia · Contattaci su WhatsApp per conferma orari",
+          "2026-12-31": "San Silvestro · Contattaci su WhatsApp per disponibilità"
+        }
+      }
+    };
+
+    /* 2. MENÙ FOOD COMPLETO (37 PIATTI, ESCLUSO BEVERAGE) */
+    window.FUSION_MENU = {
+      categorie: [
+        {
+          id: "fuori-menu",
+          nome: "Fuori Menù",
+          descrizione: "Proposte speciali stagionali fuori carta, preparate con ingredienti selezionati.",
+          fotoCategoria: [
+            { titolo: "Foto Fuori Menù · Scatto 1", didascalia: "Spazio foto categoria Fuori Menù (es. Tonno e Cipolla o Porcini) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Fuori Menù · Scatto 2", didascalia: "Spazio foto categoria Fuori Menù (dettaglio impasto e farcitura) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "per-cominciare",
+          nome: "Per Cominciare",
+          descrizione: "Sfizi caldi e fritti fatti in casa per aprire la serata.",
+          fotoCategoria: [
+            { titolo: "Foto Per Cominciare · Scatto 1", didascalia: "Spazio foto categoria Per Cominciare (es. Parmigiana & Crocchette Home Made) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Per Cominciare · Scatto 2", didascalia: "Spazio foto categoria Per Cominciare (es. Patatine con la buccia / Olive DOP) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "pinse-rosse",
+          nome: "Pinse Rosse",
+          descrizione: "Le classiche su base pomodoro, leggere e croccanti.",
+          fotoCategoria: [
+            { titolo: "Foto Pinse Rosse · Scatto 1", didascalia: "Spazio foto categoria Pinse Rosse (es. Margherita / Bufalina) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Pinse Rosse · Scatto 2", didascalia: "Spazio foto categoria Pinse Rosse (es. Siciliana con stracciatella e alici) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "pinse-bianche",
+          nome: "Pinse Bianche",
+          descrizione: "Basi bianche con fiordilatte, verdure, salumi e abbinamenti equilibrati.",
+          fotoCategoria: [
+            { titolo: "Foto Pinse Bianche · Scatto 1", didascalia: "Spazio foto categoria Pinse Bianche (es. Guanciale / Nduja / La Rossa) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Pinse Bianche · Scatto 2", didascalia: "Spazio foto categoria Pinse Bianche (es. Crudo di Parma / Carpaccio di Bresaola) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "pinse-speciali",
+          nome: "Pinse 3.0 · Speciali",
+          descrizione: "Le creazioni firma Fusion 3.0 tra tradizione familiare e tecnica contemporanea.",
+          fotoCategoria: [
+            { titolo: "Foto Pinse 3.0 Speciali · Scatto 1", didascalia: "Spazio foto categoria Pinse 3.0 (es. Mortadella a Modo Mio / Tartare di Manzo) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Pinse 3.0 Speciali · Scatto 2", didascalia: "Spazio foto categoria Pinse 3.0 (es. Baccalà 3.0 / Patata Viola) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "focacce-ripiene",
+          nome: "Focacce e Ripiene",
+          descrizione: "Basi focaccia e pinse ripiene dal cuore ricco e fragrante.",
+          fotoCategoria: [
+            { titolo: "Foto Focacce e Ripiene · Scatto 1", didascalia: "Spazio foto Focacce (es. Pistacchio / Salmone) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Focacce e Ripiene · Scatto 2", didascalia: "Spazio foto Ripiene (es. Ariccia / Croccante) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        },
+        {
+          id: "hamburger",
+          nome: "Hamburger",
+          descrizione: "Panini artigianali con hamburger di scottona da 200 gr.",
+          fotoCategoria: [
+            { titolo: "Foto Hamburger Artigianali · Scatto 1", didascalia: "Spazio foto categoria Hamburger (es. Bun N. 1 / Bun N. 2) — Da inviare dal proprietario", imgUrl: "" },
+            { titolo: "Foto Hamburger Artigianali · Scatto 2", didascalia: "Spazio foto categoria Hamburger (es. Bun N. 3 scottona 200 gr) — Da inviare dal proprietario", imgUrl: "" }
+          ]
+        }
       ],
-      'cominciare': [
-        { nome: 'Patatine Fritte con la Buccia*', prezzo: 4.00, desc: "Patate rustiche croccanti servite calde." },
-        { nome: 'Olive di Ascoli DOP (6 pz)*', prezzo: 4.00, desc: "Olive ascolane ripiene tradizionali. [1-6-7]" },
-        { nome: 'Parmigiana Fritta (1 pz - 60 gr) — Home Made', prezzo: 2.00, desc: "Melanzana alla parmigiana cotta al forno con panatura croccante dal cuore morbido. [1-7-5-10]" },
-        { nome: 'Crocchètta di Patate (1 pz - 50 gr) — Home Made', prezzo: 1.50, desc: "Patate, fiordilatte e provola in doppia panatura extra croccante. [1-7-5-10]" }
+      piatti: [
+        { id: "fm-tonno-cipolla", categoria: "fuori-menu", nome: "Tonno e Cipolla", prezzo: 13.0, ingredienti: "Fiordilatte, filetti di tonno sott'olio, cipolla caramellata, salsa verde", allergeni: "1-3-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Fuori Menù"] },
+        { id: "fm-zucca", categoria: "fuori-menu", nome: "Zucca", prezzo: 12.0, ingredienti: "Fiordilatte, gorgonzola, pancetta, chips di zucca", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Fuori Menù"] },
+        { id: "fm-porcini", categoria: "fuori-menu", nome: "Porcini", prezzo: 15.0, ingredienti: "Fiordilatte, funghi porcini*, salsiccia, ricotta aromatizzata al timo, nocciole tostate", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Fuori Menù"] },
+
+        { id: "pc-patatine", categoria: "per-cominciare", nome: "Patatine Fritte con la Buccia*", prezzo: 4.0, ingredienti: "Patate fritte croccanti con la buccia", allergeni: "1-7-5-10", baseSenzaGlutineDisponibile: false, tags: ["Senza glutine su richiesta"] },
+        { id: "pc-olive-ascoli", categoria: "per-cominciare", nome: "Olive di Ascoli DOP (6 pz)*", prezzo: 4.0, ingredienti: "Olive ascolane DOP ripiene, 6 pezzi", allergeni: "1-7-5-10", baseSenzaGlutineDisponibile: false, tags: [] },
+        { id: "pc-parmigiana", categoria: "per-cominciare", nome: "Parmigiana Fritta (1 pz · 60 gr)", prezzo: 2.0, ingredienti: "Melanzana alla parmigiana cotta al forno con una panatura croccante che dona un crunch dal cuore morbido", allergeni: "1-7-5-10", baseSenzaGlutineDisponibile: false, tags: ["Home Made"] },
+        { id: "pc-crocchetta", categoria: "per-cominciare", nome: "Crocchetta di Patate (1 pz · 50 gr)", prezzo: 1.5, ingredienti: "Patate, fiordilatte e provola in una doppia panatura extra croccante", allergeni: "1-7-5-10", baseSenzaGlutineDisponibile: false, tags: ["Home Made"] },
+
+        { id: "pr-margherita", categoria: "pinse-rosse", nome: "Margherita", prezzo: 6.5, ingredienti: "Pomodoro, fiordilatte, basilico", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pr-marinara", categoria: "pinse-rosse", nome: "Marinara", prezzo: 6.5, ingredienti: "Pomodoro, pomodorino giallo semi dry, origano del Monte Saro, pesto d'aglio", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pr-napoletana", categoria: "pinse-rosse", nome: "Napoletana", prezzo: 8.0, ingredienti: "Pomodoro, fiordilatte, alici", allergeni: "1-3-7-5-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pr-bufalina", categoria: "pinse-rosse", nome: "Bufalina", prezzo: 8.5, ingredienti: "Pomodoro, pachini, bufala in cottura, basilico", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pr-siciliana", categoria: "pinse-rosse", nome: "Siciliana", prezzo: 15.0, ingredienti: "Pomodoro, pachini confit, stracciatella, acciughe del Cantabrico, olive taggiasche, prezzemolo", allergeni: "1-3-7-5-10", baseSenzaGlutineDisponibile: true, tags: [] },
+
+        { id: "pb-vegetariana", categoria: "pinse-bianche", nome: "Vegetariana", prezzo: 9.0, ingredienti: "Fiordilatte, verdure del giorno", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-4-formaggi", categoria: "pinse-bianche", nome: "4 Formaggi", prezzo: 8.0, ingredienti: "Fiordilatte, provola, gorgonzola, grana padano", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-capricciosa", categoria: "pinse-bianche", nome: "Capricciosa", prezzo: 10.0, ingredienti: "Fiordilatte, prosciutto cotto, carciofi, champignon, olive taggiasche", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-guanciale", categoria: "pinse-bianche", nome: "Guanciale", prezzo: 10.0, ingredienti: "Fiordilatte, zucchine, guanciale croccante, stracciatella", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-nduja", categoria: "pinse-bianche", nome: "Nduja", prezzo: 10.0, ingredienti: "Nduja di Spilinga DOP, fiordilatte, melanzane, pachini, olive taggiasche, stracciatella", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-la-rossa", categoria: "pinse-bianche", nome: "La Rossa", prezzo: 10.0, ingredienti: "Fiordilatte, patate al forno, salsiccia, stracciatella, peperone rosso dolce di Altino", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-sempre-verde", categoria: "pinse-bianche", nome: "Sempre Verde", prezzo: 10.0, ingredienti: "Fiordilatte, cicoria saltata*, stracciatella, pancetta, crema di patate", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-crudo-parma", categoria: "pinse-bianche", nome: "Crudo di Parma", prezzo: 14.0, ingredienti: "Fiordilatte, datterini, crudo di Parma DOC 24 mesi, stracciatella, pesto di basilico", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+        { id: "pb-carpaccio-bresaola", categoria: "pinse-bianche", nome: "Carpaccio di Bresaola", prezzo: 14.0, ingredienti: "Fiordilatte, carpaccio di bresaola, rucola, pachini, scaglie di grana, glassa di balsamico, olio EVO al limone", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: [] },
+
+        { id: "ps-bufala-30", categoria: "pinse-speciali", nome: "Bufala 3.0", prezzo: 10.0, ingredienti: "Pomodoro, bufala in cottura, ricotta salata, polvere di olive", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-come-una-volta", categoria: "pinse-speciali", nome: "Come una Volta", prezzo: 15.0, ingredienti: "Peperoni arrosto, stracciatella, acciughe del Cantabrico, olive taggiasche, capperi, prezzemolo", allergeni: "1-3-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-baccala-30", categoria: "pinse-speciali", nome: "Baccalà 3.0", prezzo: 15.0, ingredienti: "Fiordilatte, crema di patate, baccalà CBT, peperoni, polvere di olive, peperone di Altino, prezzemolo", allergeni: "1-3-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-tartare-manzo", categoria: "pinse-speciali", nome: "Tartare di Manzo", prezzo: 15.0, ingredienti: "Misticanza condita con olio e limone, tartare di manzo, stracciatella, mango", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-lardo", categoria: "pinse-speciali", nome: "Lardo", prezzo: 13.0, ingredienti: "Fiordilatte, Lardo di Patanegra, pera caramellata, pecorino", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-mortadella", categoria: "pinse-speciali", nome: "Mortadella a Modo Mio", prezzo: 14.0, ingredienti: "Passata di pomodorino giallo, fiordilatte, mortadella Riserva Oro, pesto pistacchio e basilico, crema di stracciatella, zest al limone", allergeni: "1-5-7-8-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-carbonara", categoria: "pinse-speciali", nome: "Carbonara", prezzo: 12.0, ingredienti: "Fiordilatte, guanciale, pecorino, tuorlo d'uovo", allergeni: "1-5-6-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+        { id: "ps-patata-viola", categoria: "pinse-speciali", nome: "Patata Viola", prezzo: 14.0, ingredienti: "Fiordilatte, caciocavallo, salsiccia, crema di peperoni gialli e rossi, chips di patata viola, basilico", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Pinsa 3.0"] },
+
+        { id: "fr-pistacchio", categoria: "focacce-ripiene", nome: "Pistacchio", prezzo: 10.0, ingredienti: "Mortadella Riserva Oro, stracciatella, pistacchi", allergeni: "1-5-7-8-10", baseSenzaGlutineDisponibile: true, tags: ["Base Focaccia"] },
+        { id: "fr-salmone", categoria: "focacce-ripiene", nome: "Salmone", prezzo: 15.0, ingredienti: "Valeriana, salmone affumicato, bufala, limone, pachini secchi", allergeni: "1-3-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Base Focaccia"] },
+        { id: "fr-ariccia", categoria: "focacce-ripiene", nome: "Ariccia", prezzo: 13.0, ingredienti: "Porchetta di Ariccia IGP, finocchi, stracciatella", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Ripiena"] },
+        { id: "fr-leggera", categoria: "focacce-ripiene", nome: "Leggera", prezzo: 12.0, ingredienti: "Fiordilatte, cime di rapa saltate, ventricina", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Ripiena"] },
+        { id: "fr-croccante", categoria: "focacce-ripiene", nome: "Croccante", prezzo: 14.0, ingredienti: "Stracchino alle olive, crudo di Parma DOC 24 mesi, spinaci", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: true, tags: ["Ripiena"] },
+
+        { id: "hb-bun-1", categoria: "hamburger", nome: "Bun N. 1", prezzo: 13.0, ingredienti: "Bun bianco, hamburger scottona 200 gr, insalata, pomodoro, pancetta, sottiletta, salse", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: false, tags: ["Panino Artigianale"] },
+        { id: "hb-bun-2", categoria: "hamburger", nome: "Bun N. 2", prezzo: 14.0, ingredienti: "Bun bianco, hamburger scottona 200 gr, cicoria saltata*, stracciatella, pachini confit, ventricina", allergeni: "1-5-7-10", baseSenzaGlutineDisponibile: false, tags: ["Panino Artigianale"] },
+        { id: "hb-bun-3", categoria: "hamburger", nome: "Bun N. 3", prezzo: 14.0, ingredienti: "Bun bianco, hamburger scottona 200 gr, maionese alla soya, misticanza, bufala, cipolla caramellata, pancetta sgrassatella", allergeni: "1-5-6-7-10", baseSenzaGlutineDisponibile: false, tags: ["Panino Artigianale"] }
       ],
-      'rosse': [
-        { nome: 'Margherita', prezzo: 6.50, desc: "Pomodoro, fiordilatte, basilico. [1-5-7-10]" },
-        { nome: 'Marinara', prezzo: 6.50, desc: "Pomodoro, pomodorino giallo semi dry, origano del Monte Saro, pesto d'aglio. [1-5-10]" },
-        { nome: 'Napoletana', prezzo: 8.00, desc: "Pomodoro, fiordilatte, alici. [1-3-5-7-10]" },
-        { nome: 'Bufalina', prezzo: 8.50, desc: "Pomodoro, pachini, bufala in cottura, basilico. [1-5-7-10]" },
-        { nome: 'Siciliana', prezzo: 15.00, desc: "Pomodoro, pachini confit, stracciatella, acciughe del Cantabrico, olive taggiasche, prezzemolo. [1-3-5-7-10]" }
+      allergeni: [
+        "1_cereali contenenti glutine e prodotti derivati",
+        "2_crostacei e prodotti a base di crostacei",
+        "3_pesce e prodotti a base di pesce",
+        "4_arachidi e prodotti a base di arachidi",
+        "5_soia e prodotti a base di soia",
+        "6_uova e prodotti a base di uova",
+        "7_latte e prodotti a base di latte",
+        "8_frutta a guscio e loro prodotti",
+        "9_sedano e prodotti a base di sedano",
+        "10_senape e prodotti a base di senape",
+        "11_sesamo e prodotti a base di sesamo",
+        "12_solfiti in concentrazione superiore a 10 mg/kg",
+        "13_lupini e prodotti a base di lupini",
+        "14_molluschi e prodotti a base di molluschi"
       ],
-      'bianche': [
-        { nome: 'Vegetariana', prezzo: 9.00, desc: "Fiordilatte, verdure del giorno. [1-5-7-10]" },
-        { nome: '4 Formaggi', prezzo: 8.00, desc: "Fiordilatte, provola, gorgonzola, grana padano. [1-5-7-10]" },
-        { nome: 'Capricciosa', prezzo: 10.00, desc: "Fiordilatte, prosciutto cotto, carciofi, champignon, olive taggiasche. [1-5-7-10]" },
-        { nome: 'Guanciale', prezzo: 10.00, desc: "Fiordilatte, zucchine, guanciale croccante, stracciatella. [1-5-7-10]" },
-        { nome: 'Nduja', prezzo: 10.00, desc: "Nduja di Spilinga DOP, fiordilatte, melanzane, pachini, olive taggiasche, stracciatella. [1-5-7-10]" },
-        { nome: 'La Rossa', prezzo: 10.00, desc: "Fiordilatte, patate al forno, salsiccia, stracciatella, peperone rosso dolce di Altino. [1-5-7-10]" },
-        { nome: 'Sempre Verde', prezzo: 10.00, desc: "Fiordilatte, cicoria saltata*, stracciatella, pancetta, crema di patate. [1-5-7-10]" },
-        { nome: 'Crudo di Parma', prezzo: 14.00, desc: "Fiordilatte, datterini, crudo di Parma DOC 24 mesi, stracciatella, pesto di basilico. [1-5-7-8-10]" },
-        { nome: 'Carpaccio di Bresaola', prezzo: 14.00, desc: "Fiordilatte, carpaccio di bresaola, rucola, pachini, scaglie di grana, glassa di balsamico, olio EVO al limone. [1-5-7-10-12]" }
-      ],
-      'focacce': [
-        { nome: 'Pistacchio (Base Focaccia)', prezzo: 10.00, desc: "Base focaccia, mortadella Riserva Oro, stracciatella, pistacchi. [1-5-7-8-10]" },
-        { nome: 'Salmone (Base Focaccia)', prezzo: 15.00, desc: "Base focaccia, valeriana, salmone affumicato, bufala, limone, pachini secchi. [1-3-5-7-10]" },
-        { nome: 'Ariccia (Ripiena)', prezzo: 13.00, desc: "Ripiena con Porchetta di Ariccia IGP, finocchi, stracciatella. [1-5-7-10]" },
-        { nome: 'Leggera (Ripiena)', prezzo: 12.00, desc: "Ripiena con fiordilatte, cime di rapa saltate, ventricina. [1-5-7-10]" },
-        { nome: 'Croccante (Ripiena)', prezzo: 14.00, desc: "Ripiena con stracchino alle olive, crudo di Parma DOC 24 mesi, spinaci. [1-5-7-10]" }
-      ],
-      'pinse-30': [
-        { nome: 'Bufala 3.0', prezzo: 10.00, desc: "Pomodoro, bufala in cottura, ricotta salata, polvere di olive. [1-5-7-10]" },
-        { nome: 'Come Una Volta', prezzo: 15.00, desc: "Peperoni arrosto, stracciatella, acciughe del Cantabrico, olive taggiasche, capperi, prezzemolo. [1-3-5-7-10]" },
-        { nome: 'Baccalà 3.0', prezzo: 15.00, desc: "Fiordilatte, crema di patate, baccalà CBT, peperoni, polvere di olive, peperone di Altino, prezzemolo. [1-3-5-7-10]" },
-        { nome: 'Tartare di Manzo', prezzo: 15.00, desc: "Misticanza condita con olio e limone, tartare di manzo, stracciatella, mango. [1-5-7-10]" },
-        { nome: 'Lardo', prezzo: 13.00, desc: "Fiordilatte, Lardo di Patanegra, pera caramellata, pecorino. [1-5-7-10]" },
-        { nome: 'Mortadella a Modo Mio', prezzo: 14.00, desc: "Passata di pomodorino giallo, fiordilatte, mortadella Riserva Oro, pesto pistacchio e basilico, crema di stracciatella, zest al limone. [1-5-7-8-10]" },
-        { nome: 'Carbonara', prezzo: 12.00, desc: "Fiordilatte, guanciale, pecorino, tuorlo d'uovo. [1-5-6-7-10]" },
-        { nome: 'Patata Viola', prezzo: 14.00, desc: "Fiordilatte, caciocavallo, salsiccia, crema di peperoni gialli e rossi, chips di patata viola, basilico. [1-5-7-10]" }
-      ],
-      'hamburger': [
-        { nome: 'Bun N. 1', prezzo: 13.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, insalata, pomodoro, pancetta, sottiletta, salse. [1-5-7-10]" },
-        { nome: 'Bun N. 2', prezzo: 14.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, cicoria saltata*, stracciatella, pachini confit, ventricina. [1-5-7-10]" },
-        { nome: 'Bun N. 3', prezzo: 14.00, desc: "Bun bianco artigianale, hamburger scottona 200 gr, maionese alla soya, misticanza, bufala, cipolla caramellata, pancetta sgrassatella. [1-5-6-7-10]" }
-      ],
-      'birre': [
-        { nome: 'Spina: Doge "Pils" (0.2 / 0.4 / 0.5)', prezzo: 5.50, desc: "Lager | Giallo fieno | 5% Vol | Veneto. Mediamente corposa con note di malto, miele d'acacia e luppolo erbaceo. (0.2 €3 / 0.4 €5,5 / 0.5 €6,5)" },
-        { nome: 'Spina: Doge "IPA" (0.4)', prezzo: 6.50, desc: "IPA | Giallo oro | 6% Vol | Veneto. Gusto erbaceo e rinfrescante con note di fiori e frutti tropicali." },
-        { nome: 'Spina: Doge "Weizen" (0.3 / 0.5)', prezzo: 4.50, desc: "Weizen | Giallo oro | 6% Vol | Veneto. Note di banana, frutta a pasta bianca, vaniglia e nocciola. (0.3 €4,5 / 0.5 €7,5)" },
-        { nome: 'Spina: Doge "Vienna Lager" (0.4)', prezzo: 6.50, desc: "Lager | Rosso ramato | 5,4% Vol | Veneto. Note di caramello, malto tostato, frutta secca e miele di castagno." },
-        { nome: 'Gluten Free 33cl: Doge "APA"', prezzo: 6.00, desc: "APA | Oro chiaro | 4,8% Vol | Veneto. Gusto agrumato, bevuta dissetante." },
-        { nome: 'Gluten Free 33cl: Rebel\'s "Secret View"', prezzo: 6.50, desc: "Pale Ale | Ramato trasparente | 4,5% Vol | Lazio. Agrumi mediterranei e note maltate." },
-        { nome: 'Bottiglia 33cl: Rebel\'s "Belvedere"', prezzo: 6.00, desc: "Keller Pils | 5% Vol | Lazio. Gusto scorrevole, mielato e leggermente amaro." },
-        { nome: 'Bottiglia 33cl: Rebel\'s "Parrot Invasion"', prezzo: 6.00, desc: "West Coast IPA | 6% Vol | Lazio. Amaro morbido con accenti floreali e agrumi." },
-        { nome: 'Bottiglia 33cl: Rebel\'s "Sunshine Blanche"', prezzo: 6.00, desc: "Blanche | 4,5% Vol | Lazio. Pepe di Sichuan, coriandolo e pepe rosa." },
-        { nome: 'Bottiglia 33cl: Rebel\'s "Lil Tropical"', prezzo: 6.00, desc: "Session IPA | 4,5% Vol | Lazio. Mix di frutta tropicale e note agrumate." },
-        { nome: 'Bottiglia 33cl: Amerino "Edwige"', prezzo: 6.00, desc: "Blanche | 4% Vol | Umbria. Zenzero, bergamotto e fiori di sambuco." },
-        { nome: 'Bottiglia 33cl: Amerino "Mario Rossi"', prezzo: 6.00, desc: "Italian Ale | 5,2% Vol | Umbria. Gusto dolce del malto con amaro morbido." },
-        { nome: 'Alcohol Free 33cl: Doge "Non Hai Più Scuse"', prezzo: 6.50, desc: "IPA < 0,5% Vol | Veneto. Note di pompelmo, mango e accenno erbaceo." }
-      ],
-      'cocktail': [
-        { nome: 'Acqua 0.75 L', prezzo: 2.00, desc: "Naturale o frizzante." },
-        { nome: 'Coca Cola / Coca Cola Zero (0.33 L)', prezzo: 3.00, desc: "In lattina / vetro." },
-        { nome: 'Estathé Limone / Pesca (0.25 L)', prezzo: 3.00, desc: "Tè freddo." },
-        { nome: 'Lurisia Aranciata / Limonata / Chinotto (0.3 L)', prezzo: 4.00, desc: "Bibite artigianali italiane." },
-        { nome: 'Caffè / Caffè Dek / Shakerato', prezzo: 1.50, desc: "Espresso € 1,50 | Caffè Shakerato € 3,00." },
-        { nome: 'Aperol / Campari / Hugo Spritz', prezzo: 6.00, desc: "Aperitivo classico." },
-        { nome: 'Americano / Negroni / Sbagliato', prezzo: 7.00, desc: "I grandi classici della miscelazione." },
-        { nome: 'London / Moscow Mule', prezzo: 6.00, desc: "Fresco e speziato allo zenzero." },
-        { nome: 'Gin Tonic Base', prezzo: 6.00, desc: "Gin selezionato e tonica." },
-        { nome: 'Our Gin Selection (10 Etichette Botanical)', prezzo: 12.00, desc: "Gin Onde, Gin Neve, Gin Campi, Old School, Paloma, Nippon, Mandala, Mediterranean N.8, Menta & Lime, Pino Mugo & Mirto." }
-      ],
-      'vini': [
-        { nome: 'Calice Kripia Cantina Orsogna (Rosato o Rosso)', prezzo: 4.00, desc: "Cerasuolo d'Abruzzo DOP 2025 (13%) oppure Montepulciano d'Abruzzo DOP 2024 (13,5%)." },
-        { nome: 'Bianco: Jasci e Marchesani Trebbiano DOP', prezzo: 16.00, desc: "Trebbiano d'Abruzzo DOC | 2025 | 12% Vol." },
-        { nome: 'Bianco: Jasci e Marchesani Riesling / Traminer / Pecorino', prezzo: 18.00, desc: "Terre d'Abruzzo IGT | 2025 | 12% - 12,5% Vol." },
-        { nome: 'Bianco: Ebrio Orsogna Passerina / Lunaria Civitas Pecorino', prezzo: 20.00, desc: "Terre d'Abruzzo / Terre di Chieti IGP | 12,5% - 13,5% Vol." },
-        { nome: 'Bianco: Cataldi Madonna Malandrino / Giulia', prezzo: 22.00, desc: "Trebbiano d'Abruzzo DOC / Pecorino Terre Aquilane IGP | 2024." },
-        { nome: 'Bianco: Zemmer Gewurztraminer / Pinot Grigio / Pinot Bianco', prezzo: 26.00, desc: "Alto Adige DOC | 2024 | 13% - 14% Vol." },
-        { nome: 'Rosato: Jasci e Marchesani / Kripia Orsogna Cerasuolo', prezzo: 16.00, desc: "Cerasuolo d'Abruzzo DOC/DOP | 2025." },
-        { nome: 'Rosato: Ebrio Orsogna / Lunaria Pettirosce / Ramoro Bio', prezzo: 20.00, desc: "Cerasuolo d'Abruzzo DOP / Pinot Grigio Ramato Bio." },
-        { nome: 'Rosato: Fonte Cupa (€22) / Cataldi Madonna Malandrino (€24)', prezzo: 22.00, desc: "Cerasuolo d'Abruzzo DOC | 2024." },
-        { nome: 'Bollicine: Gemin Brut Rosè (€20) / Valdobbiadene Brut (€22)', prezzo: 20.00, desc: "Pinot Nero / Glera DOCG | 12% Vol." },
-        { nome: 'Bollicine: Jasci e Marchesani Metodo Ancestrale (Bianco/Rosato)', prezzo: 22.00, desc: "Pecorino-Riesling-Chardonnay oppure Montepulciano | 12,5% Vol." },
-        { nome: 'Bollicine: La Genisia Metodo Classico (Extra Brut / Brut / Rosè)', prezzo: 32.00, desc: "Oltrepò Pavese DOCG | Pinot Nero | 12,5% Vol." },
-        { nome: 'Rosso: Jasci e Marchesani / Kripia Orsogna Montepulciano', prezzo: 16.00, desc: "Montepulciano d'Abruzzo DOC/DOP | 2024 | 13,5% Vol." },
-        { nome: 'Rosso: Ebrio Orsogna / Graffetta Syrah / Nero d\'Avola', prezzo: 20.00, desc: "Montepulciano DOP 2024 oppure Sicilia DOC 2021." },
-        { nome: 'Rosso: Nuraghe Crabioni Cannonau (€22) / Lunaria Bio (€23)', prezzo: 22.00, desc: "Cannonau di Sardegna DOC 2019 / Bucefalo / Coste di Moro Bio." },
-        { nome: 'Rosso: Cataldi Madonna (€26) / Steflhof Lagrein (€30)', prezzo: 26.00, desc: "Montepulciano DOC 2023 / Alto Adige Lagrein DOC 2021." },
-        { nome: 'Rosso: Caprera Le Vasche (€35) / Zumbo Manata Etna DOC (€36)', prezzo: 35.00, desc: "Montepulciano DOC 2020 / Nerello Mascalese Etna DOC 2017." }
+      noteServizio: [
+        "Servizio torta P.P. _ € 0,50",
+        "Coperto _ € 2,50",
+        "Base senza glutine _ € 3,50",
+        "* prodotto surgelato in mancanza del fresco",
+        "** prodotto sottoposto a trattamento di bonifica preventiva in conformità alle prescrizioni del Reg. CE 853/2004, allegato III, sezione VIII, capitolo 3, lettera D, punto 1."
       ]
     };
 
-    // Popola dinamicamente tutte le griglie del menù
-    Object.entries(MENU_DATA).forEach(([catKey, items]) => {
-      const container = document.getElementById(`grid-${catKey}`);
-      if (!container) return;
+    /* 3. CALENDARIO INTERATTIVO */
+    (function () {
+      const MONTHS_IT = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+      const WEEKDAYS_IT = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
 
-      container.innerHTML = items.map(item => `
-        <div class="bg-white rounded-xl p-4 sm:p-5 border border-slate-200/80 shadow-sm flex justify-between items-start gap-3 hover:border-senape/60 transition">
-          <div>
-            <h4 class="font-bold text-petrolio text-sm sm:text-base leading-snug">${item.nome}</h4>
-            <p class="text-xs text-slate-600 mt-1 leading-relaxed">${item.desc}</p>
-          </div>
-          <div class="text-right shrink-0">
-            <span class="block font-bold text-petrolio text-sm sm:text-base">€ ${item.prezzo.toFixed(2).replace('.', ',')}</span>
-            <button type="button" onclick="aggiungiAlCarrello('${item.nome.replace(/'/g, "\\'")}', ${item.prezzo})" class="mt-2 text-[11px] font-bold bg-petrolio-soft hover:bg-senape hover:text-petrolio-dark text-petrolio px-2.5 py-1 rounded-lg transition">
-              + Asporto
-            </button>
-          </div>
-        </div>
-      `).join('');
-    });
-
-    // ==========================================
-    // 2. CALENDARIO APERTURE / CHIUSURE DEL MESE
-    // ==========================================
-    const GIORNO_CHIUSURA_SETTIMANALE = 2; // 2 = Martedì (metti null a Dicembre se sempre aperto)
-    const DATE_CHIUSE_EXTRA = [];
-
-    let calDate = new Date();
-    calDate.setDate(1);
-
-    function renderCalendario() {
-      const grid = document.getElementById('cal-grid');
-      const title = document.getElementById('cal-month-title');
-      const year = calDate.getFullYear();
-      const month = calDate.getMonth();
-
-      title.textContent = calDate.toLocaleDateString('it-IT', { month: 'long', year: 'numeric' });
-      grid.innerHTML = '';
-
-      let firstDay = new Date(year, month, 1).getDay();
-      firstDay = firstDay === 0 ? 6 : firstDay - 1;
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      for (let i = 0; i < firstDay; i++) {
-        grid.innerHTML += `<div></div>`;
+      function toIsoDate(date) {
+        const y = date.getFullYear();
+        const m = String(date.getMonth() + 1).padStart(2, "0");
+        const d = String(date.getDate()).padStart(2, "0");
+        return `${y}-${m}-${d}`;
       }
 
-      for (let day = 1; day <= daysInMonth; day++) {
-        const current = new Date(year, month, day);
-        const dayOfWeek = current.getDay();
-        const isoDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        // Se è Dicembre, sempre aperto come da banner
-        const isDecember = month === 11;
-        const isClosed = !isDecember && ((GIORNO_CHIUSURA_SETTIMANALE !== null && dayOfWeek === GIORNO_CHIUSURA_SETTIMANALE) || DATE_CHIUSE_EXTRA.includes(isoDate));
+      function parseIsoDate(iso) {
+        const [y, m, d] = iso.split("-").map(Number);
+        return new Date(y, m - 1, d);
+      }
 
-        if (isClosed) {
-          grid.innerHTML += `<div title="Chiuso" class="py-1 rounded bg-red-50 text-red-600 border border-red-200 line-through">${day}</div>`;
+      function formatDateIT(iso) {
+        if (!iso) return "";
+        const d = parseIsoDate(iso);
+        return `${WEEKDAYS_IT[d.getDay()]} ${d.getDate()} ${MONTHS_IT[d.getMonth()]} ${d.getFullYear()}`;
+      }
+
+      function getDayStatus(iso) {
+        const cfg = window.FUSION_CONFIG;
+        const dateObj = parseIsoDate(iso);
+        const weekday = dateObj.getDay();
+        const ym = iso.slice(0, 7);
+        const calCfg = cfg.calendario;
+        const closedWeekdays = calCfg.giorniChiusuraDefault || calCfg.giorniChiusuraSettimanaleDefault || [];
+        const isAlwaysOpenMonth = (calCfg.mesiSempreAperti || []).includes(ym);
+        const isExtraOpen = (calCfg.apertureStraordinarie || []).includes(iso);
+        const isExtraClosed = (calCfg.chiusureStraordinarie || []).includes(iso);
+        const isDefaultClosed = closedWeekdays.includes(weekday);
+
+        let isOpen = true;
+        let reason = "Aperti dalle 19:00";
+
+        if (isExtraClosed) {
+          isOpen = false;
+          reason = "Chiusura straordinaria programmata";
+        } else if (isExtraOpen) {
+          isOpen = true;
+          reason = "Apertura straordinaria dalle 19:00";
+        } else if (isAlwaysOpenMonth) {
+          isOpen = true;
+          reason = "Mese sempre aperto · tutte le sere dalle 19:00";
+        } else if (isDefaultClosed) {
+          isOpen = false;
+          reason = "Giorno di chiusura settimanale";
+        }
+
+        const isWeekendDoubleShift = cfg.prenotazioni.giorniDoppioTurno.includes(weekday);
+        const customNote = calCfg.noteGiorni[iso] || "";
+
+        return { iso, dateObj, weekday, isOpen, isExtraOpen, isAlwaysOpenMonth, isWeekendDoubleShift, reason, note: customNote };
+      }
+
+      function getFirstAvailableDate(startDate) {
+        const cursor = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+        for (let i = 0; i < 45; i++) {
+          const iso = toIsoDate(cursor);
+          if (getDayStatus(iso).isOpen) return iso;
+          cursor.setDate(cursor.getDate() + 1);
+        }
+        return toIsoDate(startDate);
+      }
+
+      const today = new Date();
+      const todayIso = toIsoDate(today);
+      let viewYear = today.getFullYear();
+      let viewMonth = today.getMonth();
+      let selectedIso = getFirstAvailableDate(today);
+
+      function renderHeroStatus() {
+        const status = getDayStatus(todayIso);
+        const dot = document.getElementById("heroStatusDot");
+        const text = document.getElementById("heroStatusText");
+        if (!dot || !text) return;
+        if (status.isOpen) {
+          dot.classList.remove("status-dot--closed");
+          const shiftHint = status.isWeekendDoubleShift
+            ? "Tavoli in 2 turni (19:30–21:30 / 21:30+) · Asporto ogni 10 min"
+            : "Asporto ogni 10 min · Tavoli ogni 30 min dalle 19:00";
+          text.textContent = `Oggi aperti dalle 19:00 · ${shiftHint}`;
         } else {
-          grid.innerHTML += `<div title="Aperto dalle 19:00" class="py-1 rounded bg-petrolio-soft text-petrolio border border-petrolio/20">${day}</div>`;
+          dot.classList.add("status-dot--closed");
+          text.textContent = "Oggi riposo settimanale · Prenota già per i prossimi giorni";
         }
       }
-    }
 
-    document.getElementById('cal-prev').addEventListener('click', () => {
-      calDate.setMonth(calDate.getMonth() - 1);
-      renderCalendario();
-    });
+      function renderDetailBox(iso) {
+        const status = getDayStatus(iso);
+        const titleEl = document.getElementById("calDetailTitle");
+        const textEl = document.getElementById("calDetailText");
+        const asportoBtn = document.getElementById("calUseAsportoBtn");
+        const tavoloBtn = document.getElementById("calUseTavoloBtn");
+        if (!titleEl || !textEl) return;
 
-    document.getElementById('cal-next').addEventListener('click', () => {
-      calDate.setMonth(calDate.getMonth() + 1);
-      renderCalendario();
-    });
+        titleEl.textContent = formatDateIT(iso);
+        if (!status.isOpen) {
+          textEl.textContent = `${status.reason}. Scegli un altro giorno evidenziato o chiama il fisso 0872 703567 per informazioni.`;
+          if (asportoBtn) asportoBtn.disabled = true;
+          if (tavoloBtn) tavoloBtn.disabled = true;
+          return;
+        }
+        if (asportoBtn) asportoBtn.disabled = false;
+        if (tavoloBtn) tavoloBtn.disabled = false;
 
-    renderCalendario();
+        const tavoloRule = status.isWeekendDoubleShift
+          ? "Tavoli divisi in 2 turni: 19:30–21:30 e dalle 21:30 in poi."
+          : "Tavoli prenotabili ogni 30 minuti dalle 19:00.";
+        const extraNote = status.note ? ` Nota: ${status.note}.` : "";
+        textEl.textContent = `${status.reason}. Asporto ogni 10 minuti dalle 19:00. ${tavoloRule}${extraNote}`;
+      }
 
-    // ==========================================
-    // 3. ORARI TAVOLI (30 min feriali / Turni Weekend)
-    // ==========================================
-    const inputDataTavolo = document.getElementById('tavolo-data');
-    const selectOraTavolo = document.getElementById('tavolo-ora');
+      function renderCalendar() {
+        const grid = document.getElementById("calDaysGrid");
+        const title = document.getElementById("calMonthTitle");
+        if (!grid || !title) return;
 
-    const oggiISO = new Date().toISOString().split('T')[0];
-    inputDataTavolo.value = oggiISO;
-    inputDataTavolo.min = oggiISO;
+        title.textContent = `${MONTHS_IT[viewMonth]} ${viewYear}`;
+        grid.innerHTML = "";
 
-    function aggiornaOrariTavolo() {
-      const val = inputDataTavolo.value;
-      selectOraTavolo.innerHTML = '';
-      if (!val) return;
+        const firstDay = new Date(viewYear, viewMonth, 1);
+        const daysInMonth = new Date(viewYear, viewMonth + 1, 0).getDate();
+        const offset = (firstDay.getDay() + 6) % 7;
 
-      const [y, m, d] = val.split('-').map(Number);
-      const giornoSettimana = new Date(y, m - 1, d).getDay(); // 5=Ven, 6=Sab, 0=Dom
+        for (let i = 0; i < offset; i++) {
+          const empty = document.createElement("div");
+          empty.className = "cal-day cal-day--empty";
+          grid.appendChild(empty);
+        }
 
-      if (giornoSettimana === 5 || giornoSettimana === 6 || giornoSettimana === 0) {
-        ['1° Turno (19:30 – 21:30)', '2° Turno (21:30 – in poi)'].forEach(t => {
-          const opt = document.createElement('option');
-          opt.value = t;
-          opt.textContent = t;
-          selectOraTavolo.appendChild(opt);
+        for (let day = 1; day <= daysInMonth; day++) {
+          const iso = `${viewYear}-${String(viewMonth + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+          const status = getDayStatus(iso);
+          const isPast = iso < todayIso;
+
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "cal-day";
+          btn.dataset.date = iso;
+
+          if (!status.isOpen) btn.classList.add("cal-day--closed");
+          else if (status.isExtraOpen) btn.classList.add("cal-day--special");
+          else if (status.isWeekendDoubleShift) btn.classList.add("cal-day--weekend");
+          else btn.classList.add("cal-day--open");
+
+          if (isPast) btn.classList.add("cal-day--past");
+          if (iso === selectedIso) btn.classList.add("is-selected");
+
+          btn.setAttribute("aria-label", `${formatDateIT(iso)}: ${status.isOpen ? "Aperto" : "Chiuso"}`);
+          btn.innerHTML = `<span>${day}</span>${status.isOpen ? '<span class="cal-day__dot" aria-hidden="true"></span>' : ""}`;
+
+          btn.addEventListener("click", () => {
+            if (isPast) return;
+            selectedIso = iso;
+            renderCalendar();
+            renderDetailBox(iso);
+          });
+
+          grid.appendChild(btn);
+        }
+        renderDetailBox(selectedIso);
+      }
+
+      function init() {
+        renderHeroStatus();
+        renderCalendar();
+
+        document.getElementById("calPrevBtn")?.addEventListener("click", () => {
+          viewMonth -= 1;
+          if (viewMonth < 0) { viewMonth = 11; viewYear -= 1; }
+          renderCalendar();
         });
-      } else {
-        ['19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00', '22:30'].forEach(ora => {
-          const opt = document.createElement('option');
-          opt.value = ora;
-          opt.textContent = ora;
-          selectOraTavolo.appendChild(opt);
+        document.getElementById("calNextBtn")?.addEventListener("click", () => {
+          viewMonth += 1;
+          if (viewMonth > 11) { viewMonth = 0; viewYear += 1; }
+          renderCalendar();
+        });
+        document.getElementById("calUseAsportoBtn")?.addEventListener("click", () => {
+          window.FusionBooking?.applyDateAndOpenTab(selectedIso, "asporto");
+        });
+        document.getElementById("calUseTavoloBtn")?.addEventListener("click", () => {
+          window.FusionBooking?.applyDateAndOpenTab(selectedIso, "tavolo");
         });
       }
-    }
 
-    inputDataTavolo.addEventListener('change', aggiornaOrariTavolo);
-    aggiornaOrariTavolo();
+      window.FusionCalendar = { init, toIsoDate, formatDateIT, getDayStatus, getFirstAvailableDate, getSelectedIso: () => selectedIso };
+    })();
 
-    // ==========================================
-    // 4. ORARI ASPORTO (Ogni 10 minuti dalle 19:00)
-    // ==========================================
-    const selectOraAsporto = document.getElementById('asporto-ora');
-    for (let h = 19; h <= 22; h++) {
-      for (let m = 0; m < 60; m += 10) {
-        if (h === 22 && m > 40) break;
-        const label = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
-        const opt = document.createElement('option');
-        opt.value = label;
-        opt.textContent = label;
-        selectOraAsporto.appendChild(opt);
+    /* 4. CARRELLO ASPORTO E PRENOTAZIONI WHATSAPP */
+    (function () {
+      const STORAGE_KEY = "fusion30_asporto_cart_v1";
+      let cart = [];
+      let selectedAsportoTime = "19:30";
+      let selectedTavoloSlot = "";
+
+      function formatEuro(amount) { return `€ ${amount.toFixed(2).replace(".", ",")}`; }
+      function escapeHtml(str) {
+        return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
       }
-    }
 
-    // ==========================================
-    // 5. FILTRI CATEGORIA MENÙ
-    // ==========================================
-    const catBtns = document.querySelectorAll('.cat-btn');
-    const categories = document.querySelectorAll('.menu-category');
+      function loadCart() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) cart = parsed;
+          }
+        } catch (_) { cart = []; }
+      }
 
-    catBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        catBtns.forEach(b => {
-          b.classList.remove('bg-petrolio', 'text-white');
-          b.classList.add('bg-white', 'text-petrolio');
+      function saveCart() {
+        try { localStorage.setItem(STORAGE_KEY, JSON.stringify(cart)); } catch (_) {}
+      }
+
+      function getCartKey(dishId, glutenFree) { return `${dishId}__${glutenFree ? "gf" : "std"}`; }
+
+      function getCartTotals() {
+        let count = 0, total = 0;
+        for (const item of cart) { count += item.qty; total += item.unitPrice * item.qty; }
+        return { count, total };
+      }
+
+      function addToCart(dishId, glutenFree) {
+        const dish = window.FUSION_MENU.piatti.find((p) => p.id === dishId);
+        if (!dish) return;
+        const gf = Boolean(glutenFree && dish.baseSenzaGlutineDisponibile);
+        const key = getCartKey(dishId, gf);
+        const extraGf = gf ? window.FUSION_CONFIG.prenotazioni.extra.baseSenzaGlutine : 0;
+
+        const existing = cart.find((c) => c.key === key);
+        if (existing) existing.qty += 1;
+        else cart.push({ key, dishId: dish.id, nome: dish.nome, glutenFree: gf, unitPrice: dish.prezzo + extraGf, qty: 1 });
+
+        saveCart();
+        syncCartUI();
+        window.FusionApp?.showToast(`Aggiunto all'asporto: ${dish.nome}${gf ? " (Senza Glutine)" : ""}`);
+      }
+
+      function updateCartQty(key, delta) {
+        const idx = cart.findIndex((c) => c.key === key);
+        if (idx === -1) return;
+        cart[idx].qty += delta;
+        if (cart[idx].qty <= 0) cart.splice(idx, 1);
+        saveCart();
+        syncCartUI();
+      }
+
+      function getDishQtyInCart(dishId, glutenFree) {
+        const found = cart.find((c) => c.key === getCartKey(dishId, Boolean(glutenFree)));
+        return found ? found.qty : 0;
+      }
+
+      function syncCartUI() {
+        const { count, total } = getCartTotals();
+        const hc = document.getElementById("headerCartCount");
+        const mc = document.getElementById("mobileCartCount");
+        const ic = document.getElementById("inlineCartCount");
+        const it = document.getElementById("inlineCartTotal");
+        const dt = document.getElementById("drawerCartTotal");
+
+        if (hc) hc.textContent = String(count);
+        if (mc) mc.textContent = String(count);
+        if (ic) ic.textContent = `${count} ${count === 1 ? "prodotto" : "prodotti"}`;
+        if (it) it.textContent = formatEuro(total);
+        if (dt) dt.textContent = formatEuro(total);
+
+        renderCartDrawer();
+        window.FusionApp?.renderMenu();
+      }
+
+      function renderCartDrawer() {
+        const body = document.getElementById("cartDrawerBody");
+        if (!body) return;
+
+        if (cart.length === 0) {
+          body.innerHTML = `
+            <div style="text-align:center; padding:34px 16px; background:#ffffff; border-radius:16px; border:1px dashed var(--border-subtle);">
+              <p style="font-family:var(--font-display); font-size:1.25rem; color:var(--petrolio-deep); margin:0 0 6px;">Il carrellino asporto è vuoto</p>
+              <p style="font-size:0.88rem; color:var(--text-muted); margin:0 0 16px;">Aggiungi le tue pinse o i fritti dal menù, oppure procedi comunque indicando cosa desideri nelle note su WhatsApp.</p>
+              <a href="#menu" class="btn btn--petrol btn--sm" id="drawerGoMenuBtn">Scegli dal Menù</a>
+            </div>
+          `;
+          document.getElementById("drawerGoMenuBtn")?.addEventListener("click", closeCartDrawer);
+          return;
+        }
+
+        body.innerHTML = cart.map((item) => `
+          <div class="cart-item">
+            <div>
+              <div class="cart-item__title">${escapeHtml(item.nome)}${item.glutenFree ? " · Base Senza Glutine" : ""}</div>
+              <div class="cart-item__sub">${formatEuro(item.unitPrice)} cad. · Subtotale ${formatEuro(item.unitPrice * item.qty)}</div>
+            </div>
+            <div class="qty-stepper">
+              <button type="button" data-cart-dec="${escapeHtml(item.key)}" aria-label="Rimuovi uno">−</button>
+              <span>${item.qty}</span>
+              <button type="button" data-cart-inc="${escapeHtml(item.key)}" aria-label="Aggiungi uno">+</button>
+            </div>
+          </div>
+        `).join("");
+
+        body.querySelectorAll("[data-cart-dec]").forEach((btn) => btn.addEventListener("click", () => updateCartQty(btn.dataset.cartDec, -1)));
+        body.querySelectorAll("[data-cart-inc]").forEach((btn) => btn.addEventListener("click", () => updateCartQty(btn.dataset.cartInc, 1)));
+      }
+
+      function openCartDrawer() {
+        const b = document.getElementById("cartDrawerBackdrop");
+        if (b) { b.classList.add("is-open"); b.setAttribute("aria-hidden", "false"); }
+      }
+
+      function closeCartDrawer() {
+        const b = document.getElementById("cartDrawerBackdrop");
+        if (b) { b.classList.remove("is-open"); b.setAttribute("aria-hidden", "true"); }
+      }
+
+      function generateTimeSlots(startStr, endStr, stepMinutes) {
+        const [sh, sm] = startStr.split(":").map(Number);
+        const [eh, em] = endStr.split(":").map(Number);
+        let current = sh * 60 + sm;
+        const end = eh * 60 + em;
+        const slots = [];
+        while (current <= end) {
+          slots.push(`${String(Math.floor(current / 60)).padStart(2, "0")}:${String(current % 60).padStart(2, "0")}`);
+          current += stepMinutes;
+        }
+        return slots;
+      }
+
+      function renderAsportoSlots() {
+        const dateInput = document.getElementById("asportoDate");
+        const closedAlert = document.getElementById("asportoClosedAlert");
+        const timeWrap = document.getElementById("asportoTimeWrap");
+        const grid = document.getElementById("asportoSlotsGrid");
+        if (!dateInput || !grid) return;
+
+        const status = window.FusionCalendar.getDayStatus(dateInput.value);
+        if (!status.isOpen) {
+          closedAlert.hidden = false;
+          closedAlert.textContent = `Il giorno selezionato (${window.FusionCalendar.formatDateIT(dateInput.value)}) il locale risulta chiuso (${status.reason}). Seleziona un'altra data dal calendario oppure chiama il fisso 0872 703567.`;
+          timeWrap.hidden = true;
+          return;
+        }
+
+        closedAlert.hidden = true;
+        timeWrap.hidden = false;
+
+        const cfg = window.FUSION_CONFIG.prenotazioni.asporto;
+        const slots = generateTimeSlots(cfg.oraInizio, cfg.oraFine, cfg.intervalloMinuti);
+        if (!slots.includes(selectedAsportoTime)) selectedAsportoTime = slots[0];
+
+        grid.innerHTML = slots.map((slot) => `
+          <button type="button" class="slot-btn slot-btn--asporto ${slot === selectedAsportoTime ? "is-selected" : ""}" data-asporto-slot="${slot}">${slot}</button>
+        `).join("");
+
+        grid.querySelectorAll("[data-asporto-slot]").forEach((btn) => {
+          btn.addEventListener("click", () => { selectedAsportoTime = btn.dataset.asportoSlot; renderAsportoSlots(); });
         });
-        btn.classList.remove('bg-white', 'text-petrolio');
-        btn.classList.add('bg-petrolio', 'text-white');
+      }
 
-        const selected = btn.dataset.cat;
-        categories.forEach(cat => {
-          if (selected === 'tutte' || cat.dataset.category === selected) {
-            cat.classList.remove('hidden');
+      function renderTavoloSlots() {
+        const dateInput = document.getElementById("tavoloDate");
+        const closedAlert = document.getElementById("tavoloClosedAlert");
+        const timeWrap = document.getElementById("tavoloTimeWrap");
+        const label = document.getElementById("tavoloTimeLabel");
+        const container = document.getElementById("tavoloTimeContainer");
+        if (!dateInput || !container) return;
+
+        const status = window.FusionCalendar.getDayStatus(dateInput.value);
+        if (!status.isOpen) {
+          closedAlert.hidden = false;
+          closedAlert.textContent = `Il giorno selezionato (${window.FusionCalendar.formatDateIT(dateInput.value)}) il locale è chiuso (${status.reason}). Scegli una data aperta o chiama lo 0872 703567.`;
+          timeWrap.hidden = true;
+          return;
+        }
+
+        closedAlert.hidden = true;
+        timeWrap.hidden = false;
+
+        if (status.isWeekendDoubleShift) {
+          label.textContent = "Turno Prenotazione Weekend (Ven / Sab / Dom — 2 Turni)";
+          const turni = window.FUSION_CONFIG.prenotazioni.turniWeekend;
+          if (!turni.map((t) => t.labelCompleta).includes(selectedTavoloSlot)) selectedTavoloSlot = turni[0].labelCompleta;
+
+          container.innerHTML = `<div class="turni-grid">${turni.map((t) => `
+            <button type="button" class="turno-card ${selectedTavoloSlot === t.labelCompleta ? "is-selected" : ""}" data-tavolo-slot="${escapeHtml(t.labelCompleta)}">
+              <strong>${escapeHtml(t.titolo)}</strong>
+              <span>${escapeHtml(t.fascia)}</span>
+              <small>${escapeHtml(t.descrizione)}</small>
+            </button>
+          `).join("")}</div>`;
+        } else {
+          label.textContent = "Orario Tavolo (dalle 19:00 ogni 30 minuti)";
+          const cfg = window.FUSION_CONFIG.prenotazioni.tavoloFeriali;
+          const slots = generateTimeSlots(cfg.oraInizio, cfg.oraFine, cfg.intervalloMinuti);
+          if (!slots.includes(selectedTavoloSlot)) selectedTavoloSlot = slots[1] || slots[0];
+
+          container.innerHTML = `<div class="slots-grid">${slots.map((slot) => `
+            <button type="button" class="slot-btn ${selectedTavoloSlot === slot ? "is-selected" : ""}" data-tavolo-slot="${slot}">${slot}</button>
+          `).join("")}</div>`;
+        }
+
+        container.querySelectorAll("[data-tavolo-slot]").forEach((btn) => {
+          btn.addEventListener("click", () => { selectedTavoloSlot = btn.dataset.tavoloSlot; renderTavoloSlots(); });
+        });
+      }
+
+      function switchBookingTab(tabName) {
+        const isAsporto = tabName === "asporto";
+        document.getElementById("tabAsportoBtn")?.classList.toggle("is-active", isAsporto);
+        document.getElementById("tabTavoloBtn")?.classList.toggle("is-active", !isAsporto);
+        const af = document.getElementById("asportoForm");
+        const tf = document.getElementById("tavoloForm");
+        if (af) af.hidden = !isAsporto;
+        if (tf) tf.hidden = isAsporto;
+      }
+
+      function applyDateAndOpenTab(isoDate, tabName) {
+        const ad = document.getElementById("asportoDate");
+        const td = document.getElementById("tavoloDate");
+        if (ad) ad.value = isoDate;
+        if (td) td.value = isoDate;
+        renderAsportoSlots();
+        renderTavoloSlots();
+        switchBookingTab(tabName);
+        document.getElementById("calendario-prenotazioni")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+
+      function openWhatsApp(message) {
+        const phone = window.FUSION_CONFIG.contatti.whatsappNumero;
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+      }
+
+      function buildQuickDatePills() {
+        const container = document.getElementById("tavoloQuickDates");
+        if (!container) return;
+        const today = new Date();
+        const pills = [];
+        for (let i = 0; i < 7; i++) {
+          const d = new Date(today.getFullYear(), today.getMonth(), today.getDate() + i);
+          const iso = window.FusionCalendar.toIsoDate(d);
+          const st = window.FusionCalendar.getDayStatus(iso);
+          if (!st.isOpen) continue;
+          let label = i === 0 ? "Stasera" : i === 1 ? "Domani" : `${["Dom", "Lun", "Mar", "Mer", "Gio", "Ven", "Sab"][d.getDay()]} ${d.getDate()}`;
+          if (st.isWeekendDoubleShift && i > 1) label += " (2 Turni)";
+          pills.push({ iso, label });
+          if (pills.length >= 4) break;
+        }
+        container.innerHTML = pills.map((p) => `<button type="button" class="mini-pill" data-quick-date="${p.iso}">${p.label}</button>`).join("");
+        container.querySelectorAll("[data-quick-date]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const td = document.getElementById("tavoloDate");
+            if (td) { td.value = btn.dataset.quickDate; renderTavoloSlots(); }
+          });
+        });
+      }
+
+      function buildGuestPills() {
+        const container = document.getElementById("guestQuickPills");
+        const input = document.getElementById("tavoloGuests");
+        if (!container || !input) return;
+        container.innerHTML = [2, 3, 4, 6, 8].map((n) => `<button type="button" class="mini-pill ${n === 2 ? "is-selected" : ""}" data-guests="${n}">${n} pers.</button>`).join("");
+        container.querySelectorAll("[data-guests]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            input.value = btn.dataset.guests;
+            container.querySelectorAll(".mini-pill").forEach((b) => b.classList.remove("is-selected"));
+            btn.classList.add("is-selected");
+          });
+        });
+      }
+
+      function init() {
+        loadCart();
+        const defaultIso = window.FusionCalendar.getSelectedIso();
+        const todayIso = window.FusionCalendar.toIsoDate(new Date());
+        const ad = document.getElementById("asportoDate");
+        const td = document.getElementById("tavoloDate");
+
+        if (ad) { ad.min = todayIso; ad.value = defaultIso; ad.addEventListener("change", renderAsportoSlots); }
+        if (td) { td.min = todayIso; td.value = defaultIso; td.addEventListener("change", renderTavoloSlots); }
+
+        buildQuickDatePills();
+        buildGuestPills();
+        renderAsportoSlots();
+        renderTavoloSlots();
+        syncCartUI();
+
+        document.getElementById("tabAsportoBtn")?.addEventListener("click", () => switchBookingTab("asporto"));
+        document.getElementById("tabTavoloBtn")?.addEventListener("click", () => switchBookingTab("tavolo"));
+
+        document.querySelectorAll("[data-open-booking='tavolo']").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            switchBookingTab("tavolo");
+            document.getElementById("calendario-prenotazioni")?.scrollIntoView({ behavior: "smooth" });
+          });
+        });
+
+        document.getElementById("heroAsportoBtn")?.addEventListener("click", () => {
+          switchBookingTab("asporto");
+          document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+        });
+
+        document.getElementById("headerCartBtn")?.addEventListener("click", openCartDrawer);
+        document.getElementById("mobileCartBtn")?.addEventListener("click", openCartDrawer);
+        document.getElementById("inlineOpenCartBtn")?.addEventListener("click", openCartDrawer);
+        document.getElementById("closeCartDrawerBtn")?.addEventListener("click", closeCartDrawer);
+        document.getElementById("cartDrawerBackdrop")?.addEventListener("click", (e) => { if (e.target.id === "cartDrawerBackdrop") closeCartDrawer(); });
+
+        document.getElementById("drawerProceedBtn")?.addEventListener("click", () => {
+          closeCartDrawer();
+          switchBookingTab("asporto");
+          document.getElementById("calendario-prenotazioni")?.scrollIntoView({ behavior: "smooth" });
+          document.getElementById("asportoName")?.focus();
+        });
+
+        document.getElementById("asportoForm")?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const dateIso = document.getElementById("asportoDate").value;
+          const name = document.getElementById("asportoName").value.trim();
+          const notes = document.getElementById("asportoNotes").value.trim();
+          if (!window.FusionCalendar.getDayStatus(dateIso).isOpen) { window.FusionApp.showToast("Scegli una data in cui il locale è aperto."); return; }
+          if (!name) { window.FusionApp.showToast("Inserisci il tuo nome per l'ordine d'asporto."); document.getElementById("asportoName").focus(); return; }
+          if (cart.length === 0 && !notes) { window.FusionApp.showToast("Aggiungi almeno un prodotto dal menù o scrivi l'ordine nelle note."); return; }
+
+          const { total } = getCartTotals();
+          const lines = [
+            "*ORDINE ASPORTO — FUSION 3.0 LANCIANO*",
+            `Nome: ${name}`,
+            `Data ritiro: ${window.FusionCalendar.formatDateIT(dateIso)}`,
+            `Orario ritiro: ${selectedAsportoTime}`,
+            ""
+          ];
+          if (cart.length > 0) {
+            lines.push("*Riepilogo Ordine:*");
+            for (const item of cart) lines.push(`- ${item.qty}x ${item.nome}${item.glutenFree ? " (Base Senza Glutine)" : ""} = ${formatEuro(item.unitPrice * item.qty)}`);
+            lines.push(`*Totale stimato:* ${formatEuro(total)}`);
           } else {
-            cat.classList.add('hidden');
+            lines.push("*Ordine indicato nelle note:*");
+          }
+          if (notes) lines.push("", `*Note / Modifiche:* ${notes}`);
+          lines.push("", "_Inviato da fusion30lanciano.it — Eventuali cambiamenti successivi li comunico qui su WhatsApp._");
+          openWhatsApp(lines.join("\n"));
+        });
+
+        document.getElementById("tavoloForm")?.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const dateIso = document.getElementById("tavoloDate").value;
+          const guests = document.getElementById("tavoloGuests").value || "2";
+          const name = document.getElementById("tavoloName").value.trim();
+          const notes = document.getElementById("tavoloNotes").value.trim();
+          if (!window.FusionCalendar.getDayStatus(dateIso).isOpen) { window.FusionApp.showToast("Scegli una data in cui il locale è aperto."); return; }
+          if (!name) { window.FusionApp.showToast("Inserisci il tuo nome per la prenotazione del tavolo."); document.getElementById("tavoloName").focus(); return; }
+
+          const lines = [
+            "*PRENOTAZIONE TAVOLO — FUSION 3.0 LANCIANO*",
+            `Nome: ${name}`,
+            `Data: ${window.FusionCalendar.formatDateIT(dateIso)}`,
+            `Fascia/Turno: ${selectedTavoloSlot}`,
+            `Numero persone: ${guests}`
+          ];
+          if (notes) lines.push(`*Note / Richieste:* ${notes}`);
+          lines.push("", "_Richiesta inviata da fusion30lanciano.it — Attendo vostra gentile conferma._");
+          openWhatsApp(lines.join("\n"));
+        });
+      }
+
+      window.FusionBooking = { init, addToCart, updateCartQty, getDishQtyInCart, getCartKey, applyDateAndOpenTab, switchBookingTab, openCartDrawer, closeCartDrawer };
+    })();
+
+    /* 5. INTERFACCIA MENÙ, FILTRI, SHOWCASE FOTO & OVERLAY */
+    (function () {
+      let activeCategory = "all";
+      let searchQuery = "";
+      const glutenFreeSelection = {};
+
+      function formatEuro(amount) { return `€ ${amount.toFixed(2).replace(".", ",")}`; }
+      function escapeHtml(str) {
+        return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+      }
+
+      function showToast(msg) {
+        const el = document.getElementById("toastMsg");
+        if (!el) return;
+        el.textContent = msg;
+        el.classList.add("is-visible");
+        clearTimeout(el._timer);
+        el._timer = setTimeout(() => el.classList.remove("is-visible"), 2600);
+      }
+
+      function initNoticeOverlay() {
+        const cfg = window.FUSION_CONFIG.comunicazioneOverlay;
+        const bar = document.getElementById("topNoticeBar");
+        const modalBackdrop = document.getElementById("noticeModalBackdrop");
+        if (!cfg || !cfg.attiva) { if (bar) bar.style.display = "none"; return; }
+
+        const b1 = document.getElementById("topNoticeBadge");
+        const t1 = document.getElementById("topNoticeText");
+        const b2 = document.getElementById("modalNoticeBadge");
+        const t2 = document.getElementById("noticeModalTitle");
+        const m2 = document.getElementById("noticeModalMessage");
+        const e2 = document.getElementById("noticeModalExtra");
+
+        if (b1) b1.textContent = cfg.badge;
+        if (t1) t1.textContent = cfg.testoBarraFissa;
+        if (b2) b2.textContent = cfg.badge;
+        if (t2) t2.textContent = cfg.titolo;
+        if (m2) m2.textContent = cfg.messaggio;
+        if (e2) e2.textContent = cfg.dettaglioExtra || "";
+
+        const openModal = () => { if (modalBackdrop) { modalBackdrop.classList.add("is-open"); modalBackdrop.setAttribute("aria-hidden", "false"); } };
+        const closeModal = () => { if (modalBackdrop) { modalBackdrop.classList.remove("is-open"); modalBackdrop.setAttribute("aria-hidden", "true"); } };
+
+        document.getElementById("openNoticeModalBtn")?.addEventListener("click", openModal);
+        document.getElementById("closeNoticeModalBtn")?.addEventListener("click", closeModal);
+        document.getElementById("modalNoticeDismissBtn")?.addEventListener("click", closeModal);
+        document.getElementById("modalNoticeCtaBtn")?.addEventListener("click", () => {
+          closeModal();
+          document.getElementById("calendario-prenotazioni")?.scrollIntoView({ behavior: "smooth" });
+        });
+        modalBackdrop?.addEventListener("click", (e) => { if (e.target.id === "noticeModalBackdrop") closeModal(); });
+
+        if (cfg.mostraModalAllApertura && !sessionStorage.getItem("fusion30_notice_seen")) {
+          openModal();
+          sessionStorage.setItem("fusion30_notice_seen", "1");
+        }
+      }
+
+      function openPhotoModal(title, hint, imgUrl) {
+        const backdrop = document.getElementById("photoModalBackdrop");
+        const titleEl = document.getElementById("photoModalTitle");
+        const contentEl = document.getElementById("photoModalContent");
+        if (!backdrop || !titleEl || !contentEl) return;
+
+        titleEl.textContent = title;
+        contentEl.innerHTML = imgUrl
+          ? `<img src="${escapeHtml(imgUrl)}" alt="${escapeHtml(title)}" style="width:100%; border-radius:14px; max-height:60vh; object-fit:cover;" />`
+          : `<div class="photo-placeholder" style="min-height:260px;">
+               <span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+               <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+               <p class="photo-placeholder__label">${escapeHtml(title)}</p>
+               <p class="photo-placeholder__hint">${escapeHtml(hint)}</p>
+               <span class="photo-placeholder__tag">Foto da inviare dal proprietario</span>
+             </div>`;
+        backdrop.classList.add("is-open");
+        backdrop.setAttribute("aria-hidden", "false");
+      }
+
+      function closePhotoModal() {
+        const backdrop = document.getElementById("photoModalBackdrop");
+        if (backdrop) { backdrop.classList.remove("is-open"); backdrop.setAttribute("aria-hidden", "true"); }
+      }
+
+      function renderFilters() {
+        const container = document.getElementById("menuFilters");
+        if (!container) return;
+        const cats = [{ id: "all", nome: "Tutte le Categorie" }, ...window.FUSION_MENU.categorie];
+        container.innerHTML = cats.map((cat) => `
+          <button type="button" class="filter-pill ${activeCategory === cat.id ? "is-active" : ""}" data-cat="${cat.id}" role="tab" aria-selected="${activeCategory === cat.id}">
+            ${escapeHtml(cat.nome)}
+          </button>
+        `).join("");
+
+        container.querySelectorAll("[data-cat]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            activeCategory = btn.dataset.cat;
+            renderFilters();
+            renderCategoryShowcase();
+            renderMenu();
+          });
+        });
+      }
+
+      function renderCategoryShowcase() {
+        const container = document.getElementById("categoryShowcase");
+        if (!container) return;
+        if (activeCategory === "all") { container.innerHTML = ""; return; }
+        const cat = window.FUSION_MENU.categorie.find((c) => c.id === activeCategory);
+        if (!cat) { container.innerHTML = ""; return; }
+
+        container.innerHTML = `
+          <div class="category-showcase">
+            <img src="${window.FUSION_SUBMARK_URI}" alt="" class="category-showcase__watermark" aria-hidden="true" />
+            <div class="category-showcase__head">
+              <div>
+                <h3 class="category-showcase__title">${escapeHtml(cat.nome)} · Galleria Categoria</h3>
+                <p class="category-showcase__desc">${escapeHtml(cat.descrizione)}</p>
+              </div>
+              <span class="service-chip">Clicca sui riquadri per ingrandire in sovraimpressione</span>
+            </div>
+            <div class="category-showcase__photos">
+              ${cat.fotoCategoria.map((ph, idx) => `
+                <button type="button" class="showcase-photo-btn" data-showcase-idx="${idx}">
+                  <div class="photo-placeholder photo-placeholder--sm ${ph.imgUrl ? "photo-placeholder--has-img" : ""}">
+                    ${ph.imgUrl
+                      ? `<img src="${escapeHtml(ph.imgUrl)}" alt="${escapeHtml(ph.titolo)}" class="photo-real" />`
+                      : `<span class="photo-placeholder__corner photo-placeholder__corner--tl"></span>
+                         <span class="photo-placeholder__corner photo-placeholder__corner--br"></span>
+                         <p class="photo-placeholder__label">${escapeHtml(ph.titolo)}</p>
+                         <p class="photo-placeholder__hint">${escapeHtml(ph.didascalia)}</p>
+                         <span class="photo-placeholder__tag">Foto da inviare</span>`}
+                  </div>
+                </button>
+              `).join("")}
+            </div>
+          </div>
+        `;
+
+        container.querySelectorAll("[data-showcase-idx]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const photo = cat.fotoCategoria[Number(btn.dataset.showcaseIdx)];
+            if (photo) openPhotoModal(photo.titolo, photo.didascalia, photo.imgUrl);
+          });
+        });
+      }
+
+      function renderDishCard(dish) {
+        const isGf = Boolean(glutenFreeSelection[dish.id]);
+        const qtyInCart = window.FusionBooking ? window.FusionBooking.getDishQtyInCart(dish.id, isGf) : 0;
+        const effectivePrice = dish.prezzo + (isGf ? window.FUSION_CONFIG.prenotazioni.extra.baseSenzaGlutine : 0);
+
+        return `
+          <article class="dish-card">
+            <div>
+              <div class="dish-card__top">
+                <h4 class="dish-card__name">${escapeHtml(dish.nome)}</h4>
+                <span class="dish-card__price">${formatEuro(effectivePrice)}</span>
+              </div>
+              <p class="dish-card__ingredients">${escapeHtml(dish.ingredienti)}</p>
+              <div class="dish-card__meta">
+                ${dish.tags.map((t) => `<span class="dish-tag">${escapeHtml(t)}</span>`).join("")}
+                <span class="dish-allergens">Allergeni [${escapeHtml(dish.allergeni)}]</span>
+              </div>
+            </div>
+            <div class="dish-card__footer">
+              ${dish.baseSenzaGlutineDisponibile ? `
+                <label class="gf-toggle">
+                  <input type="checkbox" data-gf-toggle="${dish.id}" ${isGf ? "checked" : ""} />
+                  <span>Base Senza Glutine (+€ 3,50)</span>
+                </label>` : ""}
+              <div class="dish-card__actions">
+                ${qtyInCart > 0 ? `
+                  <span style="font-size:0.8rem; font-weight:700; color:var(--petrolio);">Nel carrello asporto</span>
+                  <div class="qty-stepper">
+                    <button type="button" data-dec-dish="${dish.id}" aria-label="Rimuovi una porzione">−</button>
+                    <span>${qtyInCart}</span>
+                    <button type="button" data-inc-dish="${dish.id}" aria-label="Aggiungi una porzione">+</button>
+                  </div>` : `
+                  <button type="button" class="btn btn--mustard btn--sm" style="width:100%;" data-add-dish="${dish.id}">
+                    + Aggiungi all'Asporto
+                  </button>`}
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      function renderMenu() {
+        const listEl = document.getElementById("menuList");
+        if (!listEl) return;
+
+        const q = searchQuery.trim().toLowerCase();
+        const catsToRender = activeCategory === "all"
+          ? window.FUSION_MENU.categorie
+          : window.FUSION_MENU.categorie.filter((c) => c.id === activeCategory);
+
+        let html = "", totalShown = 0;
+        for (const cat of catsToRender) {
+          const items = window.FUSION_MENU.piatti.filter((p) => p.categoria === cat.id && (!q || p.nome.toLowerCase().includes(q) || p.ingredienti.toLowerCase().includes(q)));
+          if (items.length === 0) continue;
+          totalShown += items.length;
+          html += `
+            <div class="menu-group">
+              <div class="menu-group__header">
+                <h3 class="menu-group__title">${escapeHtml(cat.nome)}</h3>
+                <span class="menu-group__count">${items.length} ${items.length === 1 ? "proposta" : "proposte"}</span>
+              </div>
+              <div class="menu-grid">${items.map(renderDishCard).join("")}</div>
+            </div>
+          `;
+        }
+
+        if (totalShown === 0) {
+          html = `
+            <div class="panel-card" style="text-align:center;">
+              <p style="margin:0 0 10px; font-weight:700; color:var(--petrolio-deep);">Nessun piatto trovato per "${escapeHtml(searchQuery)}".</p>
+              <button type="button" class="btn btn--outline btn--sm" id="resetMenuSearchBtn">Mostra tutto il menù</button>
+            </div>
+          `;
+        }
+
+        listEl.innerHTML = html;
+
+        document.getElementById("resetMenuSearchBtn")?.addEventListener("click", () => {
+          searchQuery = "";
+          const input = document.getElementById("menuSearchInput");
+          if (input) input.value = "";
+          activeCategory = "all";
+          renderFilters();
+          renderCategoryShowcase();
+          renderMenu();
+        });
+
+        listEl.querySelectorAll("[data-gf-toggle]").forEach((cb) => {
+          cb.addEventListener("change", () => { glutenFreeSelection[cb.dataset.gfToggle] = cb.checked; renderMenu(); });
+        });
+        listEl.querySelectorAll("[data-add-dish]").forEach((btn) => {
+          btn.addEventListener("click", () => window.FusionBooking.addToCart(btn.dataset.addDish, Boolean(glutenFreeSelection[btn.dataset.addDish])));
+        });
+        listEl.querySelectorAll("[data-inc-dish]").forEach((btn) => {
+          btn.addEventListener("click", () => window.FusionBooking.addToCart(btn.dataset.incDish, Boolean(glutenFreeSelection[btn.dataset.incDish])));
+        });
+        listEl.querySelectorAll("[data-dec-dish]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = btn.dataset.decDish;
+            window.FusionBooking.updateCartQty(window.FusionBooking.getCartKey(id, Boolean(glutenFreeSelection[id])), -1);
+          });
+        });
+      }
+
+      function renderAllergens() {
+        const body = document.getElementById("allergensBody");
+        if (!body) return;
+        body.innerHTML = `
+          <p style="margin:0;"><strong>Elenco Allergeni:</strong> ${escapeHtml(window.FUSION_MENU.allergeni.join("; "))}.</p>
+          <p style="margin:0;"><strong>Note &amp; Servizi:</strong> ${escapeHtml(window.FUSION_MENU.noteServizio.join(" · "))}</p>
+        `;
+      }
+
+      function init() {
+        initNoticeOverlay();
+        renderFilters();
+        renderCategoryShowcase();
+        renderAllergens();
+        window.FusionCalendar?.init();
+        window.FusionBooking?.init();
+        renderMenu();
+
+        document.getElementById("menuSearchInput")?.addEventListener("input", (e) => { searchQuery = e.target.value; renderMenu(); });
+        document.getElementById("closePhotoModalBtn")?.addEventListener("click", closePhotoModal);
+        document.getElementById("photoModalBackdrop")?.addEventListener("click", (e) => { if (e.target.id === "photoModalBackdrop") closePhotoModal(); });
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            closePhotoModal();
+            document.getElementById("noticeModalBackdrop")?.classList.remove("is-open");
+            window.FusionBooking?.closeCartDrawer();
           }
         });
-      });
-    });
-
-    // ==========================================
-    // 6. CARRELLO ASPORTO E INVIO WHATSAPP
-    // ==========================================
-    const WHATSAPP_NUMBER = '390872703567';
-    let carrello = [];
-
-    function aggiungiAlCarrello(nome, prezzo) {
-      const esistente = carrello.find(item => item.nome === nome);
-      if (esistente) {
-        esistente.qty += 1;
-      } else {
-        carrello.push({ nome, prezzo, qty: 1 });
-      }
-      renderCarrello();
-    }
-
-    function svuotaCarrello() {
-      carrello = [];
-      renderCarrello();
-    }
-
-    function renderCarrello() {
-      const lista = document.getElementById('carrello-lista');
-      const totaleEl = document.getElementById('carrello-totale');
-
-      if (carrello.length === 0) {
-        lista.innerHTML = `<p class="text-xs italic text-slate-400">Nessun prodotto selezionato. Aggiungili dal menù qui sopra oppure scrivili nelle note.</p>`;
-        totaleEl.textContent = '€ 0,00';
-        return;
       }
 
-      let totale = 0;
-      lista.innerHTML = carrello.map(item => {
-        const sub = item.prezzo * item.qty;
-        totale += sub;
-        return `<div class="flex justify-between text-xs sm:text-sm">
-          <span><strong>${item.qty}x</strong> ${item.nome}</span>
-          <span class="font-semibold">€ ${sub.toFixed(2).replace('.', ',')}</span>
-        </div>`;
-      }).join('');
-
-      totaleEl.textContent = `€ ${totale.toFixed(2).replace('.', ',')}`;
-    }
-
-    document.getElementById('form-tavolo').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nome = document.getElementById('tavolo-nome').value.trim();
-      const persone = document.getElementById('tavolo-persone').value;
-      const data = document.getElementById('tavolo-data').value;
-      const ora = document.getElementById('tavolo-ora').value;
-      const note = document.getElementById('tavolo-note').value.trim();
-
-      let msg = `*PRENOTAZIONE TAVOLO - FUSION 3.0*\n`;
-      msg += `• Nome: ${nome}\n`;
-      msg += `• Persone: ${persone}\n`;
-      msg += `• Data: ${data}\n`;
-      msg += `• Orario/Turno: ${ora}\n`;
-      if (note) msg += `• Note: ${note}\n`;
-
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-    });
-
-    document.getElementById('form-asporto').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const nome = document.getElementById('asporto-nome').value.trim();
-      const ora = document.getElementById('asporto-ora').value;
-      const note = document.getElementById('asporto-note').value.trim();
-
-      let msg = `*ORDINE ASPORTO - FUSION 3.0*\n`;
-      msg += `• Nome ritiro: ${nome}\n`;
-      msg += `• Orario ritiro: ${ora}\n\n`;
-
-      if (carrello.length > 0) {
-        msg += `*Riepilogo ordine:*\n`;
-        let tot = 0;
-        carrello.forEach(i => {
-          tot += i.prezzo * i.qty;
-          msg += `- ${i.qty}x ${i.nome} (€ ${(i.prezzo * i.qty).toFixed(2).replace('.', ',')})\n`;
-        });
-        msg += `*Totale stimato:* € ${tot.toFixed(2).replace('.', ',')}\n`;
-      }
-
-      if (note) msg += `\n• Note/Allergie: ${note}\n`;
-
-      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
-    });
+      window.FusionApp = { init, renderMenu, showToast };
+      if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+      else init();
+    })();
   </script>
 </body>
 </html>
